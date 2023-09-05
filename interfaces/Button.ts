@@ -1,4 +1,3 @@
-import {PDFDocumentProxy} from "pdfjs-dist";
 import {Data} from "../pdf-viewer";
 
 export default interface Button {
