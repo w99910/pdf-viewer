@@ -5,4 +5,5 @@ export {default as ViewThumbnailsButton} from './buttons/view-thumbnails-button.
 export {default as ViewPropertiesButton} from './buttons/view-properties-button.ts';
 export {default as ZoomButton} from './buttons/zoom-button.ts';
 
+import './app.css';
 // export {default as ButtonInterface} from './interfaces/Button.ts';

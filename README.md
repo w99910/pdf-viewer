@@ -33,7 +33,7 @@ Thus, I implemented this package because
 - Import the css file and construct the `PDFViewer` class
 
 ```js
-import 'pdf-viewer/dist/build.css';
+import 'pdf-viewer/dist/style.css';
 import PDFViewer from "pdf-viewer";
 
 let pdfViewer = new PDFViewer(document.getElementById('pdf'))
