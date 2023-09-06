@@ -1,7 +1,7 @@
-import './dist/build.css';
+import "./dist/style.css";
 
 import PDFViewer from "./pdf-viewer";
 
-let pdfViewer = new PDFViewer(document.getElementById('pdf'))
+let pdfViewer = new PDFViewer(document.getElementById("pdf"));
 
-pdfViewer.init('/readme.pdf');
+pdfViewer.init("/readme.pdf");

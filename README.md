@@ -3,6 +3,8 @@
 Easy-to-use PDF Viewer library written in vanilla typescript based on the core pdf
 library [pdfjs](https://github.com/mozilla/pdf.js/).
 
+Example pdf viewer is hosted at [https://w99910.github.io/pdf-viewer/](https://w99910.github.io/pdf-viewer/).
+
 ## Purposes of this library
 
 The core library [pdfjs](https://github.com/mozilla/pdf.js/) currently offers
