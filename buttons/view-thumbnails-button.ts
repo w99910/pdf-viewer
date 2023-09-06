@@ -60,17 +60,23 @@ export default class ViewThumbnailsButton implements Button {
     protected async _build(data: Data) {
         let numPages = data.pdfDocument.numPages;
         for (let i = 1; i <= numPages; i++) {
-            let page = await data.pdfDocument.getPage(i);
-            let img = await this.generateThumbnail(page);
-            img.dataset.id = i.toString();
-            img.title = 'Page ' + i;
-            img.classList.add('cursor-pointer', 'border');
-            img.addEventListener('click', () => {
-                data.bodyContainer.scrollTop = parseFloat(img.dataset.offsetY!);
-            });
-            this.thumbnailContainer.append(img);
-            let pageElement = data.pdfContainer.querySelector(`[data-page-number="${i}"]`);
-            img.dataset.offsetY = pageElement?.getBoundingClientRect().top.toString();
+          let page = await data.pdfDocument.getPage(i);
+          let img = await this.generateThumbnail(page);
+          img.dataset.id = i.toString();
+          img.title = "Page " + i;
+          img.classList.add("cursor-pointer", "border");
+          img.addEventListener("click", () => {
+            let pageElement = data.pdfContainer.querySelector(
+              `[data-page-number="${i}"]`
+            );
+            data.bodyContainer.scrollTop =
+              data.bodyContainer.scrollTop +
+              parseFloat(pageElement!.getBoundingClientRect().top.toString()) -
+              100;
+          });
+          this.thumbnailContainer.append(img);
+          // let pageElement = data.pdfContainer.querySelector(`[data-page-number="${i}"]`);
+          // img.dataset.offsetY = pageElement?.getBoundingClientRect().top.toString();
         }
     }
 

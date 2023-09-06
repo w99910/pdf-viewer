@@ -1,42 +1,42 @@
 var ts = Object.defineProperty;
-var es = (A, e, k) => e in A ? ts(A, e, { enumerable: !0, configurable: !0, writable: !0, value: k }) : A[e] = k;
-var Zt = (A, e, k) => (es(A, typeof e != "symbol" ? e + "" : e, k), k), We = (A, e, k) => {
+var es = (A, e, L) => e in A ? ts(A, e, { enumerable: !0, configurable: !0, writable: !0, value: L }) : A[e] = L;
+var Zt = (A, e, L) => (es(A, typeof e != "symbol" ? e + "" : e, L), L), We = (A, e, L) => {
   if (!e.has(A))
-    throw TypeError("Cannot " + k);
+    throw TypeError("Cannot " + L);
 };
-var t = (A, e, k) => (We(A, e, "read from private field"), k ? k.call(A) : e.get(A)), N = (A, e, k) => {
+var t = (A, e, L) => (We(A, e, "read from private field"), L ? L.call(A) : e.get(A)), N = (A, e, L) => {
   if (e.has(A))
     throw TypeError("Cannot add the same private member more than once");
-  e instanceof WeakSet ? e.add(A) : e.set(A, k);
-}, it = (A, e, k, n) => (We(A, e, "write to private field"), n ? n.call(A, k) : e.set(A, k), k);
-var ae = (A, e, k, n) => ({
-  set _(u) {
-    it(A, e, u, k);
+  e instanceof WeakSet ? e.add(A) : e.set(A, L);
+}, it = (A, e, L, n) => (We(A, e, "write to private field"), n ? n.call(A, L) : e.set(A, L), L);
+var ae = (A, e, L, n) => ({
+  set _(f) {
+    it(A, e, f, L);
   },
   get _() {
     return t(A, e, n);
   }
-}), X = (A, e, k) => (We(A, e, "access private method"), k);
+}), X = (A, e, L) => (We(A, e, "access private method"), L);
 function getAugmentedNamespace(A) {
   if (A.__esModule)
     return A;
   var e = A.default;
   if (typeof e == "function") {
-    var k = function n() {
+    var L = function n() {
       return this instanceof n ? Reflect.construct(e, arguments, this.constructor) : e.apply(this, arguments);
     };
-    k.prototype = e.prototype;
+    L.prototype = e.prototype;
   } else
-    k = {};
-  return Object.defineProperty(k, "__esModule", { value: !0 }), Object.keys(A).forEach(function(n) {
-    var u = Object.getOwnPropertyDescriptor(A, n);
-    Object.defineProperty(k, n, u.get ? u : {
+    L = {};
+  return Object.defineProperty(L, "__esModule", { value: !0 }), Object.keys(A).forEach(function(n) {
+    var f = Object.getOwnPropertyDescriptor(A, n);
+    Object.defineProperty(L, n, f.get ? f : {
       enumerable: !0,
       get: function() {
         return A[n];
       }
     });
-  }), k;
+  }), L;
 }
 function commonjsRequire(A) {
   throw new Error('Could not dynamically require "' + A + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
@@ -47,8 +47,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
   default: __viteBrowserExternal
 }, Symbol.toStringTag, { value: "Module" })), require$$5 = /* @__PURE__ */ getAugmentedNamespace(__viteBrowserExternal$1);
 (function(module, exports) {
-  (function(e, k) {
-    module.exports = e.pdfjsLib = k();
+  (function(e, L) {
+    module.exports = e.pdfjsLib = L();
   })(globalThis, () => (
     /******/
     (() => {
@@ -61,12 +61,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.VerbosityLevel = e.Util = e.UnknownErrorException = e.UnexpectedResponseException = e.TextRenderingMode = e.RenderingIntentFlag = e.PromiseCapability = e.PermissionFlag = e.PasswordResponses = e.PasswordException = e.PageActionEventType = e.OPS = e.MissingPDFException = e.MAX_IMAGE_SIZE_TO_CACHE = e.LINE_FACTOR = e.LINE_DESCENT_FACTOR = e.InvalidPDFException = e.ImageKind = e.IDENTITY_MATRIX = e.FormatError = e.FeatureTest = e.FONT_IDENTITY_MATRIX = e.DocumentActionEventType = e.CMapCompressionType = e.BaseException = e.BASELINE_FACTOR = e.AnnotationType = e.AnnotationReplyType = e.AnnotationMode = e.AnnotationFlag = e.AnnotationFieldFlag = e.AnnotationEditorType = e.AnnotationEditorPrefix = e.AnnotationEditorParamsType = e.AnnotationBorderStyleType = e.AnnotationActionEventType = e.AbortException = void 0, e.assert = j, e.bytesToString = ut, e.createValidAbsoluteUrl = lt, e.getModificationDate = Ot, e.getUuid = $t, e.getVerbosityLevel = K, e.info = Z, e.isArrayBuffer = dt, e.isArrayEqual = xt, e.isNodeJS = void 0, e.normalizeUnicode = Ht, e.objectFromMap = ot, e.objectSize = Et, e.setVerbosityLevel = x, e.shadow = _t, e.string32 = yt, e.stringToBytes = wt, e.stringToPDFString = at, e.stringToUTF8String = J, e.unreachable = v, e.utf8StringToString = rt, e.warn = Q;
-          const k = typeof process == "object" && process + "" == "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
-          e.isNodeJS = k;
+          const L = typeof process == "object" && process + "" == "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
+          e.isNodeJS = L;
           const n = [1, 0, 0, 1, 0, 0];
           e.IDENTITY_MATRIX = n;
-          const u = [1e-3, 0, 0, 1e-3, 0, 0];
-          e.FONT_IDENTITY_MATRIX = u;
+          const f = [1e-3, 0, 0, 1e-3, 0, 0];
+          e.FONT_IDENTITY_MATRIX = f;
           const q = 1e7;
           e.MAX_IMAGE_SIZE_TO_CACHE = q;
           const V = 1.35;
@@ -138,12 +138,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             ADD_TO_PATH_FLAG: 4
           };
           e.TextRenderingMode = p;
-          const f = {
+          const u = {
             GRAYSCALE_1BPP: 1,
             RGB_24BPP: 2,
             RGBA_32BPP: 3
           };
-          e.ImageKind = f;
+          e.ImageKind = u;
           const y = {
             TEXT: 1,
             LINK: 2,
@@ -419,50 +419,50 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               writable: !1
             }), B;
           }
-          const L = function() {
+          const k = function() {
             function m(B, ht) {
               this.constructor === m && v("Cannot initialize BaseException."), this.message = B, this.name = ht;
             }
             return m.prototype = new Error(), m.constructor = m, m;
           }();
-          e.BaseException = L;
-          class a extends L {
+          e.BaseException = k;
+          class a extends k {
             constructor(m, B) {
               super(m, "PasswordException"), this.code = B;
             }
           }
           e.PasswordException = a;
-          class l extends L {
+          class l extends k {
             constructor(m, B) {
               super(m, "UnknownErrorException"), this.details = B;
             }
           }
           e.UnknownErrorException = l;
-          class R extends L {
+          class R extends k {
             constructor(m) {
               super(m, "InvalidPDFException");
             }
           }
           e.InvalidPDFException = R;
-          class $ extends L {
+          class $ extends k {
             constructor(m) {
               super(m, "MissingPDFException");
             }
           }
           e.MissingPDFException = $;
-          class W extends L {
+          class W extends k {
             constructor(m, B) {
               super(m, "UnexpectedResponseException"), this.status = B;
             }
           }
           e.UnexpectedResponseException = W;
-          class nt extends L {
+          class nt extends k {
             constructor(m) {
               super(m, "FormatError");
             }
           }
           e.FormatError = nt;
-          class st extends L {
+          class st extends k {
             constructor(m) {
               super(m, "AbortException");
             }
@@ -674,7 +674,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         /* 2 */
         /***/
         (__unused_webpack_module, exports, __w_pdfjs_require__) => {
-          var A, k, n, u, oe, V, we, c, d, r, F, M, S, h, p, f, Pe, b, g, ze, s, i;
+          var A, L, n, f, oe, V, we, c, d, r, F, M, S, h, p, u, Pe, b, g, ze, s, i;
           Object.defineProperty(exports, "__esModule", {
             value: !0
           }), exports.RenderTask = exports.PDFWorkerUtil = exports.PDFWorker = exports.PDFPageProxy = exports.PDFDocumentProxy = exports.PDFDocumentLoadingTask = exports.PDFDataRangeTransport = exports.LoopbackPort = exports.DefaultStandardFontDataFactory = exports.DefaultFilterFactory = exports.DefaultCanvasFactory = exports.DefaultCMapReaderFactory = void 0, Object.defineProperty(exports, "SVGGraphics", {
@@ -705,7 +705,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               docId: T
             } = o, P = _.url ? getUrlProp(_.url) : null, Y = _.data ? getDataProp(_.data) : null, tt = _.httpHeaders || null, x = _.withCredentials === !0, K = _.password ?? null, Z = _.range instanceof PDFDataRangeTransport ? _.range : null, Q = Number.isInteger(_.rangeChunkSize) && _.rangeChunkSize > 0 ? _.rangeChunkSize : DEFAULT_RANGE_CHUNK_SIZE;
             let v = _.worker instanceof PDFWorker ? _.worker : null;
-            const j = _.verbosity, D = typeof _.docBaseUrl == "string" && !(0, _display_utils.isDataScheme)(_.docBaseUrl) ? _.docBaseUrl : null, lt = typeof _.cMapUrl == "string" ? _.cMapUrl : null, _t = _.cMapPacked !== !1, L = _.CMapReaderFactory || DefaultCMapReaderFactory, a = typeof _.standardFontDataUrl == "string" ? _.standardFontDataUrl : null, l = _.StandardFontDataFactory || DefaultStandardFontDataFactory, R = _.stopAtErrors !== !0, $ = Number.isInteger(_.maxImageSize) && _.maxImageSize > -1 ? _.maxImageSize : -1, W = _.isEvalSupported !== !1, nt = typeof _.isOffscreenCanvasSupported == "boolean" ? _.isOffscreenCanvasSupported : !_util.isNodeJS, st = Number.isInteger(_.canvasMaxAreaInBytes) ? _.canvasMaxAreaInBytes : -1, ut = typeof _.disableFontFace == "boolean" ? _.disableFontFace : _util.isNodeJS, wt = _.fontExtraProperties === !0, yt = _.enableXfa === !0, Et = _.ownerDocument || globalThis.document, ot = _.disableRange === !0, At = _.disableStream === !0, St = _.disableAutoFetch === !0, Rt = _.pdfBug === !0, Bt = Z ? Z.length : _.length ?? NaN, kt = typeof _.useSystemFonts == "boolean" ? _.useSystemFonts : !_util.isNodeJS && !ut, Ut = typeof _.useWorkerFetch == "boolean" ? _.useWorkerFetch : L === _display_utils.DOMCMapReaderFactory && l === _display_utils.DOMStandardFontDataFactory && lt && a && (0, _display_utils.isValidFetchUrl)(lt, document.baseURI) && (0, _display_utils.isValidFetchUrl)(a, document.baseURI), at = _.canvasFactory || new DefaultCanvasFactory({
+            const j = _.verbosity, D = typeof _.docBaseUrl == "string" && !(0, _display_utils.isDataScheme)(_.docBaseUrl) ? _.docBaseUrl : null, lt = typeof _.cMapUrl == "string" ? _.cMapUrl : null, _t = _.cMapPacked !== !1, k = _.CMapReaderFactory || DefaultCMapReaderFactory, a = typeof _.standardFontDataUrl == "string" ? _.standardFontDataUrl : null, l = _.StandardFontDataFactory || DefaultStandardFontDataFactory, R = _.stopAtErrors !== !0, $ = Number.isInteger(_.maxImageSize) && _.maxImageSize > -1 ? _.maxImageSize : -1, W = _.isEvalSupported !== !1, nt = typeof _.isOffscreenCanvasSupported == "boolean" ? _.isOffscreenCanvasSupported : !_util.isNodeJS, st = Number.isInteger(_.canvasMaxAreaInBytes) ? _.canvasMaxAreaInBytes : -1, ut = typeof _.disableFontFace == "boolean" ? _.disableFontFace : _util.isNodeJS, wt = _.fontExtraProperties === !0, yt = _.enableXfa === !0, Et = _.ownerDocument || globalThis.document, ot = _.disableRange === !0, At = _.disableStream === !0, St = _.disableAutoFetch === !0, Rt = _.pdfBug === !0, Bt = Z ? Z.length : _.length ?? NaN, kt = typeof _.useSystemFonts == "boolean" ? _.useSystemFonts : !_util.isNodeJS && !ut, Ut = typeof _.useWorkerFetch == "boolean" ? _.useWorkerFetch : k === _display_utils.DOMCMapReaderFactory && l === _display_utils.DOMStandardFontDataFactory && lt && a && (0, _display_utils.isValidFetchUrl)(lt, document.baseURI) && (0, _display_utils.isValidFetchUrl)(a, document.baseURI), at = _.canvasFactory || new DefaultCanvasFactory({
               ownerDocument: Et
             }), J = _.filterFactory || new DefaultFilterFactory({
               docId: T,
@@ -716,7 +716,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               canvasFactory: at,
               filterFactory: J
             };
-            if (Ut || (dt.cMapReaderFactory = new L({
+            if (Ut || (dt.cMapReaderFactory = new k({
               baseUrl: lt,
               isCompressed: _t
             }), dt.standardFontDataFactory = new l({
@@ -1003,9 +1003,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           exports.PDFDocumentProxy = PDFDocumentProxy;
           class PDFPageProxy {
             constructor(o, T, P, Y = !1) {
-              N(this, u);
+              N(this, f);
               N(this, V);
-              N(this, k, null);
+              N(this, L, null);
               N(this, n, !1);
               this._pageIndex = o, this._pageInfo = T, this._transport = P, this._stats = Y ? new _display_utils.StatTimer() : null, this._pdfBug = Y, this.commonObjs = P.commonObjs, this.objs = new PDFObjects(), this._maybeCleanupAfterRender = !1, this._intentStates = /* @__PURE__ */ new Map(), this.destroyed = !1;
             }
@@ -1086,11 +1086,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }, (R = this._stats) == null || R.time("Page Request"), this._pumpOperatorList(j));
               const _t = ($) => {
                 var W, nt;
-                D.renderTasks.delete(L), (this._maybeCleanupAfterRender || lt) && it(this, n, !0), X(this, u, oe).call(this, !lt), $ ? (L.capability.reject($), this._abortOperatorList({
+                D.renderTasks.delete(k), (this._maybeCleanupAfterRender || lt) && it(this, n, !0), X(this, f, oe).call(this, !lt), $ ? (k.capability.reject($), this._abortOperatorList({
                   intentState: D,
                   reason: $ instanceof Error ? $ : new Error($)
-                })) : L.capability.resolve(), (W = this._stats) == null || W.timeEnd("Rendering"), (nt = this._stats) == null || nt.timeEnd("Overall");
-              }, L = new InternalRenderTask({
+                })) : k.capability.resolve(), (W = this._stats) == null || W.timeEnd("Rendering"), (nt = this._stats) == null || nt.timeEnd("Overall");
+              }, k = new InternalRenderTask({
                 callback: _t,
                 params: {
                   canvasContext: o,
@@ -1109,18 +1109,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 pdfBug: this._pdfBug,
                 pageColors: Q
               });
-              (D.renderTasks || (D.renderTasks = /* @__PURE__ */ new Set())).add(L);
-              const a = L.task;
+              (D.renderTasks || (D.renderTasks = /* @__PURE__ */ new Set())).add(k);
+              const a = k.task;
               return Promise.all([D.displayReadyCapability.promise, K]).then(([$, W]) => {
                 var nt;
                 if (this.destroyed) {
                   _t();
                   return;
                 }
-                (nt = this._stats) == null || nt.time("Rendering"), L.initializeGraphics({
+                (nt = this._stats) == null || nt.time("Rendering"), k.initializeGraphics({
                   transparency: $,
                   optionalContentConfig: W
-                }), L.operatorListChanged();
+                }), k.operatorListChanged();
               }).catch(_t), a;
             }
             getOperatorList({
@@ -1200,7 +1200,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             cleanup(o = !1) {
               it(this, n, !0);
-              const T = X(this, u, oe).call(this, !1);
+              const T = X(this, f, oe).call(this, !1);
               return o && T && this._stats && (this._stats = new _display_utils.StatTimer()), T;
             }
             _startRenderPage(o, T) {
@@ -1214,7 +1214,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               T.operatorList.lastChunk = o.lastChunk, T.operatorList.separateAnnots = o.separateAnnots;
               for (const P of T.renderTasks)
                 P.operatorListChanged();
-              o.lastChunk && X(this, u, oe).call(this, !0);
+              o.lastChunk && X(this, f, oe).call(this, !0);
             }
             _pumpOperatorList({
               renderingIntent: o,
@@ -1247,7 +1247,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                       Z.operatorList.lastChunk = !0;
                       for (const j of Z.renderTasks)
                         j.operatorListChanged();
-                      X(this, u, oe).call(this, !0);
+                      X(this, f, oe).call(this, !0);
                     }
                     if (Z.displayReadyCapability)
                       Z.displayReadyCapability.reject(v);
@@ -1296,12 +1296,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return this._stats;
             }
           }
-          k = new WeakMap(), n = new WeakMap(), u = new WeakSet(), oe = function(o = !1) {
+          L = new WeakMap(), n = new WeakMap(), f = new WeakSet(), oe = function(o = !1) {
             if (X(this, V, we).call(this), !t(this, n) || this.destroyed)
               return !1;
             if (o)
-              return it(this, k, setTimeout(() => {
-                it(this, k, null), X(this, u, oe).call(this, !1);
+              return it(this, L, setTimeout(() => {
+                it(this, L, null), X(this, f, oe).call(this, !1);
               }, DELAYED_CLEANUP_TIMEOUT)), !1;
             for (const {
               renderTasks: T,
@@ -1311,7 +1311,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 return !1;
             return this._intentStates.clear(), this.objs.clear(), it(this, n, !1), !0;
           }, V = new WeakSet(), we = function() {
-            t(this, k) && (clearTimeout(t(this, k)), it(this, k, null));
+            t(this, L) && (clearTimeout(t(this, L)), it(this, L, null));
           }, exports.PDFPageProxy = PDFPageProxy;
           class LoopbackPort {
             constructor() {
@@ -1509,7 +1509,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           exports.PDFWorker = PDFWorker;
           class WorkerTransport {
             constructor(o, T, P, Y, tt) {
-              N(this, f);
+              N(this, u);
               N(this, M, /* @__PURE__ */ new Map());
               N(this, S, /* @__PURE__ */ new Map());
               N(this, h, /* @__PURE__ */ new Map());
@@ -1809,10 +1809,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               });
             }
             getFieldObjects() {
-              return X(this, f, Pe).call(this, "GetFieldObjects");
+              return X(this, u, Pe).call(this, "GetFieldObjects");
             }
             hasJSActions() {
-              return X(this, f, Pe).call(this, "HasJSActions");
+              return X(this, u, Pe).call(this, "HasJSActions");
             }
             getCalculationOrderIds() {
               return this.messageHandler.sendWithPromise("GetCalculationOrderIds", null);
@@ -1844,7 +1844,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return this.messageHandler.sendWithPromise("GetAttachments", null);
             }
             getDocJSActions() {
-              return X(this, f, Pe).call(this, "GetDocJSActions");
+              return X(this, u, Pe).call(this, "GetDocJSActions");
             }
             getPageJSActions(o) {
               return this.messageHandler.sendWithPromise("GetPageJSActions", {
@@ -1903,7 +1903,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               });
             }
           }
-          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakSet(), Pe = function(o, T = null) {
+          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakSet(), Pe = function(o, T = null) {
             const P = t(this, M).get(o);
             if (P)
               return P;
@@ -2057,12 +2057,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 3 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var d, r, F, zi, S;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.SerializableEmpty = e.PrintAnnotationStorage = e.AnnotationStorage = void 0;
-          var n = k(1), u = k(4), q = k(8);
+          var n = L(1), f = L(4), q = L(8);
           const V = Object.freeze({
             map: null,
             hash: "",
@@ -2076,30 +2076,30 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, r, /* @__PURE__ */ new Map());
               this.onSetModified = null, this.onResetModified = null, this.onAnnotationEditor = null;
             }
-            getValue(p, f) {
+            getValue(p, u) {
               const y = t(this, r).get(p);
-              return y === void 0 ? f : Object.assign(f, y);
+              return y === void 0 ? u : Object.assign(u, y);
             }
             getRawValue(p) {
               return t(this, r).get(p);
             }
             remove(p) {
               if (t(this, r).delete(p), t(this, r).size === 0 && this.resetModified(), typeof this.onAnnotationEditor == "function") {
-                for (const f of t(this, r).values())
-                  if (f instanceof u.AnnotationEditor)
+                for (const u of t(this, r).values())
+                  if (u instanceof f.AnnotationEditor)
                     return;
                 this.onAnnotationEditor(null);
               }
             }
-            setValue(p, f) {
+            setValue(p, u) {
               const y = t(this, r).get(p);
               let b = !1;
               if (y !== void 0)
-                for (const [g, w] of Object.entries(f))
+                for (const [g, w] of Object.entries(u))
                   y[g] !== w && (b = !0, y[g] = w);
               else
-                b = !0, t(this, r).set(p, f);
-              b && X(this, F, zi).call(this), f instanceof u.AnnotationEditor && typeof this.onAnnotationEditor == "function" && this.onAnnotationEditor(f.constructor._type);
+                b = !0, t(this, r).set(p, u);
+              b && X(this, F, zi).call(this), u instanceof f.AnnotationEditor && typeof this.onAnnotationEditor == "function" && this.onAnnotationEditor(u.constructor._type);
             }
             has(p) {
               return t(this, r).has(p);
@@ -2108,8 +2108,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return t(this, r).size > 0 ? (0, n.objectFromMap)(t(this, r)) : null;
             }
             setAll(p) {
-              for (const [f, y] of Object.entries(p))
-                this.setValue(f, y);
+              for (const [u, y] of Object.entries(p))
+                this.setValue(u, y);
             }
             get size() {
               return t(this, r).size;
@@ -2123,18 +2123,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             get serializable() {
               if (t(this, r).size === 0)
                 return V;
-              const p = /* @__PURE__ */ new Map(), f = new q.MurmurHash3_64(), y = [], b = /* @__PURE__ */ Object.create(null);
+              const p = /* @__PURE__ */ new Map(), u = new q.MurmurHash3_64(), y = [], b = /* @__PURE__ */ Object.create(null);
               let g = !1;
               for (const [w, s] of t(this, r)) {
-                const i = s instanceof u.AnnotationEditor ? s.serialize(!1, b) : s;
-                i && (p.set(w, i), f.update(`${w}:${JSON.stringify(i)}`), g || (g = !!i.bitmap));
+                const i = s instanceof f.AnnotationEditor ? s.serialize(!1, b) : s;
+                i && (p.set(w, i), u.update(`${w}:${JSON.stringify(i)}`), g || (g = !!i.bitmap));
               }
               if (g)
                 for (const w of p.values())
                   w.bitmap && y.push(w.bitmap);
               return p.size > 0 ? {
                 map: p,
-                hash: f.hexdigest(),
+                hash: u.hexdigest(),
                 transfers: y
               } : V;
             }
@@ -2143,14 +2143,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             t(this, d) || (it(this, d, !0), typeof this.onSetModified == "function" && this.onSetModified());
           }, e.AnnotationStorage = I;
           class c extends I {
-            constructor(f) {
+            constructor(u) {
               super();
               N(this, S, void 0);
               const {
                 map: y,
                 hash: b,
                 transfers: g
-              } = f.serializable, w = structuredClone(y, g ? {
+              } = u.serializable, w = structuredClone(y, g ? {
                 transfer: g
               } : null);
               it(this, S, {
@@ -2170,15 +2170,15 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 4 */
         /***/
-        (A, e, k) => {
-          var I, c, d, r, F, M, S, h, p, f, Ge, b, $e, w, Xe, i, Gi, _, $i, T, Xi, Y, qi, x, Yi;
+        (A, e, L) => {
+          var I, c, d, r, F, M, S, h, p, u, Ge, b, $e, w, Xe, i, Gi, _, $i, T, Xi, Y, qi, x, Yi;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.AnnotationEditor = void 0;
-          var n = k(5), u = k(1);
+          var n = L(5), f = L(1);
           const Z = class Z {
             constructor(v) {
-              N(this, f);
+              N(this, u);
               N(this, w);
               N(this, _);
               N(this, T);
@@ -2196,22 +2196,22 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               Zt(this, "_focusEventsAllowed", !0);
               N(this, h, !1);
               N(this, p, Z._zIndex++);
-              this.constructor === Z && (0, u.unreachable)("Cannot initialize AnnotationEditor."), this.parent = v.parent, this.id = v.id, this.width = this.height = null, this.pageIndex = v.parent.pageIndex, this.name = v.name, this.div = null, this._uiManager = v.uiManager, this.annotationElementId = null, this._willKeepAspectRatio = !1, this._initialOptions.isCentered = v.isCentered;
+              this.constructor === Z && (0, f.unreachable)("Cannot initialize AnnotationEditor."), this.parent = v.parent, this.id = v.id, this.width = this.height = null, this.pageIndex = v.parent.pageIndex, this.name = v.name, this.div = null, this._uiManager = v.uiManager, this.annotationElementId = null, this._willKeepAspectRatio = !1, this._initialOptions.isCentered = v.isCentered;
               const {
                 rotation: j,
                 rawDims: {
                   pageWidth: D,
                   pageHeight: lt,
                   pageX: _t,
-                  pageY: L
+                  pageY: k
                 }
               } = this.parent.viewport;
-              this.rotation = j, this.pageRotation = (360 + j - this._uiManager.viewParameters.rotation) % 360, this.pageDimensions = [D, lt], this.pageTranslation = [_t, L];
+              this.rotation = j, this.pageRotation = (360 + j - this._uiManager.viewParameters.rotation) % 360, this.pageDimensions = [D, lt], this.pageTranslation = [_t, k];
               const [a, l] = this.parentDimensions;
               this.x = v.x / a, this.y = v.y / l, this.isAttachedToDOM = !1, this.deleted = !1;
             }
             static get _defaultLineColor() {
-              return (0, u.shadow)(this, "_defaultLineColor", this._colorManager.getHexCode("CanvasText"));
+              return (0, f.shadow)(this, "_defaultLineColor", this._colorManager.getHexCode("CanvasText"));
             }
             static deleteAnnotationElement(v) {
               const j = new V({
@@ -2232,7 +2232,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return !1;
             }
             static paste(v, j) {
-              (0, u.unreachable)("Not implemented");
+              (0, f.unreachable)("Not implemented");
             }
             get propertiesToUpdate() {
               return [];
@@ -2297,14 +2297,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this._uiManager.addToAnnotationStorage(this);
             }
             setAt(v, j, D, lt) {
-              const [_t, L] = this.parentDimensions;
-              [D, lt] = this.screenToPageTranslation(D, lt), this.x = (v + D) / _t, this.y = (j + lt) / L, this.fixAndSetPosition();
+              const [_t, k] = this.parentDimensions;
+              [D, lt] = this.screenToPageTranslation(D, lt), this.x = (v + D) / _t, this.y = (j + lt) / k, this.fixAndSetPosition();
             }
             translate(v, j) {
-              X(this, f, Ge).call(this, this.parentDimensions, v, j);
+              X(this, u, Ge).call(this, this.parentDimensions, v, j);
             }
             translateInPage(v, j) {
-              X(this, f, Ge).call(this, this.pageDimensions, v, j), this.moveInDOM(), this.div.scrollIntoView({
+              X(this, u, Ge).call(this, this.pageDimensions, v, j), this.moveInDOM(), this.div.scrollIntoView({
                 block: "nearest"
               });
             }
@@ -2313,9 +2313,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               if (this.x += v / D, this.y += j / lt, this.x < 0 || this.x > 1 || this.y < 0 || this.y > 1) {
                 const {
                   x: _t,
-                  y: L
+                  y: k
                 } = this.div.getBoundingClientRect();
-                this.parent.findNewParent(this, _t, L) && (this.x -= Math.floor(this.x), this.y -= Math.floor(this.y));
+                this.parent.findNewParent(this, _t, k) && (this.x -= Math.floor(this.x), this.y -= Math.floor(this.y));
               }
               this.div.style.left = `${(100 * this.x).toFixed(2)}%`, this.div.style.top = `${(100 * this.y).toFixed(2)}%`, this.div.scrollIntoView({
                 block: "nearest"
@@ -2327,20 +2327,20 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 x: D,
                 y: lt,
                 width: _t,
-                height: L
+                height: k
               } = this;
-              switch (_t *= v, L *= j, D *= v, lt *= j, this.rotation) {
+              switch (_t *= v, k *= j, D *= v, lt *= j, this.rotation) {
                 case 0:
-                  D = Math.max(0, Math.min(v - _t, D)), lt = Math.max(0, Math.min(j - L, lt));
+                  D = Math.max(0, Math.min(v - _t, D)), lt = Math.max(0, Math.min(j - k, lt));
                   break;
                 case 90:
-                  D = Math.max(0, Math.min(v - L, D)), lt = Math.min(j, Math.max(_t, lt));
+                  D = Math.max(0, Math.min(v - k, D)), lt = Math.min(j, Math.max(_t, lt));
                   break;
                 case 180:
-                  D = Math.min(v, Math.max(_t, D)), lt = Math.min(j, Math.max(L, lt));
+                  D = Math.min(v, Math.max(_t, D)), lt = Math.min(j, Math.max(k, lt));
                   break;
                 case 270:
-                  D = Math.min(v, Math.max(L, D)), lt = Math.max(0, Math.min(j - _t, lt));
+                  D = Math.min(v, Math.max(k, D)), lt = Math.max(0, Math.min(j - _t, lt));
                   break;
               }
               this.x = D / v, this.y = lt / j, this.div.style.left = `${(100 * this.x).toFixed(2)}%`, this.div.style.top = `${(100 * this.y).toFixed(2)}%`;
@@ -2364,7 +2364,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 parentScale: v,
                 pageDimensions: [j, D]
               } = this, lt = j * v, _t = D * v;
-              return u.FeatureTest.isCSSRoundSupported ? [Math.round(lt), Math.round(_t)] : [lt, _t];
+              return f.FeatureTest.isCSSRoundSupported ? [Math.round(lt), Math.round(_t)] : [lt, _t];
             }
             setDims(v, j) {
               const [D, lt] = this.parentDimensions;
@@ -2379,8 +2379,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               } = v, lt = D.endsWith("%"), _t = !t(this, I) && j.endsWith("%");
               if (lt && _t)
                 return;
-              const [L, a] = this.parentDimensions;
-              lt || (v.width = `${(100 * parseFloat(D) / L).toFixed(2)}%`), !t(this, I) && !_t && (v.height = `${(100 * parseFloat(j) / a).toFixed(2)}%`);
+              const [k, a] = this.parentDimensions;
+              lt || (v.width = `${(100 * parseFloat(D) / k).toFixed(2)}%`), !t(this, I) && !_t && (v.height = `${(100 * parseFloat(j) / a).toFixed(2)}%`);
             }
             getInitialTranslation() {
               return [0, 0];
@@ -2395,7 +2395,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             pointerdown(v) {
               const {
                 isMac: j
-              } = u.FeatureTest.platform;
+              } = f.FeatureTest.platform;
               if (v.button !== 0 || v.ctrlKey && j) {
                 v.preventDefault();
                 return;
@@ -2409,31 +2409,31 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               v.changeParent(this), this.x = j, this.y = D, this.fixAndSetPosition(), this.moveInDOM();
             }
             getRect(v, j) {
-              const D = this.parentScale, [lt, _t] = this.pageDimensions, [L, a] = this.pageTranslation, l = v / D, R = j / D, $ = this.x * lt, W = this.y * _t, nt = this.width * lt, st = this.height * _t;
+              const D = this.parentScale, [lt, _t] = this.pageDimensions, [k, a] = this.pageTranslation, l = v / D, R = j / D, $ = this.x * lt, W = this.y * _t, nt = this.width * lt, st = this.height * _t;
               switch (this.rotation) {
                 case 0:
-                  return [$ + l + L, _t - W - R - st + a, $ + l + nt + L, _t - W - R + a];
+                  return [$ + l + k, _t - W - R - st + a, $ + l + nt + k, _t - W - R + a];
                 case 90:
-                  return [$ + R + L, _t - W + l + a, $ + R + st + L, _t - W + l + nt + a];
+                  return [$ + R + k, _t - W + l + a, $ + R + st + k, _t - W + l + nt + a];
                 case 180:
-                  return [$ - l - nt + L, _t - W + R + a, $ - l + L, _t - W + R + st + a];
+                  return [$ - l - nt + k, _t - W + R + a, $ - l + k, _t - W + R + st + a];
                 case 270:
-                  return [$ - R - st + L, _t - W - l - nt + a, $ - R + L, _t - W - l + a];
+                  return [$ - R - st + k, _t - W - l - nt + a, $ - R + k, _t - W - l + a];
                 default:
                   throw new Error("Invalid rotation");
               }
             }
             getRectInCurrentCoords(v, j) {
-              const [D, lt, _t, L] = v, a = _t - D, l = L - lt;
+              const [D, lt, _t, k] = v, a = _t - D, l = k - lt;
               switch (this.rotation) {
                 case 0:
-                  return [D, j - L, a, l];
+                  return [D, j - k, a, l];
                 case 90:
                   return [D, j - lt, l, a];
                 case 180:
                   return [_t, j - lt, a, l];
                 case 270:
-                  return [_t, j - L, l, a];
+                  return [_t, j - k, l, a];
                 default:
                   throw new Error("Invalid rotation");
               }
@@ -2463,7 +2463,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               (v = this.div) == null || v.addEventListener("focusin", t(this, d)), (j = this.div) == null || j.addEventListener("focusout", t(this, r));
             }
             serialize(v = !1, j = null) {
-              (0, u.unreachable)("An editor must be serializable");
+              (0, f.unreachable)("An editor must be serializable");
             }
             static deserialize(v, j, D) {
               const lt = new this.prototype.constructor({
@@ -2472,8 +2472,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 uiManager: D
               });
               lt.rotation = v.rotation;
-              const [_t, L] = lt.pageDimensions, [a, l, R, $] = lt.getRectInCurrentCoords(v.rect, L);
-              return lt.x = a / _t, lt.y = l / L, lt.width = R / _t, lt.height = $ / L, lt;
+              const [_t, k] = lt.pageDimensions, [a, l, R, $] = lt.getRectInCurrentCoords(v.rect, k);
+              return lt.x = a / _t, lt.y = l / k, lt.width = R / _t, lt.height = $ / k, lt;
             }
             remove() {
               this.div.removeEventListener("focusin", t(this, d)), this.div.removeEventListener("focusout", t(this, r)), this.isEmpty() || this.commit(), this.parent ? this.parent.remove(this) : this._uiManager.removeEditor(this);
@@ -2520,7 +2520,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return 16;
             }
           };
-          I = new WeakMap(), c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakSet(), Ge = function([v, j], D, lt) {
+          I = new WeakMap(), c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakSet(), Ge = function([v, j], D, lt) {
             [D, lt] = this.screenToPageTranslation(D, lt), this.x += D / v, this.y += lt / j, this.fixAndSetPosition();
           }, b = new WeakSet(), $e = function(v, j, D) {
             switch (D) {
@@ -2565,20 +2565,20 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             j.preventDefault();
             const {
               isMac: D
-            } = u.FeatureTest.platform;
+            } = f.FeatureTest.platform;
             if (j.button !== 0 || j.ctrlKey && D)
               return;
             const lt = X(this, Y, qi).bind(this, v), _t = this._isDraggable;
             this._isDraggable = !1;
-            const L = {
+            const k = {
               passive: !0,
               capture: !0
             };
-            window.addEventListener("pointermove", lt, L);
+            window.addEventListener("pointermove", lt, k);
             const a = this.x, l = this.y, R = this.width, $ = this.height, W = this.parent.div.style.cursor, nt = this.div.style.cursor;
             this.div.style.cursor = this.parent.div.style.cursor = window.getComputedStyle(j.target).cursor;
             const st = () => {
-              this._isDraggable = _t, window.removeEventListener("pointerup", st), window.removeEventListener("blur", st), window.removeEventListener("pointermove", lt, L), this.parent.div.style.cursor = W, this.div.style.cursor = nt;
+              this._isDraggable = _t, window.removeEventListener("pointerup", st), window.removeEventListener("blur", st), window.removeEventListener("pointermove", lt, k), this.parent.div.style.cursor = W, this.div.style.cursor = nt;
               const ut = this.x, wt = this.y, yt = this.width, Et = this.height;
               ut === a && wt === l && yt === R && Et === $ || this.addCommands({
                 cmd: () => {
@@ -2596,7 +2596,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             };
             window.addEventListener("pointerup", st), window.addEventListener("blur", st);
           }, Y = new WeakSet(), qi = function(v, j) {
-            const [D, lt] = this.parentDimensions, _t = this.x, L = this.y, a = this.width, l = this.height, R = Z.MIN_SIZE / D, $ = Z.MIN_SIZE / lt, W = (Nt) => Math.round(Nt * 1e4) / 1e4, nt = X(this, w, Xe).call(this, this.rotation), st = (Nt, Ht) => [nt[0] * Nt + nt[2] * Ht, nt[1] * Nt + nt[3] * Ht], ut = X(this, w, Xe).call(this, 360 - this.rotation), wt = (Nt, Ht) => [ut[0] * Nt + ut[2] * Ht, ut[1] * Nt + ut[3] * Ht];
+            const [D, lt] = this.parentDimensions, _t = this.x, k = this.y, a = this.width, l = this.height, R = Z.MIN_SIZE / D, $ = Z.MIN_SIZE / lt, W = (Nt) => Math.round(Nt * 1e4) / 1e4, nt = X(this, w, Xe).call(this, this.rotation), st = (Nt, Ht) => [nt[0] * Nt + nt[2] * Ht, nt[1] * Nt + nt[3] * Ht], ut = X(this, w, Xe).call(this, 360 - this.rotation), wt = (Nt, Ht) => [ut[0] * Nt + ut[2] * Ht, ut[1] * Nt + ut[3] * Ht];
             let yt, Et, ot = !1, At = !1;
             switch (v) {
               case "topLeft":
@@ -2626,7 +2626,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             const St = yt(a, l), Rt = Et(a, l);
             let Bt = st(...Rt);
-            const kt = W(_t + Bt[0]), Ut = W(L + Bt[1]);
+            const kt = W(_t + Bt[0]), Ut = W(k + Bt[1]);
             let at = 1, J = 1, [rt, dt] = this.screenToPageTranslation(j.movementX, j.movementY);
             if ([rt, dt] = wt(rt / D, dt / lt), ot) {
               const Nt = Math.hypot(a, l);
@@ -2646,16 +2646,16 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             j && (D = {
               passive: !0,
               capture: !0
-            }, lt = (L) => {
-              const [a, l] = this.screenToPageTranslation(L.movementX, L.movementY);
+            }, lt = (k) => {
+              const [a, l] = this.screenToPageTranslation(k.movementX, k.movementY);
               this._uiManager.dragSelectedEditors(a, l);
             }, window.addEventListener("pointermove", lt, D));
             const _t = () => {
               if (window.removeEventListener("pointerup", _t), window.removeEventListener("blur", _t), j && window.removeEventListener("pointermove", lt, D), it(this, F, !1), !this._uiManager.endDragSession()) {
                 const {
-                  isMac: L
-                } = u.FeatureTest.platform;
-                v.ctrlKey && !L || v.shiftKey || v.metaKey && L ? this.parent.toggleSelected(this) : this.parent.setSelected(this);
+                  isMac: k
+                } = f.FeatureTest.platform;
+                v.ctrlKey && !k || v.shiftKey || v.metaKey && k ? this.parent.toggleSelected(this) : this.parent.setSelected(this);
               }
             };
             window.addEventListener("pointerup", _t), window.addEventListener("blur", _t);
@@ -2677,12 +2677,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 5 */
         /***/
-        (A, e, k) => {
-          var S, h, p, f, y, qe, w, s, i, E, _, Ki, P, Y, tt, x, K, Z, Q, v, j, D, lt, _t, L, a, l, R, $, W, nt, st, ut, wt, yt, Et, ot, At, St, Rt, Bt, kt, Ut, at, J, rt, dt, Qi, Ot, Ye, Wt, Ji, Ht, Ke, Gt, Zi, m, tn, ht, ie, Pt, fe, vt, en, gt, nn, bt, Qe, C, pe, H, Je;
+        (A, e, L) => {
+          var S, h, p, u, y, qe, w, s, i, E, _, Ki, P, Y, tt, x, K, Z, Q, v, j, D, lt, _t, k, a, l, R, $, W, nt, st, ut, wt, yt, Et, ot, At, St, Rt, Bt, kt, Ut, at, J, rt, dt, Qi, Ot, Ye, Wt, Ji, Ht, Ke, Gt, Zi, m, tn, ht, ie, Pt, fe, vt, en, gt, nn, bt, Qe, C, pe, H, Je;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.KeyboardManager = e.CommandManager = e.ColorManager = e.AnnotationEditorUIManager = void 0, e.bindEvents = q, e.opacityToHex = V;
-          var n = k(1), u = k(6);
+          var n = L(1), f = L(6);
           function q(Mt, G, ct) {
             for (const mt of ct)
               G.addEventListener(mt, Mt[mt].bind(Mt));
@@ -2704,7 +2704,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, y);
               N(this, h, (0, n.getUuid)());
               N(this, p, 0);
-              N(this, f, null);
+              N(this, u, null);
             }
             static get _isSVGFittingCanvas() {
               const G = 'data:image/svg+xml;charset=UTF-8,<svg viewBox="0 0 1 1" width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" style="fill:red;"/></svg>', mt = new OffscreenCanvas(1, 3).getContext("2d"), It = new Image();
@@ -2725,26 +2725,26 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return X(this, y, qe).call(this, G, G);
             }
             async getFromId(G) {
-              t(this, f) || it(this, f, /* @__PURE__ */ new Map());
-              const ct = t(this, f).get(G);
+              t(this, u) || it(this, u, /* @__PURE__ */ new Map());
+              const ct = t(this, u).get(G);
               return ct ? ct.bitmap ? (ct.refCounter += 1, ct) : ct.file ? this.getFromFile(ct.file) : this.getFromUrl(ct.url) : null;
             }
             getSvgUrl(G) {
-              const ct = t(this, f).get(G);
+              const ct = t(this, u).get(G);
               return ct != null && ct.isSvg ? ct.svgUrl : null;
             }
             deleteId(G) {
-              t(this, f) || it(this, f, /* @__PURE__ */ new Map());
-              const ct = t(this, f).get(G);
+              t(this, u) || it(this, u, /* @__PURE__ */ new Map());
+              const ct = t(this, u).get(G);
               ct && (ct.refCounter -= 1, ct.refCounter === 0 && (ct.bitmap = null));
             }
             isValidId(G) {
               return G.startsWith(`image_${t(this, h)}_`);
             }
           };
-          h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakSet(), qe = async function(G, ct) {
-            t(this, f) || it(this, f, /* @__PURE__ */ new Map());
-            let mt = t(this, f).get(G);
+          h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakSet(), qe = async function(G, ct) {
+            t(this, u) || it(this, u, /* @__PURE__ */ new Map());
+            let mt = t(this, u).get(G);
             if (mt === null)
               return null;
             if (mt != null && mt.bitmap)
@@ -2781,7 +2781,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             } catch (It) {
               console.error(It), mt = null;
             }
-            return t(this, f).set(G, mt), mt && t(this, f).set(mt.id, mt), mt;
+            return t(this, u).set(G, mt), mt && t(this, u).set(mt.id, mt), mt;
           };
           let c = g;
           class d {
@@ -2879,10 +2879,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           const T = class T {
             get _colors() {
               const G = /* @__PURE__ */ new Map([["CanvasText", null], ["Canvas", null]]);
-              return (0, u.getColorValues)(G), (0, n.shadow)(this, "_colors", G);
+              return (0, f.getColorValues)(G), (0, n.shadow)(this, "_colors", G);
             }
             convert(G) {
-              const ct = (0, u.getRGB)(G);
+              const ct = (0, f.getRGB)(G);
               if (!window.matchMedia("(forced-colors: active)").matches)
                 return ct;
               for (const [mt, It] of this._colors)
@@ -2925,7 +2925,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, D, /* @__PURE__ */ new Set());
               N(this, lt, null);
               N(this, _t, null);
-              N(this, L, new I());
+              N(this, k, new I());
               N(this, a, !1);
               N(this, l, !1);
               N(this, R, null);
@@ -2954,7 +2954,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, J, null);
               N(this, rt, null);
               it(this, J, G), it(this, rt, ct), it(this, lt, mt), t(this, lt)._on("editingaction", t(this, At)), t(this, lt)._on("pagechanging", t(this, St)), t(this, lt)._on("scalechanging", t(this, Rt)), t(this, lt)._on("rotationchanging", t(this, Bt)), it(this, x, It.annotationStorage), it(this, _t, It.filterFactory), it(this, nt, Tt), this.viewParameters = {
-                realScale: u.PixelsPerInch.PDF_TO_CSS_UNITS,
+                realScale: f.PixelsPerInch.PDF_TO_CSS_UNITS,
                 rotation: 0
               };
             }
@@ -3033,7 +3033,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             onScaleChanging({
               scale: G
             }) {
-              this.commitOrRemove(), this.viewParameters.realScale = G * u.PixelsPerInch.PDF_TO_CSS_UNITS;
+              this.commitOrRemove(), this.viewParameters.realScale = G * f.PixelsPerInch.PDF_TO_CSS_UNITS;
               for (const ct of t(this, D))
                 ct.onScaleChanging();
             }
@@ -3156,7 +3156,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             }
             getId() {
-              return t(this, L).getId();
+              return t(this, k).getId();
             }
             get currentLayer() {
               return t(this, tt).get(t(this, Z));
@@ -3436,7 +3436,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return (0, n.shadow)(this, "imageManager", new c());
             }
           };
-          P = new WeakMap(), Y = new WeakMap(), tt = new WeakMap(), x = new WeakMap(), K = new WeakMap(), Z = new WeakMap(), Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), L = new WeakMap(), a = new WeakMap(), l = new WeakMap(), R = new WeakMap(), $ = new WeakMap(), W = new WeakMap(), nt = new WeakMap(), st = new WeakMap(), ut = new WeakMap(), wt = new WeakMap(), yt = new WeakMap(), Et = new WeakMap(), ot = new WeakMap(), At = new WeakMap(), St = new WeakMap(), Rt = new WeakMap(), Bt = new WeakMap(), kt = new WeakMap(), Ut = new WeakMap(), at = new WeakMap(), J = new WeakMap(), rt = new WeakMap(), dt = new WeakSet(), Qi = function() {
+          P = new WeakMap(), Y = new WeakMap(), tt = new WeakMap(), x = new WeakMap(), K = new WeakMap(), Z = new WeakMap(), Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), k = new WeakMap(), a = new WeakMap(), l = new WeakMap(), R = new WeakMap(), $ = new WeakMap(), W = new WeakMap(), nt = new WeakMap(), st = new WeakMap(), ut = new WeakMap(), wt = new WeakMap(), yt = new WeakMap(), Et = new WeakMap(), ot = new WeakMap(), At = new WeakMap(), St = new WeakMap(), Rt = new WeakMap(), Bt = new WeakMap(), kt = new WeakMap(), Ut = new WeakMap(), at = new WeakMap(), J = new WeakMap(), rt = new WeakMap(), dt = new WeakSet(), Qi = function() {
             window.addEventListener("focus", t(this, ut)), window.addEventListener("blur", t(this, st));
           }, Ot = new WeakSet(), Ye = function() {
             window.removeEventListener("focus", t(this, ut)), window.removeEventListener("blur", t(this, st));
@@ -3497,12 +3497,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 6 */
         /***/
-        (A, e, k) => {
-          var Q, v, j, D, lt, _t, L, a, l, R, $, W, le, st, ce, wt, Ze, Et, Ce, At, Te, Rt, ge, kt, me;
+        (A, e, L) => {
+          var Q, v, j, D, lt, _t, k, a, l, R, $, W, le, st, ce, wt, Ze, Et, Ce, At, Te, Rt, ge, kt, me;
           Object.defineProperty(e, "__esModule", {
             value: !0
-          }), e.StatTimer = e.RenderingCancelledException = e.PixelsPerInch = e.PageViewport = e.PDFDateString = e.DOMStandardFontDataFactory = e.DOMSVGFactory = e.DOMFilterFactory = e.DOMCanvasFactory = e.DOMCMapReaderFactory = e.AnnotationPrefix = void 0, e.deprecated = E, e.getColorValues = Y, e.getCurrentTransform = tt, e.getCurrentTransformInverse = x, e.getFilenameFromUrl = b, e.getPdfFilenameFromUrl = g, e.getRGB = P, e.getXfaPageViewport = T, e.isDataScheme = f, e.isPdfFile = y, e.isValidFetchUrl = s, e.loadScript = i, e.setLayerDimensions = K;
-          var n = k(7), u = k(1);
+          }), e.StatTimer = e.RenderingCancelledException = e.PixelsPerInch = e.PageViewport = e.PDFDateString = e.DOMStandardFontDataFactory = e.DOMSVGFactory = e.DOMFilterFactory = e.DOMCanvasFactory = e.DOMCMapReaderFactory = e.AnnotationPrefix = void 0, e.deprecated = E, e.getColorValues = Y, e.getCurrentTransform = tt, e.getCurrentTransformInverse = x, e.getFilenameFromUrl = b, e.getPdfFilenameFromUrl = g, e.getRGB = P, e.getXfaPageViewport = T, e.isDataScheme = u, e.isPdfFile = y, e.isValidFetchUrl = s, e.loadScript = i, e.setLayerDimensions = K;
+          var n = L(7), f = L(1);
           const q = "http://www.w3.org/2000/svg", V = "pdfjs_internal_id_";
           e.AnnotationPrefix = V;
           const Z = class Z {
@@ -3529,7 +3529,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, D, void 0);
               N(this, lt, void 0);
               N(this, _t, void 0);
-              N(this, L, void 0);
+              N(this, k, void 0);
               N(this, a, void 0);
               N(this, l, void 0);
               N(this, R, void 0);
@@ -3565,14 +3565,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               var Ct;
               const xt = `${rt}-${dt}`;
               if (t(this, _t) === xt)
-                return t(this, L);
-              if (it(this, _t, xt), it(this, L, "none"), (Ct = t(this, lt)) == null || Ct.remove(), !rt || !dt)
-                return t(this, L);
+                return t(this, k);
+              if (it(this, _t, xt), it(this, k, "none"), (Ct = t(this, lt)) == null || Ct.remove(), !rt || !dt)
+                return t(this, k);
               const Ot = X(this, kt, me).call(this, rt);
-              rt = u.Util.makeHexColor(...Ot);
+              rt = f.Util.makeHexColor(...Ot);
               const jt = X(this, kt, me).call(this, dt);
-              if (dt = u.Util.makeHexColor(...jt), t(this, st, ce).style.color = "", rt === "#000000" && dt === "#ffffff" || rt === dt)
-                return t(this, L);
+              if (dt = f.Util.makeHexColor(...jt), t(this, st, ce).style.color = "", rt === "#000000" && dt === "#ffffff" || rt === dt)
+                return t(this, k);
               const Wt = new Array(256);
               for (let m = 0; m <= 255; m++) {
                 const B = m / 255;
@@ -3586,7 +3586,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   Pt[pt] = ht + pt / B * (Lt - ht);
                 return Pt.join(",");
               };
-              return X(this, Rt, ge).call(this, Gt(0, 5), Gt(1, 5), Gt(2, 5), $t), it(this, L, `url(#${Ht})`), t(this, L);
+              return X(this, Rt, ge).call(this, Gt(0, 5), Gt(1, 5), Gt(2, 5), $t), it(this, k, `url(#${Ht})`), t(this, k);
             }
             addHighlightHCMFilter(rt, dt, xt, Ot) {
               var Lt;
@@ -3614,10 +3614,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return X(this, wt, Ze).call(this, ht), X(this, Rt, ge).call(this, m(Gt[0], Ct[0], 5), m(Gt[1], Ct[1], 5), m(Gt[2], Ct[2], 5), ht), it(this, R, `url(#${B})`), t(this, R);
             }
             destroy(rt = !1) {
-              rt && (t(this, L) || t(this, R)) || (t(this, v) && (t(this, v).parentNode.parentNode.remove(), it(this, v, null)), t(this, Q) && (t(this, Q).clear(), it(this, Q, null)), it(this, $, 0));
+              rt && (t(this, k) || t(this, R)) || (t(this, v) && (t(this, v).parentNode.parentNode.remove(), it(this, v, null)), t(this, Q) && (t(this, Q).clear(), it(this, Q, null)), it(this, $, 0));
             }
           }
-          Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), L = new WeakMap(), a = new WeakMap(), l = new WeakMap(), R = new WeakMap(), $ = new WeakMap(), W = new WeakSet(), le = function() {
+          Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), k = new WeakMap(), a = new WeakMap(), l = new WeakMap(), R = new WeakMap(), $ = new WeakMap(), W = new WeakSet(), le = function() {
             return t(this, Q) || it(this, Q, /* @__PURE__ */ new Map());
           }, st = new WeakSet(), ce = function() {
             if (!t(this, v)) {
@@ -3661,7 +3661,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const rt = await fetch(at);
               if (!rt.ok)
                 throw new Error(rt.statusText);
-              return J ? new Uint8Array(await rt.arrayBuffer()) : (0, u.stringToBytes)(await rt.text());
+              return J ? new Uint8Array(await rt.arrayBuffer()) : (0, f.stringToBytes)(await rt.text());
             }
             return new Promise((rt, dt) => {
               const xt = new XMLHttpRequest();
@@ -3669,7 +3669,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 if (xt.readyState === XMLHttpRequest.DONE) {
                   if (xt.status === 200 || xt.status === 0) {
                     let Ot;
-                    if (J && xt.response ? Ot = new Uint8Array(xt.response) : !J && xt.responseText && (Ot = (0, u.stringToBytes)(xt.responseText)), Ot) {
+                    if (J && xt.response ? Ot = new Uint8Array(xt.response) : !J && xt.responseText && (Ot = (0, f.stringToBytes)(xt.responseText)), Ot) {
                       rt(Ot);
                       return;
                     }
@@ -3736,7 +3736,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 viewBox: J
               } = this;
-              return (0, u.shadow)(this, "rawDims", {
+              return (0, f.shadow)(this, "rawDims", {
                 pageWidth: J[2] - J[0],
                 pageHeight: J[3] - J[1],
                 pageX: J[0],
@@ -3760,24 +3760,24 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               });
             }
             convertToViewportPoint(J, rt) {
-              return u.Util.applyTransform([J, rt], this.transform);
+              return f.Util.applyTransform([J, rt], this.transform);
             }
             convertToViewportRectangle(J) {
-              const rt = u.Util.applyTransform([J[0], J[1]], this.transform), dt = u.Util.applyTransform([J[2], J[3]], this.transform);
+              const rt = f.Util.applyTransform([J[0], J[1]], this.transform), dt = f.Util.applyTransform([J[2], J[3]], this.transform);
               return [rt[0], rt[1], dt[0], dt[1]];
             }
             convertToPdfPoint(J, rt) {
-              return u.Util.applyInverseTransform([J, rt], this.transform);
+              return f.Util.applyInverseTransform([J, rt], this.transform);
             }
           }
           e.PageViewport = h;
-          class p extends u.BaseException {
+          class p extends f.BaseException {
             constructor(J, rt = 0) {
               super(J, "RenderingCancelledException"), this.extraDelay = rt;
             }
           }
           e.RenderingCancelledException = p;
-          function f(at) {
+          function u(at) {
             const J = at.length;
             let rt = 0;
             for (; rt < J && at[rt].trim() === ""; )
@@ -3793,8 +3793,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           function g(at, J = "document.pdf") {
             if (typeof at != "string")
               return J;
-            if (f(at))
-              return (0, u.warn)('getPdfFilenameFromUrl: ignore "data:"-URL for performance reasons.'), J;
+            if (u(at))
+              return (0, f.warn)('getPdfFilenameFromUrl: ignore "data:"-URL for performance reasons.'), J;
             const rt = /^(?:(?:[^:]+:)?\/\/[^/]+)?([^?#]*)(\?[^#]*)?(#.*)?$/, dt = /[^/?#=]+\.pdf\b(?!.*\.pdf\b)/i, xt = rt.exec(at);
             let Ot = dt.exec(xt[1]) || dt.exec(xt[2]) || dt.exec(xt[3]);
             if (Ot && (Ot = Ot[0], Ot.includes("%")))
@@ -3810,10 +3810,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               Zt(this, "times", []);
             }
             time(J) {
-              J in this.started && (0, u.warn)(`Timer is already running for ${J}`), this.started[J] = Date.now();
+              J in this.started && (0, f.warn)(`Timer is already running for ${J}`), this.started[J] = Date.now();
             }
             timeEnd(J) {
-              J in this.started || (0, u.warn)(`Timer has not been started for ${J}`), this.times.push({
+              J in this.started || (0, f.warn)(`Timer has not been started for ${J}`), this.times.push({
                 name: J,
                 start: this.started[J],
                 end: Date.now()
@@ -3907,7 +3907,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const J = parseInt(at.slice(1), 16);
               return [(J & 16711680) >> 16, (J & 65280) >> 8, J & 255];
             }
-            return at.startsWith("rgb(") ? at.slice(4, -1).split(",").map((J) => parseInt(J)) : at.startsWith("rgba(") ? at.slice(5, -1).split(",").map((J) => parseInt(J)).slice(0, 3) : ((0, u.warn)(`Not a valid color format: "${at}"`), [0, 0, 0]);
+            return at.startsWith("rgb(") ? at.slice(4, -1).split(",").map((J) => parseInt(J)) : at.startsWith("rgba(") ? at.slice(5, -1).split(",").map((J) => parseInt(J)).slice(0, 3) : ((0, f.warn)(`Not a valid color format: "${at}"`), [0, 0, 0]);
           }
           function Y(at) {
             const J = document.createElement("span");
@@ -3948,7 +3948,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 pageHeight: Ot
               } = J.rawDims, {
                 style: jt
-              } = at, Wt = u.FeatureTest.isCSSRoundSupported, Nt = `var(--scale-factor) * ${xt}px`, Ht = `var(--scale-factor) * ${Ot}px`, $t = Wt ? `round(${Nt}, 1px)` : `calc(${Nt})`, Gt = Wt ? `round(${Ht}, 1px)` : `calc(${Ht})`;
+              } = at, Wt = f.FeatureTest.isCSSRoundSupported, Nt = `var(--scale-factor) * ${xt}px`, Ht = `var(--scale-factor) * ${Ot}px`, $t = Wt ? `round(${Nt}, 1px)` : `calc(${Nt})`, Gt = Wt ? `round(${Ht}, 1px)` : `calc(${Ht})`;
               !rt || J.rotation % 180 === 0 ? (jt.width = $t, jt.height = Gt) : (jt.width = Gt, jt.height = $t);
             }
             dt && at.setAttribute("data-main-rotation", J.rotation);
@@ -3956,14 +3956,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 7 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.BaseStandardFontDataFactory = e.BaseSVGFactory = e.BaseFilterFactory = e.BaseCanvasFactory = e.BaseCMapReaderFactory = void 0;
-          var n = k(1);
-          class u {
+          var n = L(1);
+          class f {
             constructor() {
-              this.constructor === u && (0, n.unreachable)("Cannot initialize BaseFilterFactory.");
+              this.constructor === f && (0, n.unreachable)("Cannot initialize BaseFilterFactory.");
             }
             addFilter(r) {
               return "none";
@@ -3977,7 +3977,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             destroy(r = !1) {
             }
           }
-          e.BaseFilterFactory = u;
+          e.BaseFilterFactory = f;
           class q {
             constructor() {
               this.constructor === q && (0, n.unreachable)("Cannot initialize BaseCanvasFactory.");
@@ -4078,15 +4078,15 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 8 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.MurmurHash3_64 = void 0;
-          var n = k(1);
-          const u = 3285377520, q = 4294901760, V = 65535;
+          var n = L(1);
+          const f = 3285377520, q = 4294901760, V = 65535;
           class I {
             constructor(d) {
-              this.h1 = d ? d & 4294967295 : u, this.h2 = d ? d & 4294967295 : u;
+              this.h1 = d ? d & 4294967295 : f, this.h2 = d ? d & 4294967295 : f;
             }
             update(d) {
               let r, F;
@@ -4101,10 +4101,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               else
                 throw new Error("Wrong data format in MurmurHash3_64_update. Input must be a string or array.");
               const M = F >> 2, S = F - M * 4, h = new Uint32Array(r.buffer, 0, M);
-              let p = 0, f = 0, y = this.h1, b = this.h2;
+              let p = 0, u = 0, y = this.h1, b = this.h2;
               const g = 3432918353, w = 461845907, s = g & V, i = w & V;
               for (let E = 0; E < M; E++)
-                E & 1 ? (p = h[E], p = p * g & q | p * s & V, p = p << 15 | p >>> 17, p = p * w & q | p * i & V, y ^= p, y = y << 13 | y >>> 19, y = y * 5 + 3864292196) : (f = h[E], f = f * g & q | f * s & V, f = f << 15 | f >>> 17, f = f * w & q | f * i & V, b ^= f, b = b << 13 | b >>> 19, b = b * 5 + 3864292196);
+                E & 1 ? (p = h[E], p = p * g & q | p * s & V, p = p << 15 | p >>> 17, p = p * w & q | p * i & V, y ^= p, y = y << 13 | y >>> 19, y = y * 5 + 3864292196) : (u = h[E], u = u * g & q | u * s & V, u = u << 15 | u >>> 17, u = u * w & q | u * i & V, b ^= u, b = b << 13 | b >>> 19, b = b * 5 + 3864292196);
               switch (p = 0, S) {
                 case 3:
                   p ^= r[M * 4 + 2] << 16;
@@ -4124,13 +4124,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 9 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var V;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.FontLoader = e.FontFaceObject = void 0;
-          var n = k(1);
-          class u {
+          var n = L(1);
+          class f {
             constructor({
               ownerDocument: c = globalThis.document,
               styleElement: d = null
@@ -4243,9 +4243,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const h = this._document.createElement("canvas");
               h.width = 1, h.height = 1;
               const p = h.getContext("2d");
-              let f = 0;
+              let u = 0;
               function y(P, Y) {
-                if (++f > 30) {
+                if (++u > 30) {
                   (0, n.warn)("Load test font never loaded."), Y();
                   return;
                 }
@@ -4276,7 +4276,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               });
             }
           }
-          V = new WeakMap(), e.FontLoader = u;
+          V = new WeakMap(), e.FontLoader = f;
           class q {
             constructor(c, {
               isEvalSupported: d = !0,
@@ -4349,13 +4349,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 10 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.NodeStandardFontDataFactory = e.NodeFilterFactory = e.NodeCanvasFactory = e.NodeCMapReaderFactory = void 0;
-          var n = k(7);
-          k(1);
-          const u = function(d) {
+          var n = L(7);
+          L(1);
+          const f = function(d) {
             return new Promise((r, F) => {
               require$$5.readFile(d, (S, h) => {
                 if (S || !h) {
@@ -4377,7 +4377,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           e.NodeCanvasFactory = V;
           class I extends n.BaseCMapReaderFactory {
             _fetchData(r, F) {
-              return u(r).then((M) => ({
+              return f(r).then((M) => ({
                 cMapData: M,
                 compressionType: F
               }));
@@ -4386,54 +4386,54 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           e.NodeCMapReaderFactory = I;
           class c extends n.BaseStandardFontDataFactory {
             _fetchData(r) {
-              return u(r);
+              return f(r);
             }
           }
           e.NodeStandardFontDataFactory = c;
         },
         /* 11 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var v, ti, D, ei;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.CanvasGraphics = void 0;
-          var n = k(1), u = k(6), q = k(12), V = k(13);
+          var n = L(1), f = L(6), q = L(12), V = L(13);
           const I = 16, c = 100, d = 4096, r = 15, F = 10, M = 1e3, S = 16;
-          function h(L, a) {
-            if (L._removeMirroring)
+          function h(k, a) {
+            if (k._removeMirroring)
               throw new Error("Context is already forwarding operations.");
-            L.__originalSave = L.save, L.__originalRestore = L.restore, L.__originalRotate = L.rotate, L.__originalScale = L.scale, L.__originalTranslate = L.translate, L.__originalTransform = L.transform, L.__originalSetTransform = L.setTransform, L.__originalResetTransform = L.resetTransform, L.__originalClip = L.clip, L.__originalMoveTo = L.moveTo, L.__originalLineTo = L.lineTo, L.__originalBezierCurveTo = L.bezierCurveTo, L.__originalRect = L.rect, L.__originalClosePath = L.closePath, L.__originalBeginPath = L.beginPath, L._removeMirroring = () => {
-              L.save = L.__originalSave, L.restore = L.__originalRestore, L.rotate = L.__originalRotate, L.scale = L.__originalScale, L.translate = L.__originalTranslate, L.transform = L.__originalTransform, L.setTransform = L.__originalSetTransform, L.resetTransform = L.__originalResetTransform, L.clip = L.__originalClip, L.moveTo = L.__originalMoveTo, L.lineTo = L.__originalLineTo, L.bezierCurveTo = L.__originalBezierCurveTo, L.rect = L.__originalRect, L.closePath = L.__originalClosePath, L.beginPath = L.__originalBeginPath, delete L._removeMirroring;
-            }, L.save = function() {
+            k.__originalSave = k.save, k.__originalRestore = k.restore, k.__originalRotate = k.rotate, k.__originalScale = k.scale, k.__originalTranslate = k.translate, k.__originalTransform = k.transform, k.__originalSetTransform = k.setTransform, k.__originalResetTransform = k.resetTransform, k.__originalClip = k.clip, k.__originalMoveTo = k.moveTo, k.__originalLineTo = k.lineTo, k.__originalBezierCurveTo = k.bezierCurveTo, k.__originalRect = k.rect, k.__originalClosePath = k.closePath, k.__originalBeginPath = k.beginPath, k._removeMirroring = () => {
+              k.save = k.__originalSave, k.restore = k.__originalRestore, k.rotate = k.__originalRotate, k.scale = k.__originalScale, k.translate = k.__originalTranslate, k.transform = k.__originalTransform, k.setTransform = k.__originalSetTransform, k.resetTransform = k.__originalResetTransform, k.clip = k.__originalClip, k.moveTo = k.__originalMoveTo, k.lineTo = k.__originalLineTo, k.bezierCurveTo = k.__originalBezierCurveTo, k.rect = k.__originalRect, k.closePath = k.__originalClosePath, k.beginPath = k.__originalBeginPath, delete k._removeMirroring;
+            }, k.save = function() {
               a.save(), this.__originalSave();
-            }, L.restore = function() {
+            }, k.restore = function() {
               a.restore(), this.__originalRestore();
-            }, L.translate = function(R, $) {
+            }, k.translate = function(R, $) {
               a.translate(R, $), this.__originalTranslate(R, $);
-            }, L.scale = function(R, $) {
+            }, k.scale = function(R, $) {
               a.scale(R, $), this.__originalScale(R, $);
-            }, L.transform = function(R, $, W, nt, st, ut) {
+            }, k.transform = function(R, $, W, nt, st, ut) {
               a.transform(R, $, W, nt, st, ut), this.__originalTransform(R, $, W, nt, st, ut);
-            }, L.setTransform = function(R, $, W, nt, st, ut) {
+            }, k.setTransform = function(R, $, W, nt, st, ut) {
               a.setTransform(R, $, W, nt, st, ut), this.__originalSetTransform(R, $, W, nt, st, ut);
-            }, L.resetTransform = function() {
+            }, k.resetTransform = function() {
               a.resetTransform(), this.__originalResetTransform();
-            }, L.rotate = function(R) {
+            }, k.rotate = function(R) {
               a.rotate(R), this.__originalRotate(R);
-            }, L.clip = function(R) {
+            }, k.clip = function(R) {
               a.clip(R), this.__originalClip(R);
-            }, L.moveTo = function(l, R) {
+            }, k.moveTo = function(l, R) {
               a.moveTo(l, R), this.__originalMoveTo(l, R);
-            }, L.lineTo = function(l, R) {
+            }, k.lineTo = function(l, R) {
               a.lineTo(l, R), this.__originalLineTo(l, R);
-            }, L.bezierCurveTo = function(l, R, $, W, nt, st) {
+            }, k.bezierCurveTo = function(l, R, $, W, nt, st) {
               a.bezierCurveTo(l, R, $, W, nt, st), this.__originalBezierCurveTo(l, R, $, W, nt, st);
-            }, L.rect = function(l, R, $, W) {
+            }, k.rect = function(l, R, $, W) {
               a.rect(l, R, $, W), this.__originalRect(l, R, $, W);
-            }, L.closePath = function() {
+            }, k.closePath = function() {
               a.closePath(), this.__originalClosePath();
-            }, L.beginPath = function() {
+            }, k.beginPath = function() {
               a.beginPath(), this.__originalBeginPath();
             };
           }
@@ -4455,32 +4455,32 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             }
           }
-          function f(L, a, l, R, $, W, nt, st, ut, wt) {
-            const [yt, Et, ot, At, St, Rt] = (0, u.getCurrentTransform)(L);
+          function u(k, a, l, R, $, W, nt, st, ut, wt) {
+            const [yt, Et, ot, At, St, Rt] = (0, f.getCurrentTransform)(k);
             if (Et === 0 && ot === 0) {
               const Ut = nt * yt + St, at = Math.round(Ut), J = st * At + Rt, rt = Math.round(J), dt = (nt + ut) * yt + St, xt = Math.abs(Math.round(dt) - at) || 1, Ot = (st + wt) * At + Rt, jt = Math.abs(Math.round(Ot) - rt) || 1;
-              return L.setTransform(Math.sign(yt), 0, 0, Math.sign(At), at, rt), L.drawImage(a, l, R, $, W, 0, 0, xt, jt), L.setTransform(yt, Et, ot, At, St, Rt), [xt, jt];
+              return k.setTransform(Math.sign(yt), 0, 0, Math.sign(At), at, rt), k.drawImage(a, l, R, $, W, 0, 0, xt, jt), k.setTransform(yt, Et, ot, At, St, Rt), [xt, jt];
             }
             if (yt === 0 && At === 0) {
               const Ut = st * ot + St, at = Math.round(Ut), J = nt * Et + Rt, rt = Math.round(J), dt = (st + wt) * ot + St, xt = Math.abs(Math.round(dt) - at) || 1, Ot = (nt + ut) * Et + Rt, jt = Math.abs(Math.round(Ot) - rt) || 1;
-              return L.setTransform(0, Math.sign(Et), Math.sign(ot), 0, at, rt), L.drawImage(a, l, R, $, W, 0, 0, jt, xt), L.setTransform(yt, Et, ot, At, St, Rt), [jt, xt];
+              return k.setTransform(0, Math.sign(Et), Math.sign(ot), 0, at, rt), k.drawImage(a, l, R, $, W, 0, 0, jt, xt), k.setTransform(yt, Et, ot, At, St, Rt), [jt, xt];
             }
-            L.drawImage(a, l, R, $, W, nt, st, ut, wt);
+            k.drawImage(a, l, R, $, W, nt, st, ut, wt);
             const Bt = Math.hypot(yt, Et), kt = Math.hypot(ot, At);
             return [Bt * ut, kt * wt];
           }
-          function y(L) {
+          function y(k) {
             const {
               width: a,
               height: l
-            } = L;
+            } = k;
             if (a > M || l > M)
               return null;
             const R = 1e3, $ = new Uint8Array([0, 2, 4, 0, 1, 0, 5, 4, 8, 10, 0, 8, 0, 2, 1, 0]), W = a + 1;
             let nt = new Uint8Array(W * (l + 1)), st, ut, wt;
             const yt = a + 7 & -8;
             let Et = new Uint8Array(yt * l), ot = 0;
-            for (const kt of L.data) {
+            for (const kt of k.data) {
               let Ut = 128;
               for (; Ut > 0; )
                 Et[ot++] = kt & Ut ? 0 : 255, Ut >>= 1;
@@ -4577,12 +4577,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return n.Util.intersect(this.clipBox, this.getPathBoundingBox(a, l));
             }
           }
-          function g(L, a) {
+          function g(k, a) {
             if (typeof ImageData < "u" && a instanceof ImageData) {
-              L.putImageData(a, 0, 0);
+              k.putImageData(a, 0, 0);
               return;
             }
-            const l = a.height, R = a.width, $ = l % S, W = (l - $) / S, nt = $ === 0 ? W : W + 1, st = L.createImageData(R, S);
+            const l = a.height, R = a.width, $ = l % S, W = (l - $) / S, nt = $ === 0 ? W : W + 1, st = k.createImageData(R, S);
             let ut = 0, wt;
             const yt = a.data, Et = st.data;
             let ot, At, St, Rt;
@@ -4601,27 +4601,27 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 }
                 for (; wt < Ut; )
                   kt[wt++] = 0;
-                L.putImageData(st, 0, ot * S);
+                k.putImageData(st, 0, ot * S);
               }
             } else if (a.kind === n.ImageKind.RGBA_32BPP) {
               for (At = 0, Rt = R * S * 4, ot = 0; ot < W; ot++)
-                Et.set(yt.subarray(ut, ut + Rt)), ut += Rt, L.putImageData(st, 0, At), At += S;
-              ot < nt && (Rt = R * $ * 4, Et.set(yt.subarray(ut, ut + Rt)), L.putImageData(st, 0, At));
+                Et.set(yt.subarray(ut, ut + Rt)), ut += Rt, k.putImageData(st, 0, At), At += S;
+              ot < nt && (Rt = R * $ * 4, Et.set(yt.subarray(ut, ut + Rt)), k.putImageData(st, 0, At));
             } else if (a.kind === n.ImageKind.RGB_24BPP)
               for (St = S, Rt = R * St, ot = 0; ot < nt; ot++) {
                 for (ot >= W && (St = $, Rt = R * St), wt = 0, At = Rt; At--; )
                   Et[wt++] = yt[ut++], Et[wt++] = yt[ut++], Et[wt++] = yt[ut++], Et[wt++] = 255;
-                L.putImageData(st, 0, ot * S);
+                k.putImageData(st, 0, ot * S);
               }
             else
               throw new Error(`bad image kind: ${a.kind}`);
           }
-          function w(L, a) {
+          function w(k, a) {
             if (a.bitmap) {
-              L.drawImage(a.bitmap, 0, 0);
+              k.drawImage(a.bitmap, 0, 0);
               return;
             }
-            const l = a.height, R = a.width, $ = l % S, W = (l - $) / S, nt = $ === 0 ? W : W + 1, st = L.createImageData(R, S);
+            const l = a.height, R = a.width, $ = l % S, W = (l - $) / S, nt = $ === 0 ? W : W + 1, st = k.createImageData(R, S);
             let ut = 0;
             const wt = a.data, yt = st.data;
             for (let Et = 0; Et < nt; Et++) {
@@ -4635,64 +4635,64 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 width: R,
                 height: ot,
                 nonBlackColor: 0
-              })), L.putImageData(st, 0, Et * S);
+              })), k.putImageData(st, 0, Et * S);
             }
           }
-          function s(L, a) {
+          function s(k, a) {
             const l = ["strokeStyle", "fillStyle", "fillRule", "globalAlpha", "lineWidth", "lineCap", "lineJoin", "miterLimit", "globalCompositeOperation", "font", "filter"];
             for (const R of l)
-              L[R] !== void 0 && (a[R] = L[R]);
-            L.setLineDash !== void 0 && (a.setLineDash(L.getLineDash()), a.lineDashOffset = L.lineDashOffset);
+              k[R] !== void 0 && (a[R] = k[R]);
+            k.setLineDash !== void 0 && (a.setLineDash(k.getLineDash()), a.lineDashOffset = k.lineDashOffset);
           }
-          function i(L) {
-            if (L.strokeStyle = L.fillStyle = "#000000", L.fillRule = "nonzero", L.globalAlpha = 1, L.lineWidth = 1, L.lineCap = "butt", L.lineJoin = "miter", L.miterLimit = 10, L.globalCompositeOperation = "source-over", L.font = "10px sans-serif", L.setLineDash !== void 0 && (L.setLineDash([]), L.lineDashOffset = 0), !n.isNodeJS) {
+          function i(k) {
+            if (k.strokeStyle = k.fillStyle = "#000000", k.fillRule = "nonzero", k.globalAlpha = 1, k.lineWidth = 1, k.lineCap = "butt", k.lineJoin = "miter", k.miterLimit = 10, k.globalCompositeOperation = "source-over", k.font = "10px sans-serif", k.setLineDash !== void 0 && (k.setLineDash([]), k.lineDashOffset = 0), !n.isNodeJS) {
               const {
                 filter: a
-              } = L;
-              a !== "none" && a !== "" && (L.filter = "none");
+              } = k;
+              a !== "none" && a !== "" && (k.filter = "none");
             }
           }
-          function E(L, a, l, R) {
-            const $ = L.length;
+          function E(k, a, l, R) {
+            const $ = k.length;
             for (let W = 3; W < $; W += 4) {
-              const nt = L[W];
+              const nt = k[W];
               if (nt === 0)
-                L[W - 3] = a, L[W - 2] = l, L[W - 1] = R;
+                k[W - 3] = a, k[W - 2] = l, k[W - 1] = R;
               else if (nt < 255) {
                 const st = 255 - nt;
-                L[W - 3] = L[W - 3] * nt + a * st >> 8, L[W - 2] = L[W - 2] * nt + l * st >> 8, L[W - 1] = L[W - 1] * nt + R * st >> 8;
+                k[W - 3] = k[W - 3] * nt + a * st >> 8, k[W - 2] = k[W - 2] * nt + l * st >> 8, k[W - 1] = k[W - 1] * nt + R * st >> 8;
               }
             }
           }
-          function _(L, a, l) {
-            const R = L.length, $ = 1 / 255;
+          function _(k, a, l) {
+            const R = k.length, $ = 1 / 255;
             for (let W = 3; W < R; W += 4) {
-              const nt = l ? l[L[W]] : L[W];
+              const nt = l ? l[k[W]] : k[W];
               a[W] = a[W] * nt * $ | 0;
             }
           }
-          function o(L, a, l) {
-            const R = L.length;
+          function o(k, a, l) {
+            const R = k.length;
             for (let $ = 3; $ < R; $ += 4) {
-              const W = L[$ - 3] * 77 + L[$ - 2] * 152 + L[$ - 1] * 28;
+              const W = k[$ - 3] * 77 + k[$ - 2] * 152 + k[$ - 1] * 28;
               a[$] = l ? a[$] * l[W >> 8] >> 8 : a[$] * W >> 16;
             }
           }
-          function T(L, a, l, R, $, W, nt, st, ut, wt, yt) {
+          function T(k, a, l, R, $, W, nt, st, ut, wt, yt) {
             const Et = !!W, ot = Et ? W[0] : 0, At = Et ? W[1] : 0, St = Et ? W[2] : 0, Rt = $ === "Luminosity" ? o : _, kt = Math.min(R, Math.ceil(1048576 / l));
             for (let Ut = 0; Ut < R; Ut += kt) {
-              const at = Math.min(kt, R - Ut), J = L.getImageData(st - wt, Ut + (ut - yt), l, at), rt = a.getImageData(st, Ut + ut, l, at);
+              const at = Math.min(kt, R - Ut), J = k.getImageData(st - wt, Ut + (ut - yt), l, at), rt = a.getImageData(st, Ut + ut, l, at);
               Et && E(J.data, ot, At, St), Rt(J.data, rt.data, nt), a.putImageData(rt, st, Ut + ut);
             }
           }
-          function P(L, a, l, R) {
+          function P(k, a, l, R) {
             const $ = R[0], W = R[1], nt = R[2] - $, st = R[3] - W;
-            nt === 0 || st === 0 || (T(a.context, l, nt, st, a.subtype, a.backdrop, a.transferMap, $, W, a.offsetX, a.offsetY), L.save(), L.globalAlpha = 1, L.globalCompositeOperation = "source-over", L.setTransform(1, 0, 0, 1, 0, 0), L.drawImage(l.canvas, 0, 0), L.restore());
+            nt === 0 || st === 0 || (T(a.context, l, nt, st, a.subtype, a.backdrop, a.transferMap, $, W, a.offsetX, a.offsetY), k.save(), k.globalAlpha = 1, k.globalCompositeOperation = "source-over", k.setTransform(1, 0, 0, 1, 0, 0), k.drawImage(l.canvas, 0, 0), k.restore());
           }
-          function Y(L, a) {
-            const l = n.Util.singularValueDecompose2dScale(L);
+          function Y(k, a) {
+            const l = n.Util.singularValueDecompose2dScale(k);
             l[0] = Math.fround(l[0]), l[1] = Math.fround(l[1]);
-            const R = Math.fround((globalThis.devicePixelRatio || 1) * u.PixelsPerInch.PDF_TO_CSS_UNITS);
+            const R = Math.fround((globalThis.devicePixelRatio || 1) * f.PixelsPerInch.PDF_TO_CSS_UNITS);
             return a !== void 0 ? a : l[0] <= R || l[1] <= R;
           }
           const tt = ["butt", "round", "square"], x = ["miter", "round", "bevel"], K = {}, Z = {}, _t = class _t {
@@ -4716,9 +4716,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const W = this.ctx.canvas.width, nt = this.ctx.canvas.height, st = this.ctx.fillStyle;
               if (this.ctx.fillStyle = $ || "#ffffff", this.ctx.fillRect(0, 0, W, nt), this.ctx.fillStyle = st, R) {
                 const ut = this.cachedCanvases.getCanvas("transparent", W, nt);
-                this.compositeCtx = this.ctx, this.transparentCanvas = ut.canvas, this.ctx = ut.context, this.ctx.save(), this.ctx.transform(...(0, u.getCurrentTransform)(this.compositeCtx));
+                this.compositeCtx = this.ctx, this.transparentCanvas = ut.canvas, this.ctx = ut.context, this.ctx.save(), this.ctx.transform(...(0, f.getCurrentTransform)(this.compositeCtx));
               }
-              this.ctx.save(), i(this.ctx), a && (this.ctx.transform(...a), this.outputScaleX = a[0], this.outputScaleY = a[0]), this.ctx.transform(...l.transform), this.viewportScale = l.scale, this.baseTransform = (0, u.getCurrentTransform)(this.ctx);
+              this.ctx.save(), i(this.ctx), a && (this.ctx.transform(...a), this.outputScaleX = a[0], this.outputScaleY = a[0]), this.ctx.transform(...l.transform), this.viewportScale = l.scale, this.baseTransform = (0, f.getCurrentTransform)(this.ctx);
             }
             executeOperatorList(a, l, R, $) {
               const W = a.argsArray, nt = a.fnArray;
@@ -4776,7 +4776,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const l = this.ctx, {
                 width: R,
                 height: $
-              } = a, W = this.current.fillColor, nt = this.current.patternFill, st = (0, u.getCurrentTransform)(l);
+              } = a, W = this.current.fillColor, nt = this.current.patternFill, st = (0, f.getCurrentTransform)(l);
               let ut, wt, yt, Et;
               if ((a.bitmap || a.data) && a.count > 1) {
                 const xt = a.bitmap || a.data.buffer;
@@ -4796,8 +4796,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               let ot = n.Util.transform(st, [1 / R, 0, 0, -1 / $, 0, 0]);
               ot = n.Util.transform(ot, [1, 0, 0, 1, 0, -$]);
               const At = n.Util.applyTransform([0, 0], ot), St = n.Util.applyTransform([R, $], ot), Rt = n.Util.normalizeRect([At[0], At[1], St[0], St[1]]), Bt = Math.round(Rt[2] - Rt[0]) || 1, kt = Math.round(Rt[3] - Rt[1]) || 1, Ut = this.cachedCanvases.getCanvas("fillCanvas", Bt, kt), at = Ut.context, J = Math.min(At[0], St[0]), rt = Math.min(At[1], St[1]);
-              at.translate(-J, -rt), at.transform(...ot), yt || (yt = this._scaleImage(Et.canvas, (0, u.getCurrentTransformInverse)(at)), yt = yt.img, ut && nt && ut.set(wt, yt)), at.imageSmoothingEnabled = Y((0, u.getCurrentTransform)(at), a.interpolate), f(at, yt, 0, 0, yt.width, yt.height, 0, 0, R, $), at.globalCompositeOperation = "source-in";
-              const dt = n.Util.transform((0, u.getCurrentTransformInverse)(at), [1, 0, 0, 1, -J, -rt]);
+              at.translate(-J, -rt), at.transform(...ot), yt || (yt = this._scaleImage(Et.canvas, (0, f.getCurrentTransformInverse)(at)), yt = yt.img, ut && nt && ut.set(wt, yt)), at.imageSmoothingEnabled = Y((0, f.getCurrentTransform)(at), a.interpolate), u(at, yt, 0, 0, yt.width, yt.height, 0, 0, R, $), at.globalCompositeOperation = "source-in";
+              const dt = n.Util.transform((0, f.getCurrentTransformInverse)(at), [1, 0, 0, 1, -J, -rt]);
               return at.fillStyle = nt ? W.getPattern(l, this, dt, q.PathType.FILL) : W, at.fillRect(0, 0, R, $), ut && !nt && (this.cachedCanvases.delete("fillCanvas"), ut.set(wt, Ut.canvas)), {
                 canvas: Ut.canvas,
                 offsetX: Math.round(J),
@@ -4881,7 +4881,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const a = this.ctx.canvas.width, l = this.ctx.canvas.height, R = "smaskGroupAt" + this.groupLevel, $ = this.cachedCanvases.getCanvas(R, a, l);
               this.suspendedCtx = this.ctx, this.ctx = $.context;
               const W = this.ctx;
-              W.setTransform(...(0, u.getCurrentTransform)(this.suspendedCtx)), s(this.suspendedCtx, W), h(W, this.suspendedCtx), this.setGState([["BM", "source-over"], ["ca", 1], ["CA", 1]]);
+              W.setTransform(...(0, f.getCurrentTransform)(this.suspendedCtx)), s(this.suspendedCtx, W), h(W, this.suspendedCtx), this.setGState([["BM", "source-over"], ["ca", 1], ["CA", 1]]);
             }
             endSMaskMode() {
               if (!this.inSMaskMode)
@@ -4909,7 +4909,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             constructPath(a, l, R) {
               const $ = this.ctx, W = this.current;
               let nt = W.x, st = W.y, ut, wt;
-              const yt = (0, u.getCurrentTransform)($), Et = yt[0] === 0 && yt[3] === 0 || yt[1] === 0 && yt[2] === 0, ot = Et ? R.slice(0) : null;
+              const yt = (0, f.getCurrentTransform)($), Et = yt[0] === 0 && yt[3] === 0 || yt[1] === 0 && yt[2] === 0, ot = Et ? R.slice(0) : null;
               for (let At = 0, St = 0, Rt = a.length; At < Rt; At++)
                 switch (a[At] | 0) {
                   case n.OPS.rectangle:
@@ -4943,7 +4943,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             stroke(a = !0) {
               const l = this.ctx, R = this.current.strokeColor;
-              l.globalAlpha = this.current.strokeAlpha, this.contentVisible && (typeof R == "object" && (R != null && R.getPattern) ? (l.save(), l.strokeStyle = R.getPattern(l, this, (0, u.getCurrentTransformInverse)(l), q.PathType.STROKE), this.rescaleAndStroke(!1), l.restore()) : this.rescaleAndStroke(!0)), a && this.consumePath(this.current.getClippedPathBoundingBox()), l.globalAlpha = this.current.fillAlpha;
+              l.globalAlpha = this.current.strokeAlpha, this.contentVisible && (typeof R == "object" && (R != null && R.getPattern) ? (l.save(), l.strokeStyle = R.getPattern(l, this, (0, f.getCurrentTransformInverse)(l), q.PathType.STROKE), this.rescaleAndStroke(!1), l.restore()) : this.rescaleAndStroke(!0)), a && this.consumePath(this.current.getClippedPathBoundingBox()), l.globalAlpha = this.current.fillAlpha;
             }
             closeStroke() {
               this.closePath(), this.stroke();
@@ -4951,7 +4951,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             fill(a = !0) {
               const l = this.ctx, R = this.current.fillColor, $ = this.current.patternFill;
               let W = !1;
-              $ && (l.save(), l.fillStyle = R.getPattern(l, this, (0, u.getCurrentTransformInverse)(l), q.PathType.FILL), W = !0);
+              $ && (l.save(), l.fillStyle = R.getPattern(l, this, (0, f.getCurrentTransformInverse)(l), q.PathType.FILL), W = !0);
               const nt = this.current.getClippedPathBoundingBox();
               this.contentVisible && nt !== null && (this.pendingEOFill ? (l.fill("evenodd"), this.pendingEOFill = !1) : l.fill()), W && l.restore(), a && this.consumePath(nt);
             }
@@ -5041,7 +5041,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const W = this.ctx, nt = this.current, st = nt.font, ut = nt.textRenderingMode, wt = nt.fontSize / nt.fontSizeScale, yt = ut & n.TextRenderingMode.FILL_STROKE_MASK, Et = !!(ut & n.TextRenderingMode.ADD_TO_PATH_FLAG), ot = nt.patternFill && !st.missingFile;
               let At;
               (st.disableFontFace || Et || ot) && (At = st.getPathGenerator(this.commonObjs, a)), st.disableFontFace || ot ? (W.save(), W.translate(l, R), W.beginPath(), At(W, wt), $ && W.setTransform(...$), (yt === n.TextRenderingMode.FILL || yt === n.TextRenderingMode.FILL_STROKE) && W.fill(), (yt === n.TextRenderingMode.STROKE || yt === n.TextRenderingMode.FILL_STROKE) && W.stroke(), W.restore()) : ((yt === n.TextRenderingMode.FILL || yt === n.TextRenderingMode.FILL_STROKE) && W.fillText(a, l, R), (yt === n.TextRenderingMode.STROKE || yt === n.TextRenderingMode.FILL_STROKE) && W.strokeText(a, l, R)), Et && (this.pendingTextPaths || (this.pendingTextPaths = [])).push({
-                transform: (0, u.getCurrentTransform)(W),
+                transform: (0, f.getCurrentTransform)(W),
                 x: l,
                 y: R,
                 fontSize: wt,
@@ -5074,8 +5074,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               let kt;
               if (l.patternFill) {
                 W.save();
-                const dt = l.fillColor.getPattern(W, this, (0, u.getCurrentTransformInverse)(W), q.PathType.FILL);
-                kt = (0, u.getCurrentTransform)(W), W.restore(), W.fillStyle = dt;
+                const dt = l.fillColor.getPattern(W, this, (0, f.getCurrentTransformInverse)(W), q.PathType.FILL);
+                kt = (0, f.getCurrentTransform)(W), W.restore(), W.fillStyle = dt;
               }
               let Ut = l.lineWidth;
               const at = l.textMatrixScale;
@@ -5155,7 +5155,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             getColorN_Pattern(a) {
               let l;
               if (a[0] === "TilingPattern") {
-                const R = a[1], $ = this.baseTransform || (0, u.getCurrentTransform)(this.ctx), W = {
+                const R = a[1], $ = this.baseTransform || (0, f.getCurrentTransform)(this.ctx), W = {
                   createCanvasGraphics: (nt) => new _t(nt, this.commonObjs, this.objs, this.canvasFactory, this.filterFactory, {
                     optionalContentConfig: this.optionalContentConfig,
                     markedContentStack: this.markedContentStack
@@ -5190,8 +5190,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const l = this.ctx;
               this.save();
               const R = this._getPattern(a);
-              l.fillStyle = R.getPattern(l, this, (0, u.getCurrentTransformInverse)(l), q.PathType.SHADING);
-              const $ = (0, u.getCurrentTransformInverse)(l);
+              l.fillStyle = R.getPattern(l, this, (0, f.getCurrentTransformInverse)(l), q.PathType.SHADING);
+              const $ = (0, f.getCurrentTransformInverse)(l);
               if ($) {
                 const {
                   width: W,
@@ -5209,9 +5209,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               (0, n.unreachable)("Should not call beginImageData");
             }
             paintFormXObjectBegin(a, l) {
-              if (this.contentVisible && (this.save(), this.baseTransformStack.push(this.baseTransform), Array.isArray(a) && a.length === 6 && this.transform(...a), this.baseTransform = (0, u.getCurrentTransform)(this.ctx), l)) {
+              if (this.contentVisible && (this.save(), this.baseTransformStack.push(this.baseTransform), Array.isArray(a) && a.length === 6 && this.transform(...a), this.baseTransform = (0, f.getCurrentTransform)(this.ctx), l)) {
                 const R = l[2] - l[0], $ = l[3] - l[1];
-                this.ctx.rect(l[0], l[1], R, $), this.current.updateRectMinMax((0, u.getCurrentTransform)(this.ctx), l), this.clip(), this.endPath();
+                this.ctx.rect(l[0], l[1], R, $), this.current.updateRectMinMax((0, f.getCurrentTransform)(this.ctx), l), this.clip(), this.endPath();
               }
             }
             paintFormXObjectEnd() {
@@ -5223,10 +5223,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this.save(), this.inSMaskMode && (this.endSMaskMode(), this.current.activeSMask = null);
               const l = this.ctx;
               a.isolated || (0, n.info)("TODO: Support non-isolated groups."), a.knockout && (0, n.warn)("Knockout groups not supported.");
-              const R = (0, u.getCurrentTransform)(l);
+              const R = (0, f.getCurrentTransform)(l);
               if (a.matrix && l.transform(...a.matrix), !a.bbox)
                 throw new Error("Bounding box is required.");
-              let $ = n.Util.getAxialAlignedBoundingBox(a.bbox, (0, u.getCurrentTransform)(l));
+              let $ = n.Util.getAxialAlignedBoundingBox(a.bbox, (0, f.getCurrentTransform)(l));
               const W = [0, 0, l.canvas.width, l.canvas.height];
               $ = n.Util.intersect($, W) || [0, 0, 0, 0];
               const nt = Math.floor($[0]), st = Math.floor($[1]);
@@ -5257,7 +5257,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 this.tempSMask = this.smaskStack.pop(), this.restore();
               else {
                 this.ctx.restore();
-                const $ = (0, u.getCurrentTransform)(this.ctx);
+                const $ = (0, f.getCurrentTransform)(this.ctx);
                 this.restore(), this.ctx.save(), this.ctx.setTransform(...$);
                 const W = n.Util.getAxialAlignedBoundingBox([0, 0, l.canvas.width, l.canvas.height], $);
                 this.ctx.drawImage(l.canvas, 0, 0), this.ctx.restore(), this.compose(W);
@@ -5268,7 +5268,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const nt = l[2] - l[0], st = l[3] - l[1];
                 if (W && this.annotationCanvasMap) {
                   R = R.slice(), R[4] -= l[0], R[5] -= l[1], l = l.slice(), l[0] = l[1] = 0, l[2] = nt, l[3] = st;
-                  const [ut, wt] = n.Util.singularValueDecompose2dScale((0, u.getCurrentTransform)(this.ctx)), {
+                  const [ut, wt] = n.Util.singularValueDecompose2dScale((0, f.getCurrentTransform)(this.ctx)), {
                     viewportScale: yt
                   } = this, Et = Math.ceil(nt * this.outputScaleX * yt), ot = Math.ceil(st * this.outputScaleY * yt);
                   this.annotationCanvas = this.canvasFactory.create(Et, ot);
@@ -5304,7 +5304,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               a = this.getObject(a.data, a);
               const st = this.ctx;
               st.save();
-              const ut = (0, u.getCurrentTransform)(st);
+              const ut = (0, f.getCurrentTransform)(st);
               st.transform(l, R, $, W, 0, 0);
               const wt = this._createMaskCanvas(a);
               st.setTransform(1, 0, 0, 1, wt.offsetX - ut[4], wt.offsetY - ut[5]);
@@ -5327,7 +5327,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 } = W, yt = this.cachedCanvases.getCanvas("maskCanvas", st, ut), Et = yt.context;
                 Et.save();
                 const ot = this.getObject(nt, W);
-                w(Et, ot), Et.globalCompositeOperation = "source-in", Et.fillStyle = $ ? R.getPattern(Et, this, (0, u.getCurrentTransformInverse)(l), q.PathType.FILL) : R, Et.fillRect(0, 0, st, ut), Et.restore(), l.save(), l.transform(...wt), l.scale(1, -1), f(l, yt.canvas, 0, 0, st, ut, 0, -1, 1, 1), l.restore();
+                w(Et, ot), Et.globalCompositeOperation = "source-in", Et.fillStyle = $ ? R.getPattern(Et, this, (0, f.getCurrentTransformInverse)(l), q.PathType.FILL) : R, Et.fillRect(0, 0, st, ut), Et.restore(), l.save(), l.transform(...wt), l.scale(1, -1), u(l, yt.canvas, 0, 0, st, ut, 0, -1, 1, 1), l.restore();
               }
               this.compose();
             }
@@ -5393,8 +5393,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const ut = this.cachedCanvases.getCanvas("inlineImage", l, R).context;
                 g(ut, a), W = this.applyTransferMapsToCanvas(ut);
               }
-              const nt = this._scaleImage(W, (0, u.getCurrentTransformInverse)($));
-              $.imageSmoothingEnabled = Y((0, u.getCurrentTransform)($), a.interpolate), f($, nt.img, 0, 0, nt.paintWidth, nt.paintHeight, 0, -R, l, R), this.compose(), this.restore();
+              const nt = this._scaleImage(W, (0, f.getCurrentTransformInverse)($));
+              $.imageSmoothingEnabled = Y((0, f.getCurrentTransform)($), a.interpolate), u($, nt.img, 0, 0, nt.paintWidth, nt.paintHeight, 0, -R, l, R), this.compose(), this.restore();
             }
             paintInlineImageXObjectGroup(a, l) {
               if (!this.contentVisible)
@@ -5408,7 +5408,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 g(ut, a), $ = this.applyTransferMapsToCanvas(ut);
               }
               for (const W of l)
-                R.save(), R.transform(...W.transform), R.scale(1, -1), f(R, $, W.x, W.y, W.w, W.h, 0, -1, 1, 1), R.restore();
+                R.save(), R.transform(...W.transform), R.scale(1, -1), u(R, $, W.x, W.y, W.w, W.h, 0, -1, 1, 1), R.restore();
               this.compose();
             }
             paintSolidColorImageMask() {
@@ -5445,7 +5445,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             getSinglePixelWidth() {
               if (!this._cachedGetSinglePixelWidth) {
-                const a = (0, u.getCurrentTransform)(this.ctx);
+                const a = (0, f.getCurrentTransform)(this.ctx);
                 if (a[1] === 0 && a[2] === 0)
                   this._cachedGetSinglePixelWidth = 1 / Math.min(Math.abs(a[0]), Math.abs(a[3]));
                 else {
@@ -5533,16 +5533,16 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           };
           let Q = _t;
           e.CanvasGraphics = Q;
-          for (const L in n.OPS)
-            Q.prototype[L] !== void 0 && (Q.prototype[n.OPS[L]] = Q.prototype[L]);
+          for (const k in n.OPS)
+            Q.prototype[k] !== void 0 && (Q.prototype[n.OPS[k]] = Q.prototype[k]);
         },
         /* 12 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.TilingPattern = e.PathType = void 0, e.getShadingPattern = S;
-          var n = k(1), u = k(6);
+          var n = L(1), f = L(6);
           const q = {
             FILL: "Fill",
             STROKE: "Stroke",
@@ -5577,7 +5577,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             getPattern(b, g, w, s) {
               let i;
               if (s === q.STROKE || s === q.FILL) {
-                const E = g.current.getClippedPathBoundingBox(s, (0, u.getCurrentTransform)(b)) || [0, 0, 0, 0], _ = Math.ceil(E[2] - E[0]) || 1, o = Math.ceil(E[3] - E[1]) || 1, T = g.cachedCanvases.getCanvas("pattern", _, o, !0), P = T.context;
+                const E = g.current.getClippedPathBoundingBox(s, (0, f.getCurrentTransform)(b)) || [0, 0, 0, 0], _ = Math.ceil(E[2] - E[0]) || 1, o = Math.ceil(E[3] - E[1]) || 1, T = g.cachedCanvases.getCanvas("pattern", _, o, !0), P = T.context;
                 P.clearRect(0, 0, P.canvas.width, P.canvas.height), P.beginPath(), P.rect(0, 0, P.canvas.width, P.canvas.height), P.translate(-E[0], -E[1]), w = n.Util.transform(w, [1, 0, 0, 1, E[0], E[1]]), P.transform(...g.baseTransform), this.matrix && P.transform(...this.matrix), V(P, this._bbox), P.fillStyle = this._createGradient(P), P.fill(), i = b.createPattern(T.canvas, "no-repeat");
                 const Y = new DOMMatrix(w);
                 i.setTransform(Y);
@@ -5593,15 +5593,15 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             const x = (o[g] + b.offsetX) * b.scaleX, K = (o[g + 1] + b.offsetY) * b.scaleY, Z = (o[w] + b.offsetX) * b.scaleX, Q = (o[w + 1] + b.offsetY) * b.scaleY, v = (o[s] + b.offsetX) * b.scaleX, j = (o[s + 1] + b.offsetY) * b.scaleY;
             if (K >= j)
               return;
-            const D = T[i], lt = T[i + 1], _t = T[i + 2], L = T[E], a = T[E + 1], l = T[E + 2], R = T[_], $ = T[_ + 1], W = T[_ + 2], nt = Math.round(K), st = Math.round(j);
+            const D = T[i], lt = T[i + 1], _t = T[i + 2], k = T[E], a = T[E + 1], l = T[E + 2], R = T[_], $ = T[_ + 1], W = T[_ + 2], nt = Math.round(K), st = Math.round(j);
             let ut, wt, yt, Et, ot, At, St, Rt;
             for (let Bt = nt; Bt <= st; Bt++) {
               if (Bt < Q) {
                 const rt = Bt < K ? 0 : (K - Bt) / (K - Q);
-                ut = x - (x - Z) * rt, wt = D - (D - L) * rt, yt = lt - (lt - a) * rt, Et = _t - (_t - l) * rt;
+                ut = x - (x - Z) * rt, wt = D - (D - k) * rt, yt = lt - (lt - a) * rt, Et = _t - (_t - l) * rt;
               } else {
                 let rt;
-                Bt > j ? rt = 1 : Q === j ? rt = 0 : rt = (Q - Bt) / (Q - j), ut = Z - (Z - v) * rt, wt = L - (L - R) * rt, yt = a - (a - $) * rt, Et = l - (l - W) * rt;
+                Bt > j ? rt = 1 : Q === j ? rt = 0 : rt = (Q - Bt) / (Q - j), ut = Z - (Z - v) * rt, wt = k - (k - R) * rt, yt = a - (a - $) * rt, Et = l - (l - W) * rt;
               }
               let kt;
               Bt < K ? kt = 0 : Bt > j ? kt = 1 : kt = (K - Bt) / (K - j), ot = x - (x - v) * kt, At = D - (D - R) * kt, St = lt - (lt - $) * kt, Rt = _t - (_t - W) * kt;
@@ -5645,12 +5645,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 scaleY: 1 / K
               }, Q = Y + 2 * 2, v = tt + 2 * 2, j = w.getCanvas("mesh", Q, v, !1), D = j.context, lt = D.createImageData(Y, tt);
               if (g) {
-                const L = lt.data;
-                for (let a = 0, l = L.length; a < l; a += 4)
-                  L[a] = g[0], L[a + 1] = g[1], L[a + 2] = g[2], L[a + 3] = 255;
+                const k = lt.data;
+                for (let a = 0, l = k.length; a < l; a += 4)
+                  k[a] = g[0], k[a + 1] = g[1], k[a + 2] = g[2], k[a + 3] = 255;
               }
-              for (const L of this._figures)
-                r(lt, L, Z);
+              for (const k of this._figures)
+                r(lt, k, Z);
               return D.putImageData(lt, 2, 2), {
                 canvas: j.canvas,
                 offsetX: _ - 2 * x,
@@ -5663,7 +5663,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               V(b, this._bbox);
               let i;
               if (s === q.SHADING)
-                i = n.Util.singularValueDecompose2dScale((0, u.getCurrentTransform)(b));
+                i = n.Util.singularValueDecompose2dScale((0, f.getCurrentTransform)(b));
               else if (i = n.Util.singularValueDecompose2dScale(g.baseTransform), this.matrix) {
                 const _ = n.Util.singularValueDecompose2dScale(this.matrix);
                 i = [i[0] * _[0], i[1] * _[1]];
@@ -5691,7 +5691,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           const h = {
             COLORED: 1,
             UNCOLORED: 2
-          }, f = class f {
+          }, u = class u {
             constructor(b, g, w, s, i) {
               this.operatorList = b[2], this.matrix = b[3] || [1, 0, 0, 1, 0, 0], this.bbox = b[4], this.xstep = b[5], this.ystep = b[6], this.paintType = b[7], this.tilingType = b[8], this.color = g, this.ctx = w, this.canvasGraphicsFactory = s, this.baseTransform = i;
             }
@@ -5700,18 +5700,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               (0, n.info)("TilingType: " + _);
               const P = w[0], Y = w[1], tt = w[2], x = w[3], K = n.Util.singularValueDecompose2dScale(this.matrix), Z = n.Util.singularValueDecompose2dScale(this.baseTransform), Q = [K[0] * Z[0], K[1] * Z[1]], v = this.getSizeAndScale(s, this.ctx.canvas.width, Q[0]), j = this.getSizeAndScale(i, this.ctx.canvas.height, Q[1]), D = b.cachedCanvases.getCanvas("pattern", v.size, j.size, !0), lt = D.context, _t = T.createCanvasGraphics(lt);
               _t.groupLevel = b.groupLevel, this.setFillAndStrokeStyleToContext(_t, E, o);
-              let L = P, a = Y, l = tt, R = x;
-              return P < 0 && (L = 0, l += Math.abs(P)), Y < 0 && (a = 0, R += Math.abs(Y)), lt.translate(-(v.scale * L), -(j.scale * a)), _t.transform(v.scale, 0, 0, j.scale, 0, 0), lt.save(), this.clipBbox(_t, L, a, l, R), _t.baseTransform = (0, u.getCurrentTransform)(_t.ctx), _t.executeOperatorList(g), _t.endDrawing(), {
+              let k = P, a = Y, l = tt, R = x;
+              return P < 0 && (k = 0, l += Math.abs(P)), Y < 0 && (a = 0, R += Math.abs(Y)), lt.translate(-(v.scale * k), -(j.scale * a)), _t.transform(v.scale, 0, 0, j.scale, 0, 0), lt.save(), this.clipBbox(_t, k, a, l, R), _t.baseTransform = (0, f.getCurrentTransform)(_t.ctx), _t.executeOperatorList(g), _t.endDrawing(), {
                 canvas: D.canvas,
                 scaleX: v.scale,
                 scaleY: j.scale,
-                offsetX: L,
+                offsetX: k,
                 offsetY: a
               };
             }
             getSizeAndScale(b, g, w) {
               b = Math.abs(b);
-              const s = Math.max(f.MAX_PATTERN_SIZE, g);
+              const s = Math.max(u.MAX_PATTERN_SIZE, g);
               let i = Math.ceil(b * w);
               return i >= s ? i = s : w = i / b, {
                 scale: w,
@@ -5720,7 +5720,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             clipBbox(b, g, w, s, i) {
               const E = s - g, _ = i - w;
-              b.ctx.rect(g, w, E, _), b.current.updateRectMinMax((0, u.getCurrentTransform)(b.ctx), [g, w, s, i]), b.clip(), b.endPath();
+              b.ctx.rect(g, w, E, _), b.current.updateRectMinMax((0, f.getCurrentTransform)(b.ctx), [g, w, s, i]), b.clip(), b.endPath();
             }
             setFillAndStrokeStyleToContext(b, g, w) {
               const s = b.ctx, i = b.current;
@@ -5747,18 +5747,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return o.setTransform(_), o;
             }
           };
-          Zt(f, "MAX_PATTERN_SIZE", 3e3);
-          let p = f;
+          Zt(u, "MAX_PATTERN_SIZE", 3e3);
+          let p = u;
           e.TilingPattern = p;
         },
         /* 13 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
-          }), e.convertBlackAndWhiteToRGBA = q, e.convertToRGBA = u, e.grayToRGBA = I;
-          var n = k(1);
-          function u(c) {
+          }), e.convertBlackAndWhiteToRGBA = q, e.convertToRGBA = f, e.grayToRGBA = I;
+          var n = L(1);
+          function f(c) {
             switch (c.kind) {
               case n.ImageKind.GRAYSCALE_1BPP:
                 return q(c);
@@ -5776,19 +5776,19 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             nonBlackColor: S = 4294967295,
             inverseDecode: h = !1
           }) {
-            const p = n.FeatureTest.isLittleEndian ? 4278190080 : 255, [f, y] = h ? [S, p] : [p, S], b = F >> 3, g = F & 7, w = c.length;
+            const p = n.FeatureTest.isLittleEndian ? 4278190080 : 255, [u, y] = h ? [S, p] : [p, S], b = F >> 3, g = F & 7, w = c.length;
             r = new Uint32Array(r.buffer);
             let s = 0;
             for (let i = 0; i < M; i++) {
               for (const _ = d + b; d < _; d++) {
                 const o = d < w ? c[d] : 255;
-                r[s++] = o & 128 ? y : f, r[s++] = o & 64 ? y : f, r[s++] = o & 32 ? y : f, r[s++] = o & 16 ? y : f, r[s++] = o & 8 ? y : f, r[s++] = o & 4 ? y : f, r[s++] = o & 2 ? y : f, r[s++] = o & 1 ? y : f;
+                r[s++] = o & 128 ? y : u, r[s++] = o & 64 ? y : u, r[s++] = o & 32 ? y : u, r[s++] = o & 16 ? y : u, r[s++] = o & 8 ? y : u, r[s++] = o & 4 ? y : u, r[s++] = o & 2 ? y : u, r[s++] = o & 1 ? y : u;
               }
               if (g === 0)
                 continue;
               const E = d < w ? c[d++] : 255;
               for (let _ = 0; _ < g; _++)
-                r[s++] = E & 1 << 7 - _ ? y : f;
+                r[s++] = E & 1 << 7 - _ ? y : u;
             }
             return {
               srcPos: d,
@@ -5804,17 +5804,17 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             height: S
           }) {
             let h = 0;
-            const p = c.length >> 2, f = new Uint32Array(c.buffer, d, p);
+            const p = c.length >> 2, u = new Uint32Array(c.buffer, d, p);
             if (n.FeatureTest.isLittleEndian) {
               for (; h < p - 2; h += 3, F += 4) {
-                const y = f[h], b = f[h + 1], g = f[h + 2];
+                const y = u[h], b = u[h + 1], g = u[h + 2];
                 r[F] = y | 4278190080, r[F + 1] = y >>> 24 | b << 8 | 4278190080, r[F + 2] = b >>> 16 | g << 16 | 4278190080, r[F + 3] = g >>> 8 | 4278190080;
               }
               for (let y = h * 4, b = c.length; y < b; y += 3)
                 r[F++] = c[y] | c[y + 1] << 8 | c[y + 2] << 16 | 4278190080;
             } else {
               for (; h < p - 2; h += 3, F += 4) {
-                const y = f[h], b = f[h + 1], g = f[h + 2];
+                const y = u[h], b = u[h + 1], g = u[h + 2];
                 r[F] = y | 255, r[F + 1] = y << 24 | b >>> 8 | 255, r[F + 2] = b << 16 | g >>> 16 | 255, r[F + 3] = g << 8 | 255;
               }
               for (let y = h * 4, b = c.length; y < b; y += 3)
@@ -5840,18 +5840,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.GlobalWorkerOptions = void 0;
-          const k = /* @__PURE__ */ Object.create(null);
-          e.GlobalWorkerOptions = k, k.workerPort = null, k.workerSrc = "";
+          const L = /* @__PURE__ */ Object.create(null);
+          e.GlobalWorkerOptions = L, L.workerPort = null, L.workerSrc = "";
         },
         /* 15 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var c, sn, r, rn, M, xe;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.MessageHandler = void 0;
-          var n = k(1);
-          const u = {
+          var n = L(1);
+          const f = {
             UNKNOWN: 0,
             DATA: 1,
             ERROR: 2
@@ -5883,11 +5883,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           class I {
-            constructor(p, f, y) {
+            constructor(p, u, y) {
               N(this, c);
               N(this, r);
               N(this, M);
-              this.sourceName = p, this.targetName = f, this.comObj = y, this.callbackId = 1, this.streamId = 1, this.streamSinks = /* @__PURE__ */ Object.create(null), this.streamControllers = /* @__PURE__ */ Object.create(null), this.callbackCapabilities = /* @__PURE__ */ Object.create(null), this.actionHandler = /* @__PURE__ */ Object.create(null), this._onComObjOnMessage = (b) => {
+              this.sourceName = p, this.targetName = u, this.comObj = y, this.callbackId = 1, this.streamId = 1, this.streamSinks = /* @__PURE__ */ Object.create(null), this.streamControllers = /* @__PURE__ */ Object.create(null), this.callbackCapabilities = /* @__PURE__ */ Object.create(null), this.actionHandler = /* @__PURE__ */ Object.create(null), this._onComObjOnMessage = (b) => {
                 const g = b.data;
                 if (g.targetName !== this.sourceName)
                   return;
@@ -5899,9 +5899,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   const s = g.callbackId, i = this.callbackCapabilities[s];
                   if (!i)
                     throw new Error(`Cannot resolve callback ${s}`);
-                  if (delete this.callbackCapabilities[s], g.callback === u.DATA)
+                  if (delete this.callbackCapabilities[s], g.callback === f.DATA)
                     i.resolve(g.data);
-                  else if (g.callback === u.ERROR)
+                  else if (g.callback === f.ERROR)
                     i.reject(V(g.reason));
                   else
                     throw new Error("Unexpected callback case");
@@ -5918,7 +5918,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     y.postMessage({
                       sourceName: s,
                       targetName: i,
-                      callback: u.DATA,
+                      callback: f.DATA,
                       callbackId: g.callbackId,
                       data: E
                     });
@@ -5926,7 +5926,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     y.postMessage({
                       sourceName: s,
                       targetName: i,
-                      callback: u.ERROR,
+                      callback: f.ERROR,
                       callbackId: g.callbackId,
                       reason: V(E)
                     });
@@ -5940,21 +5940,21 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 w(g.data);
               }, y.addEventListener("message", this._onComObjOnMessage);
             }
-            on(p, f) {
+            on(p, u) {
               const y = this.actionHandler;
               if (y[p])
                 throw new Error(`There is already an actionName called "${p}"`);
-              y[p] = f;
+              y[p] = u;
             }
-            send(p, f, y) {
+            send(p, u, y) {
               this.comObj.postMessage({
                 sourceName: this.sourceName,
                 targetName: this.targetName,
                 action: p,
-                data: f
+                data: u
               }, y);
             }
-            sendWithPromise(p, f, y) {
+            sendWithPromise(p, u, y) {
               const b = this.callbackId++, g = new n.PromiseCapability();
               this.callbackCapabilities[b] = g;
               try {
@@ -5963,14 +5963,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   targetName: this.targetName,
                   action: p,
                   callbackId: b,
-                  data: f
+                  data: u
                 }, y);
               } catch (w) {
                 g.reject(w);
               }
               return g.promise;
             }
-            sendWithStream(p, f, y, b) {
+            sendWithStream(p, u, y, b) {
               const g = this.streamId++, w = this.sourceName, s = this.targetName, i = this.comObj;
               return new ReadableStream({
                 start: (E) => {
@@ -5986,7 +5986,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     targetName: s,
                     action: p,
                     streamId: g,
-                    data: f,
+                    data: u,
                     desiredSize: E.desiredSize
                   }, b), _.promise;
                 },
@@ -6018,7 +6018,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           c = new WeakSet(), sn = function(p) {
-            const f = p.streamId, y = this.sourceName, b = p.sourceName, g = this.comObj, w = this, s = this.actionHandler[p.action], i = {
+            const u = p.streamId, y = this.sourceName, b = p.sourceName, g = this.comObj, w = this, s = this.actionHandler[p.action], i = {
               enqueue(E, _ = 1, o) {
                 if (this.isCancelled)
                   return;
@@ -6027,7 +6027,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   sourceName: y,
                   targetName: b,
                   stream: q.ENQUEUE,
-                  streamId: f,
+                  streamId: u,
                   chunk: E
                 }, o);
               },
@@ -6036,15 +6036,15 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   sourceName: y,
                   targetName: b,
                   stream: q.CLOSE,
-                  streamId: f
-                }), delete w.streamSinks[f]);
+                  streamId: u
+                }), delete w.streamSinks[u]);
               },
               error(E) {
                 (0, n.assert)(E instanceof Error, "error must have a valid reason"), !this.isCancelled && (this.isCancelled = !0, g.postMessage({
                   sourceName: y,
                   targetName: b,
                   stream: q.ERROR,
-                  streamId: f,
+                  streamId: u,
                   reason: V(E)
                 }));
               },
@@ -6055,14 +6055,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               desiredSize: p.desiredSize,
               ready: null
             };
-            i.sinkCapability.resolve(), i.ready = i.sinkCapability.promise, this.streamSinks[f] = i, new Promise(function(E) {
+            i.sinkCapability.resolve(), i.ready = i.sinkCapability.promise, this.streamSinks[u] = i, new Promise(function(E) {
               E(s(p.data, i));
             }).then(function() {
               g.postMessage({
                 sourceName: y,
                 targetName: b,
                 stream: q.START_COMPLETE,
-                streamId: f,
+                streamId: u,
                 success: !0
               });
             }, function(E) {
@@ -6070,12 +6070,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 sourceName: y,
                 targetName: b,
                 stream: q.START_COMPLETE,
-                streamId: f,
+                streamId: u,
                 reason: V(E)
               });
             });
           }, r = new WeakSet(), rn = function(p) {
-            const f = p.streamId, y = this.sourceName, b = p.sourceName, g = this.comObj, w = this.streamControllers[f], s = this.streamSinks[f];
+            const u = p.streamId, y = this.sourceName, b = p.sourceName, g = this.comObj, w = this.streamControllers[u], s = this.streamSinks[u];
             switch (p.stream) {
               case q.START_COMPLETE:
                 p.success ? w.startCall.resolve() : w.startCall.reject(V(p.reason));
@@ -6089,7 +6089,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     sourceName: y,
                     targetName: b,
                     stream: q.PULL_COMPLETE,
-                    streamId: f,
+                    streamId: u,
                     success: !0
                   });
                   break;
@@ -6102,7 +6102,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     sourceName: y,
                     targetName: b,
                     stream: q.PULL_COMPLETE,
-                    streamId: f,
+                    streamId: u,
                     success: !0
                   });
                 }, function(i) {
@@ -6110,7 +6110,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     sourceName: y,
                     targetName: b,
                     stream: q.PULL_COMPLETE,
-                    streamId: f,
+                    streamId: u,
                     reason: V(i)
                   });
                 });
@@ -6123,13 +6123,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               case q.CLOSE:
                 if ((0, n.assert)(w, "close should have stream controller"), w.isClosed)
                   break;
-                w.isClosed = !0, w.controller.close(), X(this, M, xe).call(this, w, f);
+                w.isClosed = !0, w.controller.close(), X(this, M, xe).call(this, w, u);
                 break;
               case q.ERROR:
-                (0, n.assert)(w, "error should have stream controller"), w.controller.error(V(p.reason)), X(this, M, xe).call(this, w, f);
+                (0, n.assert)(w, "error should have stream controller"), w.controller.error(V(p.reason)), X(this, M, xe).call(this, w, u);
                 break;
               case q.CANCEL_COMPLETE:
-                p.success ? w.cancelCall.resolve() : w.cancelCall.reject(V(p.reason)), X(this, M, xe).call(this, w, f);
+                p.success ? w.cancelCall.resolve() : w.cancelCall.reject(V(p.reason)), X(this, M, xe).call(this, w, u);
                 break;
               case q.CANCEL:
                 if (!s)
@@ -6142,7 +6142,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     sourceName: y,
                     targetName: b,
                     stream: q.CANCEL_COMPLETE,
-                    streamId: f,
+                    streamId: u,
                     success: !0
                   });
                 }, function(i) {
@@ -6150,28 +6150,28 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     sourceName: y,
                     targetName: b,
                     stream: q.CANCEL_COMPLETE,
-                    streamId: f,
+                    streamId: u,
                     reason: V(i)
                   });
-                }), s.sinkCapability.reject(V(p.reason)), s.isCancelled = !0, delete this.streamSinks[f];
+                }), s.sinkCapability.reject(V(p.reason)), s.isCancelled = !0, delete this.streamSinks[u];
                 break;
               default:
                 throw new Error("Unexpected stream case");
             }
-          }, M = new WeakSet(), xe = async function(p, f) {
+          }, M = new WeakSet(), xe = async function(p, u) {
             var y, b, g;
-            await Promise.allSettled([(y = p.startCall) == null ? void 0 : y.promise, (b = p.pullCall) == null ? void 0 : b.promise, (g = p.cancelCall) == null ? void 0 : g.promise]), delete this.streamControllers[f];
+            await Promise.allSettled([(y = p.startCall) == null ? void 0 : y.promise, (b = p.pullCall) == null ? void 0 : b.promise, (g = p.cancelCall) == null ? void 0 : g.promise]), delete this.streamControllers[u];
           }, e.MessageHandler = I;
         },
         /* 16 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var q, V;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.Metadata = void 0;
-          var n = k(1);
-          class u {
+          var n = L(1);
+          class f {
             constructor({
               parsedData: c,
               rawData: d
@@ -6193,87 +6193,87 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return t(this, q).has(c);
             }
           }
-          q = new WeakMap(), V = new WeakMap(), e.Metadata = u;
+          q = new WeakMap(), V = new WeakMap(), e.Metadata = f;
         },
         /* 17 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var c, d, r, F, M, S, ii;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.OptionalContentConfig = void 0;
-          var n = k(1), u = k(8);
+          var n = L(1), f = L(8);
           const q = Symbol("INTERNAL");
           class V {
-            constructor(f, y) {
+            constructor(u, y) {
               N(this, c, !0);
-              this.name = f, this.intent = y;
+              this.name = u, this.intent = y;
             }
             get visible() {
               return t(this, c);
             }
-            _setVisible(f, y) {
-              f !== q && (0, n.unreachable)("Internal method `_setVisible` called."), it(this, c, y);
+            _setVisible(u, y) {
+              u !== q && (0, n.unreachable)("Internal method `_setVisible` called."), it(this, c, y);
             }
           }
           c = new WeakMap();
           class I {
-            constructor(f) {
+            constructor(u) {
               N(this, S);
               N(this, d, null);
               N(this, r, /* @__PURE__ */ new Map());
               N(this, F, null);
               N(this, M, null);
-              if (this.name = null, this.creator = null, f !== null) {
-                this.name = f.name, this.creator = f.creator, it(this, M, f.order);
-                for (const y of f.groups)
+              if (this.name = null, this.creator = null, u !== null) {
+                this.name = u.name, this.creator = u.creator, it(this, M, u.order);
+                for (const y of u.groups)
                   t(this, r).set(y.id, new V(y.name, y.intent));
-                if (f.baseState === "OFF")
+                if (u.baseState === "OFF")
                   for (const y of t(this, r).values())
                     y._setVisible(q, !1);
-                for (const y of f.on)
+                for (const y of u.on)
                   t(this, r).get(y)._setVisible(q, !0);
-                for (const y of f.off)
+                for (const y of u.off)
                   t(this, r).get(y)._setVisible(q, !1);
                 it(this, F, this.getHash());
               }
             }
-            isVisible(f) {
+            isVisible(u) {
               if (t(this, r).size === 0)
                 return !0;
-              if (!f)
+              if (!u)
                 return (0, n.warn)("Optional content group not defined."), !0;
-              if (f.type === "OCG")
-                return t(this, r).has(f.id) ? t(this, r).get(f.id).visible : ((0, n.warn)(`Optional content group not found: ${f.id}`), !0);
-              if (f.type === "OCMD") {
-                if (f.expression)
-                  return X(this, S, ii).call(this, f.expression);
-                if (!f.policy || f.policy === "AnyOn") {
-                  for (const y of f.ids) {
+              if (u.type === "OCG")
+                return t(this, r).has(u.id) ? t(this, r).get(u.id).visible : ((0, n.warn)(`Optional content group not found: ${u.id}`), !0);
+              if (u.type === "OCMD") {
+                if (u.expression)
+                  return X(this, S, ii).call(this, u.expression);
+                if (!u.policy || u.policy === "AnyOn") {
+                  for (const y of u.ids) {
                     if (!t(this, r).has(y))
                       return (0, n.warn)(`Optional content group not found: ${y}`), !0;
                     if (t(this, r).get(y).visible)
                       return !0;
                   }
                   return !1;
-                } else if (f.policy === "AllOn") {
-                  for (const y of f.ids) {
+                } else if (u.policy === "AllOn") {
+                  for (const y of u.ids) {
                     if (!t(this, r).has(y))
                       return (0, n.warn)(`Optional content group not found: ${y}`), !0;
                     if (!t(this, r).get(y).visible)
                       return !1;
                   }
                   return !0;
-                } else if (f.policy === "AnyOff") {
-                  for (const y of f.ids) {
+                } else if (u.policy === "AnyOff") {
+                  for (const y of u.ids) {
                     if (!t(this, r).has(y))
                       return (0, n.warn)(`Optional content group not found: ${y}`), !0;
                     if (!t(this, r).get(y).visible)
                       return !0;
                   }
                   return !1;
-                } else if (f.policy === "AllOff") {
-                  for (const y of f.ids) {
+                } else if (u.policy === "AllOff") {
+                  for (const y of u.ids) {
                     if (!t(this, r).has(y))
                       return (0, n.warn)(`Optional content group not found: ${y}`), !0;
                     if (t(this, r).get(y).visible)
@@ -6281,16 +6281,16 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   }
                   return !0;
                 }
-                return (0, n.warn)(`Unknown optional content policy ${f.policy}.`), !0;
+                return (0, n.warn)(`Unknown optional content policy ${u.policy}.`), !0;
               }
-              return (0, n.warn)(`Unknown group type ${f.type}.`), !0;
+              return (0, n.warn)(`Unknown group type ${u.type}.`), !0;
             }
-            setVisibility(f, y = !0) {
-              if (!t(this, r).has(f)) {
-                (0, n.warn)(`Optional content group not found: ${f}`);
+            setVisibility(u, y = !0) {
+              if (!t(this, r).has(u)) {
+                (0, n.warn)(`Optional content group not found: ${u}`);
                 return;
               }
-              t(this, r).get(f)._setVisible(q, !!y), it(this, d, null);
+              t(this, r).get(u)._setVisible(q, !!y), it(this, d, null);
             }
             get hasInitialVisibility() {
               return t(this, F) === null || this.getHash() === t(this, F);
@@ -6301,25 +6301,25 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             getGroups() {
               return t(this, r).size > 0 ? (0, n.objectFromMap)(t(this, r)) : null;
             }
-            getGroup(f) {
-              return t(this, r).get(f) || null;
+            getGroup(u) {
+              return t(this, r).get(u) || null;
             }
             getHash() {
               if (t(this, d) !== null)
                 return t(this, d);
-              const f = new u.MurmurHash3_64();
+              const u = new f.MurmurHash3_64();
               for (const [y, b] of t(this, r))
-                f.update(`${y}:${b.visible}`);
-              return it(this, d, f.hexdigest());
+                u.update(`${y}:${b.visible}`);
+              return it(this, d, u.hexdigest());
             }
           }
-          d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakSet(), ii = function(f) {
-            const y = f.length;
+          d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakSet(), ii = function(u) {
+            const y = u.length;
             if (y < 2)
               return !0;
-            const b = f[0];
+            const b = u[0];
             for (let g = 1; g < y; g++) {
-              const w = f[g];
+              const w = u[g];
               let s;
               if (Array.isArray(w))
                 s = X(this, S, ii).call(this, w);
@@ -6347,11 +6347,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 18 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.PDFDataTransportStream = void 0;
-          var n = k(1), u = k(6);
+          var n = L(1), f = L(6);
           class q {
             constructor({
               length: d,
@@ -6362,22 +6362,22 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               disableStream: h = !1
             }, p) {
               if ((0, n.assert)(p, 'PDFDataTransportStream - missing required "pdfDataRangeTransport" argument.'), this._queuedChunks = [], this._progressiveDone = F, this._contentDispositionFilename = M, (r == null ? void 0 : r.length) > 0) {
-                const f = r instanceof Uint8Array && r.byteLength === r.buffer.byteLength ? r.buffer : new Uint8Array(r).buffer;
-                this._queuedChunks.push(f);
+                const u = r instanceof Uint8Array && r.byteLength === r.buffer.byteLength ? r.buffer : new Uint8Array(r).buffer;
+                this._queuedChunks.push(u);
               }
-              this._pdfDataRangeTransport = p, this._isStreamingSupported = !h, this._isRangeSupported = !S, this._contentLength = d, this._fullRequestReader = null, this._rangeReaders = [], this._pdfDataRangeTransport.addRangeListener((f, y) => {
+              this._pdfDataRangeTransport = p, this._isStreamingSupported = !h, this._isRangeSupported = !S, this._contentLength = d, this._fullRequestReader = null, this._rangeReaders = [], this._pdfDataRangeTransport.addRangeListener((u, y) => {
                 this._onReceiveData({
-                  begin: f,
+                  begin: u,
                   chunk: y
                 });
-              }), this._pdfDataRangeTransport.addProgressListener((f, y) => {
+              }), this._pdfDataRangeTransport.addProgressListener((u, y) => {
                 this._onProgress({
-                  loaded: f,
+                  loaded: u,
                   total: y
                 });
-              }), this._pdfDataRangeTransport.addProgressiveReadListener((f) => {
+              }), this._pdfDataRangeTransport.addProgressiveReadListener((u) => {
                 this._onReceiveData({
-                  chunk: f
+                  chunk: u
                 });
               }), this._pdfDataRangeTransport.addProgressiveDoneListener(() => {
                 this._onProgressiveDone();
@@ -6440,7 +6440,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           e.PDFDataTransportStream = q;
           class V {
             constructor(d, r, F = !1, M = null) {
-              this._stream = d, this._done = F || !1, this._filename = (0, u.isPdfFile)(M) ? M : null, this._queuedChunks = r || [], this._loaded = 0;
+              this._stream = d, this._done = F || !1, this._filename = (0, f.isPdfFile)(M) ? M : null, this._queuedChunks = r || [], this._loaded = 0;
               for (const S of this._queuedChunks)
                 this._loaded += S.byteLength;
               this._requests = [], this._headersReady = Promise.resolve(), d._fullRequestReader = this, this.onProgress = null;
@@ -6548,11 +6548,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 19 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.PDFFetchStream = void 0;
-          var n = k(1), u = k(20);
+          var n = L(1), f = L(20);
           function q(F, M, S) {
             return {
               method: "GET",
@@ -6606,19 +6606,19 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this._withCredentials = S.withCredentials || !1, this._contentLength = S.length, this._headersCapability = new n.PromiseCapability(), this._disableRange = S.disableRange || !1, this._rangeChunkSize = S.rangeChunkSize, !this._rangeChunkSize && !this._disableRange && (this._disableRange = !0), this._abortController = new AbortController(), this._isStreamingSupported = !S.disableStream, this._isRangeSupported = !S.disableRange, this._headers = V(this._stream.httpHeaders);
               const h = S.url;
               fetch(h, q(this._headers, this._withCredentials, this._abortController)).then((p) => {
-                if (!(0, u.validateResponseStatus)(p.status))
-                  throw (0, u.createResponseStatusError)(p.status, h);
+                if (!(0, f.validateResponseStatus)(p.status))
+                  throw (0, f.createResponseStatusError)(p.status, h);
                 this._reader = p.body.getReader(), this._headersCapability.resolve();
-                const f = (g) => p.headers.get(g), {
+                const u = (g) => p.headers.get(g), {
                   allowRangeRequests: y,
                   suggestedLength: b
-                } = (0, u.validateRangeRequestCapabilities)({
-                  getResponseHeader: f,
+                } = (0, f.validateRangeRequestCapabilities)({
+                  getResponseHeader: u,
                   isHttp: this._stream.isHttp,
                   rangeChunkSize: this._rangeChunkSize,
                   disableRange: this._disableRange
                 });
-                this._isRangeSupported = y, this._contentLength = b || this._contentLength, this._filename = (0, u.extractFilenameFromHeader)(f), !this._isStreamingSupported && this._isRangeSupported && this.cancel(new n.AbortException("Streaming is disabled."));
+                this._isRangeSupported = y, this._contentLength = b || this._contentLength, this._filename = (0, f.extractFilenameFromHeader)(u), !this._isStreamingSupported && this._isRangeSupported && this.cancel(new n.AbortException("Streaming is disabled."));
               }).catch(this._headersCapability.reject), this.onProgress = null;
             }
             get headersReady() {
@@ -6664,10 +6664,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this._stream = M, this._reader = null, this._loaded = 0;
               const p = M.source;
               this._withCredentials = p.withCredentials || !1, this._readCapability = new n.PromiseCapability(), this._isStreamingSupported = !p.disableStream, this._abortController = new AbortController(), this._headers = V(this._stream.httpHeaders), this._headers.append("Range", `bytes=${S}-${h - 1}`);
-              const f = p.url;
-              fetch(f, q(this._headers, this._withCredentials, this._abortController)).then((y) => {
-                if (!(0, u.validateResponseStatus)(y.status))
-                  throw (0, u.createResponseStatusError)(y.status, f);
+              const u = p.url;
+              fetch(u, q(this._headers, this._withCredentials, this._abortController)).then((y) => {
+                if (!(0, f.validateResponseStatus)(y.status))
+                  throw (0, f.createResponseStatusError)(y.status, u);
                 this._readCapability.resolve(), this._reader = y.body.getReader();
               }).catch(this._readCapability.reject), this.onProgress = null;
             }
@@ -6699,11 +6699,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 20 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.createResponseStatusError = c, e.extractFilenameFromHeader = I, e.validateRangeRequestCapabilities = V, e.validateResponseStatus = d;
-          var n = k(1), u = k(21), q = k(6);
+          var n = L(1), f = L(21), q = L(6);
           function V({
             getResponseHeader: r,
             isHttp: F,
@@ -6719,7 +6719,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           function I(r) {
             const F = r("Content-Disposition");
             if (F) {
-              let M = (0, u.getFilenameFromContentDispositionHeader)(F);
+              let M = (0, f.getFilenameFromContentDispositionHeader)(F);
               if (M.includes("%"))
                 try {
                   M = decodeURIComponent(M);
@@ -6739,12 +6739,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 21 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
-          }), e.getFilenameFromContentDispositionHeader = u;
-          var n = k(1);
-          function u(q) {
+          }), e.getFilenameFromContentDispositionHeader = f;
+          var n = L(1);
+          function f(q) {
             let V = !0, I = c("filename\\*", "i").exec(q);
             if (I) {
               I = I[1];
@@ -6760,66 +6760,66 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               let p = M(I);
               return p = h(p), r(p);
             }
-            function c(p, f) {
-              return new RegExp("(?:^|;)\\s*" + p + '\\s*=\\s*([^";\\s][^;\\s]*|"(?:[^"\\\\]|\\\\"?)+"?)', f);
+            function c(p, u) {
+              return new RegExp("(?:^|;)\\s*" + p + '\\s*=\\s*([^";\\s][^;\\s]*|"(?:[^"\\\\]|\\\\"?)+"?)', u);
             }
-            function d(p, f) {
+            function d(p, u) {
               if (p) {
-                if (!/^[\x00-\xFF]+$/.test(f))
-                  return f;
+                if (!/^[\x00-\xFF]+$/.test(u))
+                  return u;
                 try {
                   const y = new TextDecoder(p, {
                     fatal: !0
-                  }), b = (0, n.stringToBytes)(f);
-                  f = y.decode(b), V = !1;
+                  }), b = (0, n.stringToBytes)(u);
+                  u = y.decode(b), V = !1;
                 } catch {
                 }
               }
-              return f;
+              return u;
             }
             function r(p) {
               return V && /[\x80-\xff]/.test(p) && (p = d("utf-8", p), V && (p = d("iso-8859-1", p))), p;
             }
             function F(p) {
-              const f = [];
+              const u = [];
               let y;
               const b = c("filename\\*((?!0\\d)\\d+)(\\*?)", "ig");
               for (; (y = b.exec(p)) !== null; ) {
                 let [, w, s, i] = y;
-                if (w = parseInt(w, 10), w in f) {
+                if (w = parseInt(w, 10), w in u) {
                   if (w === 0)
                     break;
                   continue;
                 }
-                f[w] = [s, i];
+                u[w] = [s, i];
               }
               const g = [];
-              for (let w = 0; w < f.length && w in f; ++w) {
-                let [s, i] = f[w];
+              for (let w = 0; w < u.length && w in u; ++w) {
+                let [s, i] = u[w];
                 i = M(i), s && (i = unescape(i), w === 0 && (i = S(i))), g.push(i);
               }
               return g.join("");
             }
             function M(p) {
               if (p.startsWith('"')) {
-                const f = p.slice(1).split('\\"');
-                for (let y = 0; y < f.length; ++y) {
-                  const b = f[y].indexOf('"');
-                  b !== -1 && (f[y] = f[y].slice(0, b), f.length = y + 1), f[y] = f[y].replaceAll(/\\(.)/g, "$1");
+                const u = p.slice(1).split('\\"');
+                for (let y = 0; y < u.length; ++y) {
+                  const b = u[y].indexOf('"');
+                  b !== -1 && (u[y] = u[y].slice(0, b), u.length = y + 1), u[y] = u[y].replaceAll(/\\(.)/g, "$1");
                 }
-                p = f.join('"');
+                p = u.join('"');
               }
               return p;
             }
             function S(p) {
-              const f = p.indexOf("'");
-              if (f === -1)
+              const u = p.indexOf("'");
+              if (u === -1)
                 return p;
-              const y = p.slice(0, f), g = p.slice(f + 1).replace(/^[^']*'/, "");
+              const y = p.slice(0, u), g = p.slice(u + 1).replace(/^[^']*'/, "");
               return d(y, g);
             }
             function h(p) {
-              return !p.startsWith("=?") || /[\x00-\x19\x80-\xff]/.test(p) ? p : p.replaceAll(/=\?([\w-]*)\?([QqBb])\?((?:[^?]|\?(?!=))*)\?=/g, function(f, y, b, g) {
+              return !p.startsWith("=?") || /[\x00-\x19\x80-\xff]/.test(p) ? p : p.replaceAll(/=\?([\w-]*)\?([QqBb])\?((?:[^?]|\?(?!=))*)\?=/g, function(u, y, b, g) {
                 if (b === "q" || b === "Q")
                   return g = g.replaceAll("_", " "), g = g.replaceAll(/=([0-9a-fA-F]{2})/g, function(w, s) {
                     return String.fromCharCode(parseInt(s, 16));
@@ -6836,11 +6836,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 22 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.PDFNetworkStream = void 0;
-          var n = k(1), u = k(20);
+          var n = L(1), f = L(20);
           const q = 200, V = 206;
           function I(M) {
             const S = M.response;
@@ -6851,19 +6851,19 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this.url = S, this.isHttp = /^https?:/i.test(S), this.httpHeaders = this.isHttp && h.httpHeaders || /* @__PURE__ */ Object.create(null), this.withCredentials = h.withCredentials || !1, this.currXhrId = 0, this.pendingRequests = /* @__PURE__ */ Object.create(null);
             }
             requestRange(S, h, p) {
-              const f = {
+              const u = {
                 begin: S,
                 end: h
               };
               for (const y in p)
-                f[y] = p[y];
-              return this.request(f);
+                u[y] = p[y];
+              return this.request(u);
             }
             requestFull(S) {
               return this.request(S);
             }
             request(S) {
-              const h = new XMLHttpRequest(), p = this.currXhrId++, f = this.pendingRequests[p] = {
+              const h = new XMLHttpRequest(), p = this.currXhrId++, u = this.pendingRequests[p] = {
                 xhr: h
               };
               h.open("GET", this.url), h.withCredentials = this.withCredentials;
@@ -6871,35 +6871,35 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const b = this.httpHeaders[y];
                 b !== void 0 && h.setRequestHeader(y, b);
               }
-              return this.isHttp && "begin" in S && "end" in S ? (h.setRequestHeader("Range", `bytes=${S.begin}-${S.end - 1}`), f.expectedStatus = V) : f.expectedStatus = q, h.responseType = "arraybuffer", S.onError && (h.onerror = function(y) {
+              return this.isHttp && "begin" in S && "end" in S ? (h.setRequestHeader("Range", `bytes=${S.begin}-${S.end - 1}`), u.expectedStatus = V) : u.expectedStatus = q, h.responseType = "arraybuffer", S.onError && (h.onerror = function(y) {
                 S.onError(h.status);
-              }), h.onreadystatechange = this.onStateChange.bind(this, p), h.onprogress = this.onProgress.bind(this, p), f.onHeadersReceived = S.onHeadersReceived, f.onDone = S.onDone, f.onError = S.onError, f.onProgress = S.onProgress, h.send(null), p;
+              }), h.onreadystatechange = this.onStateChange.bind(this, p), h.onprogress = this.onProgress.bind(this, p), u.onHeadersReceived = S.onHeadersReceived, u.onDone = S.onDone, u.onError = S.onError, u.onProgress = S.onProgress, h.send(null), p;
             }
             onProgress(S, h) {
-              var f;
+              var u;
               const p = this.pendingRequests[S];
-              p && ((f = p.onProgress) == null || f.call(p, h));
+              p && ((u = p.onProgress) == null || u.call(p, h));
             }
             onStateChange(S, h) {
               var w, s, i;
               const p = this.pendingRequests[S];
               if (!p)
                 return;
-              const f = p.xhr;
-              if (f.readyState >= 2 && p.onHeadersReceived && (p.onHeadersReceived(), delete p.onHeadersReceived), f.readyState !== 4 || !(S in this.pendingRequests))
+              const u = p.xhr;
+              if (u.readyState >= 2 && p.onHeadersReceived && (p.onHeadersReceived(), delete p.onHeadersReceived), u.readyState !== 4 || !(S in this.pendingRequests))
                 return;
-              if (delete this.pendingRequests[S], f.status === 0 && this.isHttp) {
-                (w = p.onError) == null || w.call(p, f.status);
+              if (delete this.pendingRequests[S], u.status === 0 && this.isHttp) {
+                (w = p.onError) == null || w.call(p, u.status);
                 return;
               }
-              const y = f.status || q;
+              const y = u.status || q;
               if (!(y === q && p.expectedStatus === V) && y !== p.expectedStatus) {
-                (s = p.onError) == null || s.call(p, f.status);
+                (s = p.onError) == null || s.call(p, u.status);
                 return;
               }
-              const g = I(f);
+              const g = I(u);
               if (y === V) {
-                const E = f.getResponseHeader("Content-Range"), _ = /bytes (\d+)-(\d+)\/(\d+)/.exec(E);
+                const E = u.getResponseHeader("Content-Range"), _ = /bytes (\d+)-(\d+)\/(\d+)/.exec(E);
                 p.onDone({
                   begin: parseInt(_[1], 10),
                   chunk: g
@@ -6908,7 +6908,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 g ? p.onDone({
                   begin: 0,
                   chunk: g
-                }) : (i = p.onError) == null || i.call(p, f.status);
+                }) : (i = p.onError) == null || i.call(p, u.status);
             }
             getRequestXhr(S) {
               return this.pendingRequests[S].xhr;
@@ -6960,15 +6960,15 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             _onHeadersReceived() {
               const S = this._fullRequestId, h = this._manager.getRequestXhr(S), p = (b) => h.getResponseHeader(b), {
-                allowRangeRequests: f,
+                allowRangeRequests: u,
                 suggestedLength: y
-              } = (0, u.validateRangeRequestCapabilities)({
+              } = (0, f.validateRangeRequestCapabilities)({
                 getResponseHeader: p,
                 isHttp: this._manager.isHttp,
                 rangeChunkSize: this._rangeChunkSize,
                 disableRange: this._disableRange
               });
-              f && (this._isRangeSupported = !0), this._contentLength = y || this._contentLength, this._filename = (0, u.extractFilenameFromHeader)(p), this._isRangeSupported && this._manager.abortRequest(S), this._headersReceivedCapability.resolve();
+              u && (this._isRangeSupported = !0), this._contentLength = y || this._contentLength, this._filename = (0, f.extractFilenameFromHeader)(p), this._isRangeSupported && this._manager.abortRequest(S), this._headersReceivedCapability.resolve();
             }
             _onDone(S) {
               if (S && (this._requests.length > 0 ? this._requests.shift().resolve({
@@ -6984,7 +6984,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             }
             _onError(S) {
-              this._storedError = (0, u.createResponseStatusError)(S, this._url), this._headersReceivedCapability.reject(this._storedError);
+              this._storedError = (0, f.createResponseStatusError)(S, this._url), this._headersReceivedCapability.reject(this._storedError);
               for (const h of this._requests)
                 h.reject(this._storedError);
               this._requests.length = 0, this._cachedChunks.length = 0;
@@ -7040,12 +7040,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           class F {
             constructor(S, h, p) {
               this._manager = S;
-              const f = {
+              const u = {
                 onDone: this._onDone.bind(this),
                 onError: this._onError.bind(this),
                 onProgress: this._onProgress.bind(this)
               };
-              this._url = S.url, this._requestId = S.requestRange(h, p, f), this._requests = [], this._queuedChunk = null, this._done = !1, this._storedError = void 0, this.onProgress = null, this.onClosed = null;
+              this._url = S.url, this._requestId = S.requestRange(h, p, u), this._requests = [], this._queuedChunk = null, this._done = !1, this._storedError = void 0, this.onProgress = null, this.onClosed = null;
             }
             _close() {
               var S;
@@ -7065,7 +7065,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this._requests.length = 0, this._close();
             }
             _onError(S) {
-              this._storedError = (0, u.createResponseStatusError)(S, this._url);
+              this._storedError = (0, f.createResponseStatusError)(S, this._url);
               for (const h of this._requests)
                 h.reject(this._storedError);
               this._requests.length = 0, this._queuedChunk = null;
@@ -7110,45 +7110,45 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 23 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.PDFNodeStream = void 0;
-          var n = k(1), u = k(20);
+          var n = L(1), f = L(20);
           const q = /^file:\/\/\/[a-zA-Z]:\//;
           function V(p) {
-            const f = require$$5, y = f.parse(p);
-            return y.protocol === "file:" || y.host ? y : /^[a-z]:[/\\]/i.test(p) ? f.parse(`file:///${p}`) : (y.host || (y.protocol = "file:"), y);
+            const u = require$$5, y = u.parse(p);
+            return y.protocol === "file:" || y.host ? y : /^[a-z]:[/\\]/i.test(p) ? u.parse(`file:///${p}`) : (y.host || (y.protocol = "file:"), y);
           }
           class I {
-            constructor(f) {
-              this.source = f, this.url = V(f.url), this.isHttp = this.url.protocol === "http:" || this.url.protocol === "https:", this.isFsUrl = this.url.protocol === "file:", this.httpHeaders = this.isHttp && f.httpHeaders || {}, this._fullRequestReader = null, this._rangeRequestReaders = [];
+            constructor(u) {
+              this.source = u, this.url = V(u.url), this.isHttp = this.url.protocol === "http:" || this.url.protocol === "https:", this.isFsUrl = this.url.protocol === "file:", this.httpHeaders = this.isHttp && u.httpHeaders || {}, this._fullRequestReader = null, this._rangeRequestReaders = [];
             }
             get _progressiveDataLength() {
-              var f;
-              return ((f = this._fullRequestReader) == null ? void 0 : f._loaded) ?? 0;
+              var u;
+              return ((u = this._fullRequestReader) == null ? void 0 : u._loaded) ?? 0;
             }
             getFullReader() {
               return (0, n.assert)(!this._fullRequestReader, "PDFNodeStream.getFullReader can only be called once."), this._fullRequestReader = this.isFsUrl ? new S(this) : new F(this), this._fullRequestReader;
             }
-            getRangeReader(f, y) {
+            getRangeReader(u, y) {
               if (y <= this._progressiveDataLength)
                 return null;
-              const b = this.isFsUrl ? new h(this, f, y) : new M(this, f, y);
+              const b = this.isFsUrl ? new h(this, u, y) : new M(this, u, y);
               return this._rangeRequestReaders.push(b), b;
             }
-            cancelAllRequests(f) {
+            cancelAllRequests(u) {
               var y;
-              (y = this._fullRequestReader) == null || y.cancel(f);
+              (y = this._fullRequestReader) == null || y.cancel(u);
               for (const b of this._rangeRequestReaders.slice(0))
-                b.cancel(f);
+                b.cancel(u);
             }
           }
           e.PDFNodeStream = I;
           class c {
-            constructor(f) {
-              this._url = f.url, this._done = !1, this._storedError = null, this.onProgress = null;
-              const y = f.source;
+            constructor(u) {
+              this._url = u.url, this._done = !1, this._storedError = null, this.onProgress = null;
+              const y = u.source;
               this._contentLength = y.length, this._loaded = 0, this._filename = null, this._disableRange = y.disableRange || !1, this._rangeChunkSize = y.rangeChunkSize, !this._rangeChunkSize && !this._disableRange && (this._disableRange = !0), this._isStreamingSupported = !y.disableStream, this._isRangeSupported = !y.disableRange, this._readableStream = null, this._readCapability = new n.PromiseCapability(), this._headersCapability = new n.PromiseCapability();
             }
             get headersReady() {
@@ -7175,39 +7175,39 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 };
               if (this._storedError)
                 throw this._storedError;
-              const f = this._readableStream.read();
-              return f === null ? (this._readCapability = new n.PromiseCapability(), this.read()) : (this._loaded += f.length, (b = this.onProgress) == null || b.call(this, {
+              const u = this._readableStream.read();
+              return u === null ? (this._readCapability = new n.PromiseCapability(), this.read()) : (this._loaded += u.length, (b = this.onProgress) == null || b.call(this, {
                 loaded: this._loaded,
                 total: this._contentLength
               }), {
-                value: new Uint8Array(f).buffer,
+                value: new Uint8Array(u).buffer,
                 done: !1
               });
             }
-            cancel(f) {
+            cancel(u) {
               if (!this._readableStream) {
-                this._error(f);
+                this._error(u);
                 return;
               }
-              this._readableStream.destroy(f);
+              this._readableStream.destroy(u);
             }
-            _error(f) {
-              this._storedError = f, this._readCapability.resolve();
+            _error(u) {
+              this._storedError = u, this._readCapability.resolve();
             }
-            _setReadableStream(f) {
-              this._readableStream = f, f.on("readable", () => {
+            _setReadableStream(u) {
+              this._readableStream = u, u.on("readable", () => {
                 this._readCapability.resolve();
-              }), f.on("end", () => {
-                f.destroy(), this._done = !0, this._readCapability.resolve();
-              }), f.on("error", (y) => {
+              }), u.on("end", () => {
+                u.destroy(), this._done = !0, this._readCapability.resolve();
+              }), u.on("error", (y) => {
                 this._error(y);
               }), !this._isStreamingSupported && this._isRangeSupported && this._error(new n.AbortException("streaming is disabled")), this._storedError && this._readableStream.destroy(this._storedError);
             }
           }
           class d {
-            constructor(f) {
-              this._url = f.url, this._done = !1, this._storedError = null, this.onProgress = null, this._loaded = 0, this._readableStream = null, this._readCapability = new n.PromiseCapability();
-              const y = f.source;
+            constructor(u) {
+              this._url = u.url, this._done = !1, this._storedError = null, this.onProgress = null, this._loaded = 0, this._readableStream = null, this._readCapability = new n.PromiseCapability();
+              const y = u.source;
               this._isStreamingSupported = !y.disableStream;
             }
             get isStreamingSupported() {
@@ -7222,35 +7222,35 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 };
               if (this._storedError)
                 throw this._storedError;
-              const f = this._readableStream.read();
-              return f === null ? (this._readCapability = new n.PromiseCapability(), this.read()) : (this._loaded += f.length, (b = this.onProgress) == null || b.call(this, {
+              const u = this._readableStream.read();
+              return u === null ? (this._readCapability = new n.PromiseCapability(), this.read()) : (this._loaded += u.length, (b = this.onProgress) == null || b.call(this, {
                 loaded: this._loaded
               }), {
-                value: new Uint8Array(f).buffer,
+                value: new Uint8Array(u).buffer,
                 done: !1
               });
             }
-            cancel(f) {
+            cancel(u) {
               if (!this._readableStream) {
-                this._error(f);
+                this._error(u);
                 return;
               }
-              this._readableStream.destroy(f);
+              this._readableStream.destroy(u);
             }
-            _error(f) {
-              this._storedError = f, this._readCapability.resolve();
+            _error(u) {
+              this._storedError = u, this._readCapability.resolve();
             }
-            _setReadableStream(f) {
-              this._readableStream = f, f.on("readable", () => {
+            _setReadableStream(u) {
+              this._readableStream = u, u.on("readable", () => {
                 this._readCapability.resolve();
-              }), f.on("end", () => {
-                f.destroy(), this._done = !0, this._readCapability.resolve();
-              }), f.on("error", (y) => {
+              }), u.on("end", () => {
+                u.destroy(), this._done = !0, this._readCapability.resolve();
+              }), u.on("error", (y) => {
                 this._error(y);
               }), this._storedError && this._readableStream.destroy(this._storedError);
             }
           }
-          function r(p, f) {
+          function r(p, u) {
             return {
               protocol: p.protocol,
               auth: p.auth,
@@ -7258,12 +7258,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               port: p.port,
               path: p.path,
               method: "GET",
-              headers: f
+              headers: u
             };
           }
           class F extends c {
-            constructor(f) {
-              super(f);
+            constructor(u) {
+              super(u);
               const y = (b) => {
                 if (b.statusCode === 404) {
                   const i = new n.MissingPDFException(`Missing PDF "${this._url}".`);
@@ -7274,20 +7274,20 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const g = (i) => this._readableStream.headers[i.toLowerCase()], {
                   allowRangeRequests: w,
                   suggestedLength: s
-                } = (0, u.validateRangeRequestCapabilities)({
+                } = (0, f.validateRangeRequestCapabilities)({
                   getResponseHeader: g,
-                  isHttp: f.isHttp,
+                  isHttp: u.isHttp,
                   rangeChunkSize: this._rangeChunkSize,
                   disableRange: this._disableRange
                 });
-                this._isRangeSupported = w, this._contentLength = s || this._contentLength, this._filename = (0, u.extractFilenameFromHeader)(g);
+                this._isRangeSupported = w, this._contentLength = s || this._contentLength, this._filename = (0, f.extractFilenameFromHeader)(g);
               };
               if (this._request = null, this._url.protocol === "http:") {
                 const b = require$$5;
-                this._request = b.request(r(this._url, f.httpHeaders), y);
+                this._request = b.request(r(this._url, u.httpHeaders), y);
               } else {
                 const b = require$$5;
-                this._request = b.request(r(this._url, f.httpHeaders), y);
+                this._request = b.request(r(this._url, u.httpHeaders), y);
               }
               this._request.on("error", (b) => {
                 this._storedError = b, this._headersCapability.reject(b);
@@ -7295,10 +7295,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           class M extends d {
-            constructor(f, y, b) {
-              super(f), this._httpHeaders = {};
-              for (const w in f.httpHeaders) {
-                const s = f.httpHeaders[w];
+            constructor(u, y, b) {
+              super(u), this._httpHeaders = {};
+              for (const w in u.httpHeaders) {
+                const s = u.httpHeaders[w];
                 s !== void 0 && (this._httpHeaders[w] = s);
               }
               this._httpHeaders.Range = `bytes=${y}-${b - 1}`;
@@ -7323,8 +7323,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           class S extends c {
-            constructor(f) {
-              super(f);
+            constructor(u) {
+              super(u);
               let y = decodeURIComponent(this._url.path);
               q.test(this._url.href) && (y = y.replace(/^\//, ""));
               const b = require$$5;
@@ -7338,8 +7338,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           class h extends d {
-            constructor(f, y, b) {
-              super(f);
+            constructor(u, y, b) {
+              super(u);
               let g = decodeURIComponent(this._url.path);
               q.test(this._url.href) && (g = g.replace(/^\//, ""));
               const w = require$$5;
@@ -7352,11 +7352,11 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 24 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.SVGGraphics = void 0;
-          var n = k(6), u = k(1);
+          var n = L(6), f = L(1);
           const q = {
             fontStyle: "normal",
             fontWeight: "normal",
@@ -7403,7 +7403,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return Q << 16 | Z;
             }
             function T(tt) {
-              if (!u.isNodeJS)
+              if (!f.isNodeJS)
                 return P(tt);
               try {
                 const x = parseInt(process.versions.node) >= 8 ? tt : Buffer.from(tt), K = require$$5.deflateSync(x, {
@@ -7411,7 +7411,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 });
                 return K instanceof Uint8Array ? K : new Uint8Array(K);
               } catch (x) {
-                (0, u.warn)("Not compressing PNG because zlib.deflateSync is unavailable: " + x);
+                (0, f.warn)("Not compressing PNG because zlib.deflateSync is unavailable: " + x);
               }
               return P(tt);
             }
@@ -7432,42 +7432,42 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               let j, D, lt;
               const _t = tt.data;
               switch (x) {
-                case u.ImageKind.GRAYSCALE_1BPP:
+                case f.ImageKind.GRAYSCALE_1BPP:
                   D = 0, j = 1, lt = Q + 7 >> 3;
                   break;
-                case u.ImageKind.RGB_24BPP:
+                case f.ImageKind.RGB_24BPP:
                   D = 2, j = 8, lt = Q * 3;
                   break;
-                case u.ImageKind.RGBA_32BPP:
+                case f.ImageKind.RGBA_32BPP:
                   D = 6, j = 8, lt = Q * 4;
                   break;
                 default:
                   throw new Error("invalid format");
               }
-              const L = new Uint8Array((1 + lt) * v);
+              const k = new Uint8Array((1 + lt) * v);
               let a = 0, l = 0;
               for (let ut = 0; ut < v; ++ut)
-                L[a++] = 0, L.set(_t.subarray(l, l + lt), a), l += lt, a += lt;
-              if (x === u.ImageKind.GRAYSCALE_1BPP && Z) {
+                k[a++] = 0, k.set(_t.subarray(l, l + lt), a), l += lt, a += lt;
+              if (x === f.ImageKind.GRAYSCALE_1BPP && Z) {
                 a = 0;
                 for (let ut = 0; ut < v; ut++) {
                   a++;
                   for (let wt = 0; wt < lt; wt++)
-                    L[a++] ^= 255;
+                    k[a++] ^= 255;
                 }
               }
-              const R = new Uint8Array([Q >> 24 & 255, Q >> 16 & 255, Q >> 8 & 255, Q & 255, v >> 24 & 255, v >> 16 & 255, v >> 8 & 255, v & 255, j, D, 0, 0, 0]), $ = T(L), W = w.length + s * 3 + R.length + $.length, nt = new Uint8Array(W);
+              const R = new Uint8Array([Q >> 24 & 255, Q >> 16 & 255, Q >> 8 & 255, Q & 255, v >> 24 & 255, v >> 16 & 255, v >> 8 & 255, v & 255, j, D, 0, 0, 0]), $ = T(k), W = w.length + s * 3 + R.length + $.length, nt = new Uint8Array(W);
               let st = 0;
               return nt.set(w, st), st += w.length, _("IHDR", R, nt, st), st += s + R.length, _("IDATA", $, nt, st), st += s + $.length, _("IEND", new Uint8Array(0), nt, st), r(nt, "image/png", K);
             }
             return function(x, K, Z) {
-              const Q = x.kind === void 0 ? u.ImageKind.GRAYSCALE_1BPP : x.kind;
+              const Q = x.kind === void 0 ? f.ImageKind.GRAYSCALE_1BPP : x.kind;
               return Y(x, Q, K, Z);
             };
           }();
           class M {
             constructor() {
-              this.fontSizeScale = 1, this.fontWeight = q.fontWeight, this.fontSize = 0, this.textMatrix = u.IDENTITY_MATRIX, this.fontMatrix = u.FONT_IDENTITY_MATRIX, this.leading = 0, this.textRenderingMode = u.TextRenderingMode.FILL, this.textMatrixScale = 1, this.x = 0, this.y = 0, this.lineX = 0, this.lineY = 0, this.charSpacing = 0, this.wordSpacing = 0, this.textHScale = 1, this.textRise = 0, this.fillColor = q.fillColor, this.strokeColor = "#000000", this.fillAlpha = 1, this.strokeAlpha = 1, this.lineWidth = 1, this.lineJoin = "", this.lineCap = "", this.miterLimit = 0, this.dashArray = [], this.dashPhase = 0, this.dependencies = [], this.activeClipUrl = null, this.clipGroup = null, this.maskId = "";
+              this.fontSizeScale = 1, this.fontWeight = q.fontWeight, this.fontSize = 0, this.textMatrix = f.IDENTITY_MATRIX, this.fontMatrix = f.FONT_IDENTITY_MATRIX, this.leading = 0, this.textRenderingMode = f.TextRenderingMode.FILL, this.textMatrixScale = 1, this.x = 0, this.y = 0, this.lineX = 0, this.lineY = 0, this.charSpacing = 0, this.wordSpacing = 0, this.textHScale = 1, this.textRise = 0, this.fillColor = q.fillColor, this.strokeColor = "#000000", this.fillAlpha = 1, this.strokeAlpha = 1, this.lineWidth = 1, this.lineJoin = "", this.lineCap = "", this.miterLimit = 0, this.dashArray = [], this.dashPhase = 0, this.dependencies = [], this.activeClipUrl = null, this.clipGroup = null, this.maskId = "";
             }
             clone() {
               return Object.create(this);
@@ -7516,12 +7516,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return `translate(${h(w[4])} ${h(w[5])})`;
             return `matrix(${h(w[0])} ${h(w[1])} ${h(w[2])} ${h(w[3])} ${h(w[4])} ${h(w[5])})`;
           }
-          let f = 0, y = 0, b = 0;
+          let u = 0, y = 0, b = 0;
           class g {
             constructor(s, i, E = !1) {
-              (0, n.deprecated)("The SVG back-end is no longer maintained and *may* be removed in the future."), this.svgFactory = new n.DOMSVGFactory(), this.current = new M(), this.transformMatrix = u.IDENTITY_MATRIX, this.transformStack = [], this.extraStack = [], this.commonObjs = s, this.objs = i, this.pendingClip = null, this.pendingEOFill = !1, this.embedFonts = !1, this.embeddedFonts = /* @__PURE__ */ Object.create(null), this.cssStyle = null, this.forceDataSchema = !!E, this._operatorIdMapping = [];
-              for (const _ in u.OPS)
-                this._operatorIdMapping[u.OPS[_]] = _;
+              (0, n.deprecated)("The SVG back-end is no longer maintained and *may* be removed in the future."), this.svgFactory = new n.DOMSVGFactory(), this.current = new M(), this.transformMatrix = f.IDENTITY_MATRIX, this.transformStack = [], this.extraStack = [], this.commonObjs = s, this.objs = i, this.pendingClip = null, this.pendingEOFill = !1, this.embedFonts = !1, this.embeddedFonts = /* @__PURE__ */ Object.create(null), this.cssStyle = null, this.forceDataSchema = !!E, this._operatorIdMapping = [];
+              for (const _ in f.OPS)
+                this._operatorIdMapping[f.OPS[_]] = _;
             }
             getObject(s, i = null) {
               return typeof s == "string" ? s.startsWith("g_") ? this.commonObjs.get(s) : this.objs.get(s) : i;
@@ -7540,7 +7540,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             loadDependencies(s) {
               const i = s.fnArray, E = s.argsArray;
               for (let _ = 0, o = i.length; _ < o; _++)
-                if (i[_] === u.OPS.dependency)
+                if (i[_] === f.OPS.dependency)
                   for (const T of E[_]) {
                     const P = T.startsWith("g_") ? this.commonObjs : this.objs, Y = new Promise((tt) => {
                       P.get(T, tt);
@@ -7551,12 +7551,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             transform(s, i, E, _, o, T) {
               const P = [s, i, E, _, o, T];
-              this.transformMatrix = u.Util.transform(this.transformMatrix, P), this.tgrp = null;
+              this.transformMatrix = f.Util.transform(this.transformMatrix, P), this.tgrp = null;
             }
             getSVG(s, i) {
               this.viewport = i;
               const E = this._initialize(i);
-              return this.loadDependencies(s).then(() => (this.transformMatrix = u.IDENTITY_MATRIX, this.executeOpTree(this.convertOpList(s)), E));
+              return this.loadDependencies(s).then(() => (this.transformMatrix = f.IDENTITY_MATRIX, this.executeOpTree(this.convertOpList(s)), E));
             }
             convertOpList(s) {
               const i = this._operatorIdMapping, E = s.argsArray, _ = s.fnArray, o = [];
@@ -7574,157 +7574,157 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               for (const i of s) {
                 const E = i.fn, _ = i.fnId, o = i.args;
                 switch (_ | 0) {
-                  case u.OPS.beginText:
+                  case f.OPS.beginText:
                     this.beginText();
                     break;
-                  case u.OPS.dependency:
+                  case f.OPS.dependency:
                     break;
-                  case u.OPS.setLeading:
+                  case f.OPS.setLeading:
                     this.setLeading(o);
                     break;
-                  case u.OPS.setLeadingMoveText:
+                  case f.OPS.setLeadingMoveText:
                     this.setLeadingMoveText(o[0], o[1]);
                     break;
-                  case u.OPS.setFont:
+                  case f.OPS.setFont:
                     this.setFont(o);
                     break;
-                  case u.OPS.showText:
+                  case f.OPS.showText:
                     this.showText(o[0]);
                     break;
-                  case u.OPS.showSpacedText:
+                  case f.OPS.showSpacedText:
                     this.showText(o[0]);
                     break;
-                  case u.OPS.endText:
+                  case f.OPS.endText:
                     this.endText();
                     break;
-                  case u.OPS.moveText:
+                  case f.OPS.moveText:
                     this.moveText(o[0], o[1]);
                     break;
-                  case u.OPS.setCharSpacing:
+                  case f.OPS.setCharSpacing:
                     this.setCharSpacing(o[0]);
                     break;
-                  case u.OPS.setWordSpacing:
+                  case f.OPS.setWordSpacing:
                     this.setWordSpacing(o[0]);
                     break;
-                  case u.OPS.setHScale:
+                  case f.OPS.setHScale:
                     this.setHScale(o[0]);
                     break;
-                  case u.OPS.setTextMatrix:
+                  case f.OPS.setTextMatrix:
                     this.setTextMatrix(o[0], o[1], o[2], o[3], o[4], o[5]);
                     break;
-                  case u.OPS.setTextRise:
+                  case f.OPS.setTextRise:
                     this.setTextRise(o[0]);
                     break;
-                  case u.OPS.setTextRenderingMode:
+                  case f.OPS.setTextRenderingMode:
                     this.setTextRenderingMode(o[0]);
                     break;
-                  case u.OPS.setLineWidth:
+                  case f.OPS.setLineWidth:
                     this.setLineWidth(o[0]);
                     break;
-                  case u.OPS.setLineJoin:
+                  case f.OPS.setLineJoin:
                     this.setLineJoin(o[0]);
                     break;
-                  case u.OPS.setLineCap:
+                  case f.OPS.setLineCap:
                     this.setLineCap(o[0]);
                     break;
-                  case u.OPS.setMiterLimit:
+                  case f.OPS.setMiterLimit:
                     this.setMiterLimit(o[0]);
                     break;
-                  case u.OPS.setFillRGBColor:
+                  case f.OPS.setFillRGBColor:
                     this.setFillRGBColor(o[0], o[1], o[2]);
                     break;
-                  case u.OPS.setStrokeRGBColor:
+                  case f.OPS.setStrokeRGBColor:
                     this.setStrokeRGBColor(o[0], o[1], o[2]);
                     break;
-                  case u.OPS.setStrokeColorN:
+                  case f.OPS.setStrokeColorN:
                     this.setStrokeColorN(o);
                     break;
-                  case u.OPS.setFillColorN:
+                  case f.OPS.setFillColorN:
                     this.setFillColorN(o);
                     break;
-                  case u.OPS.shadingFill:
+                  case f.OPS.shadingFill:
                     this.shadingFill(o[0]);
                     break;
-                  case u.OPS.setDash:
+                  case f.OPS.setDash:
                     this.setDash(o[0], o[1]);
                     break;
-                  case u.OPS.setRenderingIntent:
+                  case f.OPS.setRenderingIntent:
                     this.setRenderingIntent(o[0]);
                     break;
-                  case u.OPS.setFlatness:
+                  case f.OPS.setFlatness:
                     this.setFlatness(o[0]);
                     break;
-                  case u.OPS.setGState:
+                  case f.OPS.setGState:
                     this.setGState(o[0]);
                     break;
-                  case u.OPS.fill:
+                  case f.OPS.fill:
                     this.fill();
                     break;
-                  case u.OPS.eoFill:
+                  case f.OPS.eoFill:
                     this.eoFill();
                     break;
-                  case u.OPS.stroke:
+                  case f.OPS.stroke:
                     this.stroke();
                     break;
-                  case u.OPS.fillStroke:
+                  case f.OPS.fillStroke:
                     this.fillStroke();
                     break;
-                  case u.OPS.eoFillStroke:
+                  case f.OPS.eoFillStroke:
                     this.eoFillStroke();
                     break;
-                  case u.OPS.clip:
+                  case f.OPS.clip:
                     this.clip("nonzero");
                     break;
-                  case u.OPS.eoClip:
+                  case f.OPS.eoClip:
                     this.clip("evenodd");
                     break;
-                  case u.OPS.paintSolidColorImageMask:
+                  case f.OPS.paintSolidColorImageMask:
                     this.paintSolidColorImageMask();
                     break;
-                  case u.OPS.paintImageXObject:
+                  case f.OPS.paintImageXObject:
                     this.paintImageXObject(o[0]);
                     break;
-                  case u.OPS.paintInlineImageXObject:
+                  case f.OPS.paintInlineImageXObject:
                     this.paintInlineImageXObject(o[0]);
                     break;
-                  case u.OPS.paintImageMaskXObject:
+                  case f.OPS.paintImageMaskXObject:
                     this.paintImageMaskXObject(o[0]);
                     break;
-                  case u.OPS.paintFormXObjectBegin:
+                  case f.OPS.paintFormXObjectBegin:
                     this.paintFormXObjectBegin(o[0], o[1]);
                     break;
-                  case u.OPS.paintFormXObjectEnd:
+                  case f.OPS.paintFormXObjectEnd:
                     this.paintFormXObjectEnd();
                     break;
-                  case u.OPS.closePath:
+                  case f.OPS.closePath:
                     this.closePath();
                     break;
-                  case u.OPS.closeStroke:
+                  case f.OPS.closeStroke:
                     this.closeStroke();
                     break;
-                  case u.OPS.closeFillStroke:
+                  case f.OPS.closeFillStroke:
                     this.closeFillStroke();
                     break;
-                  case u.OPS.closeEOFillStroke:
+                  case f.OPS.closeEOFillStroke:
                     this.closeEOFillStroke();
                     break;
-                  case u.OPS.nextLine:
+                  case f.OPS.nextLine:
                     this.nextLine();
                     break;
-                  case u.OPS.transform:
+                  case f.OPS.transform:
                     this.transform(o[0], o[1], o[2], o[3], o[4], o[5]);
                     break;
-                  case u.OPS.constructPath:
+                  case f.OPS.constructPath:
                     this.constructPath(o[0], o[1]);
                     break;
-                  case u.OPS.endPath:
+                  case f.OPS.endPath:
                     this.endPath();
                     break;
                   case 92:
                     this.group(i.items);
                     break;
                   default:
-                    (0, u.warn)(`Unimplemented operator ${E}`);
+                    (0, f.warn)(`Unimplemented operator ${E}`);
                     break;
                 }
               }
@@ -7744,7 +7744,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             beginText() {
               const s = this.current;
-              s.x = s.lineX = 0, s.y = s.lineY = 0, s.textMatrix = u.IDENTITY_MATRIX, s.lineMatrix = u.IDENTITY_MATRIX, s.textMatrixScale = 1, s.tspan = this.svgFactory.createElement("svg:tspan"), s.txtElement = this.svgFactory.createElement("svg:text"), s.txtgrp = this.svgFactory.createElement("svg:g"), s.xcoords = [], s.ycoords = [];
+              s.x = s.lineX = 0, s.y = s.lineY = 0, s.textMatrix = f.IDENTITY_MATRIX, s.lineMatrix = f.IDENTITY_MATRIX, s.textMatrixScale = 1, s.tspan = this.svgFactory.createElement("svg:tspan"), s.txtElement = this.svgFactory.createElement("svg:text"), s.txtgrp = this.svgFactory.createElement("svg:g"), s.xcoords = [], s.ycoords = [];
             }
             moveText(s, i) {
               const E = this.current;
@@ -7764,7 +7764,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   v += K * lt * _ / 1e3;
                   continue;
                 }
-                const _t = (lt.isSpace ? P : 0) + T, L = lt.fontChar;
+                const _t = (lt.isSpace ? P : 0) + T, k = lt.fontChar;
                 let a, l, R = lt.width;
                 if (x) {
                   let W;
@@ -7774,13 +7774,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   R = nt ? -nt[0] : R, a = W / o, l = (v + st) / o;
                 } else
                   a = v / o, l = 0;
-                (lt.isInFont || E.missingFile) && (i.xcoords.push(i.x + a), x && i.ycoords.push(-i.y + l), i.tspan.textContent += L);
+                (lt.isInFont || E.missingFile) && (i.xcoords.push(i.x + a), x && i.ycoords.push(-i.y + l), i.tspan.textContent += k);
                 const $ = x ? R * Q - _t * Y : R * Q + _t * Y;
                 v += $;
               }
               i.tspan.setAttributeNS(null, "x", i.xcoords.map(h).join(" ")), x ? i.tspan.setAttributeNS(null, "y", i.ycoords.map(h).join(" ")) : i.tspan.setAttributeNS(null, "y", h(-i.y)), x ? i.y -= v : i.x += v * tt, i.tspan.setAttributeNS(null, "font-family", i.fontFamily), i.tspan.setAttributeNS(null, "font-size", `${h(i.fontSize)}px`), i.fontStyle !== q.fontStyle && i.tspan.setAttributeNS(null, "font-style", i.fontStyle), i.fontWeight !== q.fontWeight && i.tspan.setAttributeNS(null, "font-weight", i.fontWeight);
-              const j = i.textRenderingMode & u.TextRenderingMode.FILL_STROKE_MASK;
-              if (j === u.TextRenderingMode.FILL || j === u.TextRenderingMode.FILL_STROKE ? (i.fillColor !== q.fillColor && i.tspan.setAttributeNS(null, "fill", i.fillColor), i.fillAlpha < 1 && i.tspan.setAttributeNS(null, "fill-opacity", i.fillAlpha)) : i.textRenderingMode === u.TextRenderingMode.ADD_TO_PATH ? i.tspan.setAttributeNS(null, "fill", "transparent") : i.tspan.setAttributeNS(null, "fill", "none"), j === u.TextRenderingMode.STROKE || j === u.TextRenderingMode.FILL_STROKE) {
+              const j = i.textRenderingMode & f.TextRenderingMode.FILL_STROKE_MASK;
+              if (j === f.TextRenderingMode.FILL || j === f.TextRenderingMode.FILL_STROKE ? (i.fillColor !== q.fillColor && i.tspan.setAttributeNS(null, "fill", i.fillColor), i.fillAlpha < 1 && i.tspan.setAttributeNS(null, "fill-opacity", i.fillAlpha)) : i.textRenderingMode === f.TextRenderingMode.ADD_TO_PATH ? i.tspan.setAttributeNS(null, "fill", "transparent") : i.tspan.setAttributeNS(null, "fill", "none"), j === f.TextRenderingMode.STROKE || j === f.TextRenderingMode.FILL_STROKE) {
                 const lt = 1 / (i.textMatrixScale || 1);
                 this._setStrokeAttributes(i.tspan, lt);
               }
@@ -7801,7 +7801,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             setFont(s) {
               const i = this.current, E = this.commonObjs.get(s[0]);
               let _ = s[1];
-              i.font = E, this.embedFonts && !E.missingFile && !this.embeddedFonts[E.loadedName] && (this.addFontStyle(E), this.embeddedFonts[E.loadedName] = E), i.fontMatrix = E.fontMatrix || u.FONT_IDENTITY_MATRIX;
+              i.font = E, this.embedFonts && !E.missingFile && !this.embeddedFonts[E.loadedName] && (this.addFontStyle(E), this.embeddedFonts[E.loadedName] = E), i.fontMatrix = E.fontMatrix || f.FONT_IDENTITY_MATRIX;
               let o = "normal";
               E.black ? o = "900" : E.bold && (o = "bold");
               const T = E.italic ? "italic" : "normal";
@@ -7810,7 +7810,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             endText() {
               var i;
               const s = this.current;
-              s.textRenderingMode & u.TextRenderingMode.ADD_TO_PATH_FLAG && ((i = s.txtElement) != null && i.hasChildNodes()) && (s.element = s.txtElement, this.clip("nonzero"), this.endPath());
+              s.textRenderingMode & f.TextRenderingMode.ADD_TO_PATH_FLAG && ((i = s.txtElement) != null && i.hasChildNodes()) && (s.element = s.txtElement, this.clip("nonzero"), this.endPath());
             }
             setLineWidth(s) {
               s > 0 && (this.current.lineWidth = s);
@@ -7828,13 +7828,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this.current.strokeAlpha = s;
             }
             setStrokeRGBColor(s, i, E) {
-              this.current.strokeColor = u.Util.makeHexColor(s, i, E);
+              this.current.strokeColor = f.Util.makeHexColor(s, i, E);
             }
             setFillAlpha(s) {
               this.current.fillAlpha = s;
             }
             setFillRGBColor(s, i, E) {
-              this.current.fillColor = u.Util.makeHexColor(s, i, E), this.current.tspan = this.svgFactory.createElement("svg:tspan"), this.current.xcoords = [], this.current.ycoords = [];
+              this.current.fillColor = f.Util.makeHexColor(s, i, E), this.current.tspan = this.svgFactory.createElement("svg:tspan"), this.current.xcoords = [], this.current.ycoords = [];
             }
             setStrokeColorN(s) {
               this.current.strokeColor = this._makeColorN_Pattern(s);
@@ -7846,18 +7846,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 width: i,
                 height: E
-              } = this.viewport, _ = u.Util.inverseTransform(this.transformMatrix), [o, T, P, Y] = u.Util.getAxialAlignedBoundingBox([0, 0, i, E], _), tt = this.svgFactory.createElement("svg:rect");
+              } = this.viewport, _ = f.Util.inverseTransform(this.transformMatrix), [o, T, P, Y] = f.Util.getAxialAlignedBoundingBox([0, 0, i, E], _), tt = this.svgFactory.createElement("svg:rect");
               tt.setAttributeNS(null, "x", o), tt.setAttributeNS(null, "y", T), tt.setAttributeNS(null, "width", P - o), tt.setAttributeNS(null, "height", Y - T), tt.setAttributeNS(null, "fill", this._makeShadingPattern(s)), this.current.fillAlpha < 1 && tt.setAttributeNS(null, "fill-opacity", this.current.fillAlpha), this._ensureTransformGroup().append(tt);
             }
             _makeColorN_Pattern(s) {
               return s[0] === "TilingPattern" ? this._makeTilingPattern(s) : this._makeShadingPattern(s);
             }
             _makeTilingPattern(s) {
-              const i = s[1], E = s[2], _ = s[3] || u.IDENTITY_MATRIX, [o, T, P, Y] = s[4], tt = s[5], x = s[6], K = s[7], Z = `shading${b++}`, [Q, v, j, D] = u.Util.normalizeRect([...u.Util.applyTransform([o, T], _), ...u.Util.applyTransform([P, Y], _)]), [lt, _t] = u.Util.singularValueDecompose2dScale(_), L = tt * lt, a = x * _t, l = this.svgFactory.createElement("svg:pattern");
-              l.setAttributeNS(null, "id", Z), l.setAttributeNS(null, "patternUnits", "userSpaceOnUse"), l.setAttributeNS(null, "width", L), l.setAttributeNS(null, "height", a), l.setAttributeNS(null, "x", `${Q}`), l.setAttributeNS(null, "y", `${v}`);
+              const i = s[1], E = s[2], _ = s[3] || f.IDENTITY_MATRIX, [o, T, P, Y] = s[4], tt = s[5], x = s[6], K = s[7], Z = `shading${b++}`, [Q, v, j, D] = f.Util.normalizeRect([...f.Util.applyTransform([o, T], _), ...f.Util.applyTransform([P, Y], _)]), [lt, _t] = f.Util.singularValueDecompose2dScale(_), k = tt * lt, a = x * _t, l = this.svgFactory.createElement("svg:pattern");
+              l.setAttributeNS(null, "id", Z), l.setAttributeNS(null, "patternUnits", "userSpaceOnUse"), l.setAttributeNS(null, "width", k), l.setAttributeNS(null, "height", a), l.setAttributeNS(null, "x", `${Q}`), l.setAttributeNS(null, "y", `${v}`);
               const R = this.svg, $ = this.transformMatrix, W = this.current.fillColor, nt = this.current.strokeColor, st = this.svgFactory.create(j - Q, D - v);
               if (this.svg = st, this.transformMatrix = _, K === 2) {
-                const ut = u.Util.makeHexColor(...i);
+                const ut = f.Util.makeHexColor(...i);
                 this.current.fillColor = ut, this.current.strokeColor = ut;
               }
               return this.executeOpTree(this.convertOpList(E)), this.svg = R, this.transformMatrix = $, this.current.fillColor = W, this.current.strokeColor = nt, l.append(st.childNodes[0]), this.defs.append(l), `url(#${Z})`;
@@ -7885,7 +7885,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   }
                   return this.defs.append(_), `url(#${i})`;
                 case "Mesh":
-                  return (0, u.warn)("Unimplemented pattern Mesh"), null;
+                  return (0, f.warn)("Unimplemented pattern Mesh"), null;
                 case "Dummy":
                   return "hotpink";
                 default:
@@ -7900,31 +7900,31 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               let _ = E.x, o = E.y, T = [], P = 0;
               for (const Y of s)
                 switch (Y | 0) {
-                  case u.OPS.rectangle:
+                  case f.OPS.rectangle:
                     _ = i[P++], o = i[P++];
                     const tt = i[P++], x = i[P++], K = _ + tt, Z = o + x;
                     T.push("M", h(_), h(o), "L", h(K), h(o), "L", h(K), h(Z), "L", h(_), h(Z), "Z");
                     break;
-                  case u.OPS.moveTo:
+                  case f.OPS.moveTo:
                     _ = i[P++], o = i[P++], T.push("M", h(_), h(o));
                     break;
-                  case u.OPS.lineTo:
+                  case f.OPS.lineTo:
                     _ = i[P++], o = i[P++], T.push("L", h(_), h(o));
                     break;
-                  case u.OPS.curveTo:
+                  case f.OPS.curveTo:
                     _ = i[P + 4], o = i[P + 5], T.push("C", h(i[P]), h(i[P + 1]), h(i[P + 2]), h(i[P + 3]), h(_), h(o)), P += 6;
                     break;
-                  case u.OPS.curveTo2:
+                  case f.OPS.curveTo2:
                     T.push("C", h(_), h(o), h(i[P]), h(i[P + 1]), h(i[P + 2]), h(i[P + 3])), _ = i[P + 2], o = i[P + 3], P += 4;
                     break;
-                  case u.OPS.curveTo3:
+                  case f.OPS.curveTo3:
                     _ = i[P + 2], o = i[P + 3], T.push("C", h(i[P]), h(i[P + 1]), h(_), h(o), h(_), h(o)), P += 4;
                     break;
-                  case u.OPS.closePath:
+                  case f.OPS.closePath:
                     T.push("Z");
                     break;
                 }
-              T = T.join(" "), E.path && s.length > 0 && s[0] !== u.OPS.rectangle && s[0] !== u.OPS.moveTo ? T = E.path.getAttributeNS(null, "d") + T : (E.path = this.svgFactory.createElement("svg:path"), this._ensureTransformGroup().append(E.path)), E.path.setAttributeNS(null, "d", T), E.path.setAttributeNS(null, "fill", "none"), E.element = E.path, E.setCurrentPoint(_, o);
+              T = T.join(" "), E.path && s.length > 0 && s[0] !== f.OPS.rectangle && s[0] !== f.OPS.moveTo ? T = E.path.getAttributeNS(null, "d") + T : (E.path = this.svgFactory.createElement("svg:path"), this._ensureTransformGroup().append(E.path)), E.path.setAttributeNS(null, "d", T), E.path.setAttributeNS(null, "fill", "none"), E.element = E.path, E.setCurrentPoint(_, o);
             }
             endPath() {
               const s = this.current;
@@ -7934,7 +7934,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 this.pendingClip = null;
                 return;
               }
-              const i = `clippath${f++}`, E = this.svgFactory.createElement("svg:clipPath");
+              const i = `clippath${u++}`, E = this.svgFactory.createElement("svg:clipPath");
               E.setAttributeNS(null, "id", i), E.setAttributeNS(null, "transform", p(this.transformMatrix));
               const _ = s.element.cloneNode(!0);
               if (this.pendingClip === "evenodd" ? _.setAttributeNS(null, "clip-rule", "evenodd") : _.setAttributeNS(null, "clip-rule", "nonzero"), this.pendingClip = null, E.append(_), this.defs.append(E), s.activeClipUrl) {
@@ -8005,7 +8005,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                     this.setFillAlpha(E);
                     break;
                   default:
-                    (0, u.warn)(`Unimplemented graphic state operator ${i}`);
+                    (0, f.warn)(`Unimplemented graphic state operator ${i}`);
                     break;
                 }
             }
@@ -8051,7 +8051,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             paintImageXObject(s) {
               const i = this.getObject(s);
               if (!i) {
-                (0, u.warn)(`Dependent image with object ID ${s} is not ready yet`);
+                (0, f.warn)(`Dependent image with object ID ${s} is not ready yet`);
                 return;
               }
               this.paintInlineImageXObject(i);
@@ -8065,7 +8065,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             paintImageMaskXObject(s) {
               const i = this.getObject(s.data, s);
               if (i.bitmap) {
-                (0, u.warn)("paintImageMaskXObject: ImageBitmap support is not implemented, ensure that the `isOffscreenCanvasSupported` API parameter is disabled.");
+                (0, f.warn)("paintImageMaskXObject: ImageBitmap support is not implemented, ensure that the `isOffscreenCanvasSupported` API parameter is disabled.");
                 return;
               }
               const E = this.current, _ = i.width, o = i.height, T = E.fillColor;
@@ -8108,8 +8108,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.XfaText = void 0;
-          class k {
-            static textContent(u) {
+          class L {
+            static textContent(f) {
               const q = [], V = {
                 items: q,
                 styles: /* @__PURE__ */ Object.create(null)
@@ -8122,7 +8122,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const r = c.name;
                 if (r === "#text")
                   d = c.value;
-                else if (k.shouldBuildText(r))
+                else if (L.shouldBuildText(r))
                   (F = c == null ? void 0 : c.attributes) != null && F.textContent ? d = c.attributes.textContent : c.value && (d = c.value);
                 else
                   return;
@@ -8132,21 +8132,21 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   for (const M of c.children)
                     I(M);
               }
-              return I(u), V;
+              return I(f), V;
             }
-            static shouldBuildText(u) {
-              return !(u === "textarea" || u === "input" || u === "option" || u === "select");
+            static shouldBuildText(f) {
+              return !(f === "textarea" || f === "input" || f === "option" || f === "select");
             }
           }
-          e.XfaText = k;
+          e.XfaText = L;
         },
         /* 26 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
-          }), e.TextLayerRenderTask = void 0, e.renderTextLayer = p, e.updateTextLayer = f;
-          var n = k(1), u = k(6);
+          }), e.TextLayerRenderTask = void 0, e.renderTextLayer = p, e.updateTextLayer = u;
+          var n = L(1), f = L(6);
           const q = 1e5, V = 30, I = 0.8, c = /* @__PURE__ */ new Map();
           function d(y, b) {
             let g;
@@ -8286,7 +8286,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 pageX: P,
                 pageY: Y
               } = w.rawDims;
-              this._transform = [1, 0, 0, -1, -P, Y + T], this._pageWidth = o, this._pageHeight = T, (0, u.setLayerDimensions)(g, w), this._capability.promise.finally(() => {
+              this._transform = [1, 0, 0, -1, -P, Y + T], this._pageWidth = o, this._pageHeight = T, (0, f.setLayerDimensions)(g, w), this._capability.promise.finally(() => {
                 this._layoutTextParams = null;
               }).catch(() => {
               });
@@ -8350,7 +8350,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           }
           e.TextLayerRenderTask = h;
           function p(y) {
-            !y.textContentSource && (y.textContent || y.textContentStream) && ((0, u.deprecated)("The TextLayerRender `textContent`/`textContentStream` parameters will be removed in the future, please use `textContentSource` instead."), y.textContentSource = y.textContent || y.textContentStream);
+            !y.textContentSource && (y.textContent || y.textContentStream) && ((0, f.deprecated)("The TextLayerRender `textContent`/`textContentStream` parameters will be removed in the future, please use `textContentSource` instead."), y.textContentSource = y.textContent || y.textContentStream);
             const {
               container: b,
               viewport: g
@@ -8359,7 +8359,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             const E = new h(y);
             return E._render(), E;
           }
-          function f({
+          function u({
             container: y,
             viewport: b,
             textDivs: g,
@@ -8368,7 +8368,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             mustRotate: i = !0,
             mustRescale: E = !0
           }) {
-            if (i && (0, u.setLayerDimensions)(y, {
+            if (i && (0, f.setLayerDimensions)(y, {
               rotation: b.rotation
             }), E) {
               const _ = d(0, s), T = {
@@ -8386,12 +8386,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 27 */
         /***/
-        (A, e, k) => {
-          var r, F, M, S, h, p, f, y, b, g, w, ni, i, Me, _, si, T, ri;
+        (A, e, L) => {
+          var r, F, M, S, h, p, u, y, b, g, w, ni, i, Me, _, si, T, ri;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.AnnotationEditorLayer = void 0;
-          var n = k(1), u = k(4), q = k(28), V = k(33), I = k(6), c = k(34);
+          var n = L(1), f = L(4), q = L(28), V = L(33), I = L(6), c = L(34);
           const Y = class Y {
             constructor({
               uiManager: x,
@@ -8412,7 +8412,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, S, this.pointerup.bind(this));
               N(this, h, this.pointerdown.bind(this));
               N(this, p, /* @__PURE__ */ new Map());
-              N(this, f, !1);
+              N(this, u, !1);
               N(this, y, !1);
               N(this, b, !1);
               N(this, g, void 0);
@@ -8522,7 +8522,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
             changeParent(x) {
               var K;
-              x.parent !== this && (x.annotationElementId && (t(this, g).addDeletedAnnotationElement(x.annotationElementId), u.AnnotationEditor.deleteAnnotationElement(x), x.annotationElementId = null), this.attach(x), (K = x.parent) == null || K.detach(x), x.setParent(this), x.div && x.isAttachedToDOM && (x.div.remove(), this.div.append(x.div)));
+              x.parent !== this && (x.annotationElementId && (t(this, g).addDeletedAnnotationElement(x.annotationElementId), f.AnnotationEditor.deleteAnnotationElement(x), x.annotationElementId = null), this.attach(x), (K = x.parent) == null || K.detach(x), x.setParent(this), x.div && x.isAttachedToDOM && (x.div.remove(), this.div.append(x.div)));
             }
             add(x) {
               if (this.changeParent(x), t(this, g).addEditor(x), this.attach(x), !x.isAttachedToDOM) {
@@ -8608,8 +8608,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 isMac: K
               } = n.FeatureTest.platform;
-              if (!(x.button !== 0 || x.ctrlKey && K) && x.target === this.div && t(this, f)) {
-                if (it(this, f, !1), !t(this, F)) {
+              if (!(x.button !== 0 || x.ctrlKey && K) && x.target === this.div && t(this, u)) {
+                if (it(this, u, !1), !t(this, F)) {
                   it(this, F, !0);
                   return;
                 }
@@ -8621,8 +8621,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             }
             pointerdown(x) {
-              if (t(this, f)) {
-                it(this, f, !1);
+              if (t(this, u)) {
+                it(this, u, !1);
                 return;
               }
               const {
@@ -8630,7 +8630,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               } = n.FeatureTest.platform;
               if (x.button !== 0 || x.ctrlKey && K || x.target !== this.div)
                 return;
-              it(this, f, !0);
+              it(this, u, !0);
               const Z = t(this, g).getActive();
               it(this, F, !Z || Z.isEmpty());
             }
@@ -8668,7 +8668,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return [x, K];
             }
           };
-          r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakSet(), ni = function(x) {
+          r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakSet(), ni = function(x) {
             switch (t(this, g).getMode()) {
               case n.AnnotationEditorType.FREETEXT:
                 return new q.FreeTextEditor(x);
@@ -8694,7 +8694,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               y: K,
               width: Z,
               height: Q
-            } = this.div.getBoundingClientRect(), v = Math.max(0, x), j = Math.max(0, K), D = Math.min(window.innerWidth, x + Z), lt = Math.min(window.innerHeight, K + Q), _t = (v + D) / 2 - x, L = (j + lt) / 2 - K, [a, l] = this.viewport.rotation % 180 === 0 ? [_t, L] : [L, _t];
+            } = this.div.getBoundingClientRect(), v = Math.max(0, x), j = Math.max(0, K), D = Math.min(window.innerWidth, x + Z), lt = Math.min(window.innerHeight, K + Q), _t = (v + D) / 2 - x, k = (j + lt) / 2 - K, [a, l] = this.viewport.rotation % 180 === 0 ? [_t, k] : [k, _t];
             return {
               offsetX: a,
               offsetY: l
@@ -8710,12 +8710,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 28 */
         /***/
-        (A, e, k) => {
-          var c, d, r, F, M, S, h, p, f, y, an, g, on, s, ln, E, _e, o, ai, P, cn, tt, oi;
+        (A, e, L) => {
+          var c, d, r, F, M, S, h, p, u, y, an, g, on, s, ln, E, _e, o, ai, P, cn, tt, oi;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.FreeTextEditor = void 0;
-          var n = k(1), u = k(5), q = k(4), V = k(29);
+          var n = L(1), f = L(5), q = L(4), V = L(29);
           const K = class K extends q.AnnotationEditor {
             constructor(v) {
               super({
@@ -8737,12 +8737,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, S, "");
               N(this, h, `${this.id}-editor`);
               N(this, p, void 0);
-              N(this, f, null);
+              N(this, u, null);
               it(this, M, v.color || K._defaultColor || q.AnnotationEditor._defaultLineColor), it(this, p, v.fontSize || K._defaultFontSize);
             }
             static get _keyboardManager() {
-              const v = K.prototype, j = (_t) => _t.isEmpty(), D = u.AnnotationEditorUIManager.TRANSLATE_SMALL, lt = u.AnnotationEditorUIManager.TRANSLATE_BIG;
-              return (0, n.shadow)(this, "_keyboardManager", new u.KeyboardManager([[["ctrl+s", "mac+meta+s", "ctrl+p", "mac+meta+p"], v.commitOrRemove, {
+              const v = K.prototype, j = (_t) => _t.isEmpty(), D = f.AnnotationEditorUIManager.TRANSLATE_SMALL, lt = f.AnnotationEditorUIManager.TRANSLATE_BIG;
+              return (0, n.shadow)(this, "_keyboardManager", new f.KeyboardManager([[["ctrl+s", "mac+meta+s", "ctrl+p", "mac+meta+p"], v.commitOrRemove, {
                 bubbles: !0
               }], [["ctrl+Enter", "mac+meta+Enter", "Escape", "mac+Escape"], v.commitOrRemove], [["ArrowLeft", "mac+ArrowLeft"], v._translateEmpty, {
                 args: [-D, 0],
@@ -8904,28 +8904,28 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 style: D
               } = this.editorDiv;
-              if (D.fontSize = `calc(${t(this, p)}px * var(--scale-factor))`, D.color = t(this, M), this.div.append(this.editorDiv), this.overlayDiv = document.createElement("div"), this.overlayDiv.classList.add("overlay", "enabled"), this.div.append(this.overlayDiv), (0, u.bindEvents)(this, this.div, ["dblclick", "keydown"]), this.width) {
+              if (D.fontSize = `calc(${t(this, p)}px * var(--scale-factor))`, D.color = t(this, M), this.div.append(this.editorDiv), this.overlayDiv = document.createElement("div"), this.overlayDiv.classList.add("overlay", "enabled"), this.div.append(this.overlayDiv), (0, f.bindEvents)(this, this.div, ["dblclick", "keydown"]), this.width) {
                 const [lt, _t] = this.parentDimensions;
                 if (this.annotationElementId) {
                   const {
-                    position: L
-                  } = t(this, f);
+                    position: k
+                  } = t(this, u);
                   let [a, l] = this.getInitialTranslation();
                   [a, l] = this.pageTranslationToScreen(a, l);
                   const [R, $] = this.pageDimensions, [W, nt] = this.pageTranslation;
                   let st, ut;
                   switch (this.rotation) {
                     case 0:
-                      st = v + (L[0] - W) / R, ut = j + this.height - (L[1] - nt) / $;
+                      st = v + (k[0] - W) / R, ut = j + this.height - (k[1] - nt) / $;
                       break;
                     case 90:
-                      st = v + (L[0] - W) / R, ut = j - (L[1] - nt) / $, [a, l] = [l, -a];
+                      st = v + (k[0] - W) / R, ut = j - (k[1] - nt) / $, [a, l] = [l, -a];
                       break;
                     case 180:
-                      st = v - this.width + (L[0] - W) / R, ut = j - (L[1] - nt) / $, [a, l] = [-a, -l];
+                      st = v - this.width + (k[0] - W) / R, ut = j - (k[1] - nt) / $, [a, l] = [-a, -l];
                       break;
                     case 270:
-                      st = v + (L[0] - W - this.height * $) / R, ut = j + (L[1] - nt - this.width * R) / $, [a, l] = [-l, a];
+                      st = v + (k[0] - W - this.height * $) / R, ut = j + (k[1] - nt - this.width * R) / $, [a, l] = [-l, a];
                       break;
                   }
                   this.setAt(st * lt, ut * _t, a, l);
@@ -8945,7 +8945,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 const {
                   data: {
                     defaultAppearanceData: {
-                      fontSize: L,
+                      fontSize: k,
                       fontColor: a
                     },
                     rect: l,
@@ -8965,7 +8965,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 lt = v = {
                   annotationType: n.AnnotationEditorType.FREETEXT,
                   color: Array.from(a),
-                  fontSize: L,
+                  fontSize: k,
                   value: W.join(`
 `),
                   position: nt,
@@ -8977,7 +8977,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 };
               }
               const _t = super.deserialize(v, j, D);
-              return it(_t, p, v.fontSize), it(_t, M, n.Util.makeHexColor(...v.color)), it(_t, S, v.value), _t.annotationElementId = v.id || null, it(_t, f, lt), _t;
+              return it(_t, p, v.fontSize), it(_t, M, n.Util.makeHexColor(...v.color)), it(_t, S, v.value), _t.annotationElementId = v.id || null, it(_t, u, lt), _t;
             }
             serialize(v = !1) {
               if (this.isEmpty())
@@ -9000,7 +9000,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return v ? _t : this.annotationElementId && !X(this, P, cn).call(this, _t) ? null : (_t.id = this.annotationElementId, _t);
             }
           };
-          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakSet(), an = function(v) {
+          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakSet(), an = function(v) {
             const j = (lt) => {
               this.editorDiv.style.fontSize = `calc(${lt}px * var(--scale-factor))`, this.translate(0, -(lt - t(this, p)) * this.parentScale), it(this, p, lt), X(this, E, _e).call(this);
             }, D = t(this, p);
@@ -9048,8 +9048,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 currentLayer: lt,
                 div: _t
-              } = this, L = _t.style.display;
-              _t.style.display = "hidden", lt.div.append(this.div), D = _t.getBoundingClientRect(), _t.remove(), _t.style.display = L;
+              } = this, k = _t.style.display;
+              _t.style.display = "hidden", lt.div.append(this.div), D = _t.getBoundingClientRect(), _t.remove(), _t.style.display = k;
             }
             this.rotation % 180 === this.parentRotation % 180 ? (this.width = D.width / v, this.height = D.height / j) : (this.width = D.height / v, this.height = D.width / j), this.fixAndSetPosition();
           }, o = new WeakSet(), ai = function() {
@@ -9065,9 +9065,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               fontSize: D,
               color: lt,
               rect: _t,
-              pageIndex: L
-            } = t(this, f);
-            return v.value !== j || v.fontSize !== D || v.rect.some((a, l) => Math.abs(a - _t[l]) >= 1) || v.color.some((a, l) => a !== lt[l]) || v.pageIndex !== L;
+              pageIndex: k
+            } = t(this, u);
+            return v.value !== j || v.fontSize !== D || v.rect.some((a, l) => Math.abs(a - _t[l]) >= 1) || v.color.some((a, l) => a !== lt[l]) || v.pageIndex !== k;
           }, tt = new WeakSet(), oi = function(v = !1) {
             if (!this.annotationElementId)
               return;
@@ -9076,19 +9076,19 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return;
             }
             const j = K._internalPadding * this.parentScale;
-            t(this, f).rect = this.getRect(j, j);
+            t(this, u).rect = this.getRect(j, j);
           }, Zt(K, "_freeTextDefaultContent", ""), Zt(K, "_l10nPromise"), Zt(K, "_internalPadding", 0), Zt(K, "_defaultColor", null), Zt(K, "_defaultFontSize", 10), Zt(K, "_type", "freetext");
           let I = K;
           e.FreeTextEditor = I;
         },
         /* 29 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           var l, R, re, W, hn, st, ut, wt, yt, Et, ot, At, St, Rt, Bt, kt, Ut, at, J, rt, dt, xt, li, jt, ci, Nt, hi, $t, Gt, Ct, m, B, ht, Lt, Pt, pt, vt, dn, gt, di;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.StampAnnotationElement = e.InkAnnotationElement = e.FreeTextAnnotationElement = e.AnnotationLayer = void 0;
-          var n = k(1), u = k(6), q = k(3), V = k(30), I = k(31), c = k(32);
+          var n = L(1), f = L(6), q = L(3), V = L(30), I = L(31), c = L(32);
           const d = 1e3, r = 9, F = /* @__PURE__ */ new WeakSet();
           function M(bt) {
             return {
@@ -9102,7 +9102,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 case n.AnnotationType.LINK:
                   return new p(O);
                 case n.AnnotationType.TEXT:
-                  return new f(O);
+                  return new u(O);
                 case n.AnnotationType.WIDGET:
                   switch (O.data.fieldType) {
                     case "Tx":
@@ -9144,7 +9144,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 case n.AnnotationType.STAMP:
                   return new _t(O);
                 case n.AnnotationType.FILEATTACHMENT:
-                  return new L(O);
+                  return new k(O);
                 default:
                   return new h(O);
               }
@@ -9619,7 +9619,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           }, W = new WeakSet(), hn = function(C, z) {
             C.href = this.linkService.getAnchorUrl(""), C.onclick = () => (this.linkService.executeSetOCGState(z), !1), X(this, R, re).call(this);
           };
-          class f extends h {
+          class u extends h {
             constructor(O) {
               var z, H, et;
               const C = !!(O.data.popupRef || (z = O.data.titleObj) != null && z.str || (H = O.data.contentsObj) != null && H.str || (et = O.data.richText) != null && et.str);
@@ -10225,7 +10225,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, rt, null);
               N(this, dt, !1);
               it(this, ot, O), it(this, rt, H), it(this, At, ft), it(this, J, Mt), it(this, Rt, G), it(this, Et, C), it(this, at, ct), it(this, Bt, mt), it(this, St, z);
-              const Tt = u.PDFDateString.toDateObject(et);
+              const Tt = f.PDFDateString.toDateObject(et);
               Tt && it(this, st, G.l10n.get("annotation_date_string", {
                 date: Tt.toLocaleDateString(),
                 time: Tt.toLocaleTimeString()
@@ -10578,7 +10578,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             }
           }
           e.StampAnnotationElement = _t;
-          class L extends h {
+          class k extends h {
             constructor(C) {
               var et;
               super(C, {
@@ -10589,7 +10589,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 filename: z,
                 content: H
               } = this.data.file;
-              this.filename = (0, u.getFilenameFromUrl)(z, !0), this.content = H, (et = this.linkService.eventBus) == null || et.dispatch("fileattachmentannotation", {
+              this.filename = (0, f.getFilenameFromUrl)(z, !0), this.content = H, (et = this.linkService.eventBus) == null || et.dispatch("fileattachmentannotation", {
                 source: this,
                 filename: z,
                 content: H
@@ -10636,7 +10636,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const {
                 annotations: C
               } = O, z = this.div;
-              (0, u.setLayerDimensions)(z, this.viewport);
+              (0, f.setLayerDimensions)(z, this.viewport);
               const H = /* @__PURE__ */ new Map(), et = {
                 data: null,
                 layer: z,
@@ -10644,7 +10644,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 downloadManager: O.downloadManager,
                 imageResourcesPath: O.imageResourcesPath || "",
                 renderForms: O.renderForms !== !1,
-                svgFactory: new u.DOMSVGFactory(),
+                svgFactory: new f.DOMSVGFactory(),
                 annotationStorage: O.annotationStorage || new q.AnnotationStorage(),
                 enableScripting: O.enableScripting === !0,
                 hasJSActions: O.hasJSActions,
@@ -10687,7 +10687,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               viewport: O
             }) {
               const C = this.div;
-              this.viewport = O, (0, u.setLayerDimensions)(C, {
+              this.viewport = O, (0, f.setLayerDimensions)(C, {
                 rotation: O.rotation
               }), X(this, gt, di).call(this), C.hidden = !1;
             }
@@ -10701,7 +10701,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Lt = new WeakMap(), Pt = new WeakMap(), pt = new WeakMap(), vt = new WeakSet(), dn = function(O, C) {
             var H;
             const z = O.firstChild || O;
-            z.id = `${u.AnnotationPrefix}${C}`, this.div.append(O), (H = t(this, Lt)) == null || H.moveElementInDOM(this.div, O, z, !1);
+            z.id = `${f.AnnotationPrefix}${C}`, this.div.append(O), (H = t(this, Lt)) == null || H.moveElementInDOM(this.div, O, z, !1);
           }, gt = new WeakSet(), di = function() {
             if (!t(this, Pt))
               return;
@@ -10724,13 +10724,13 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.ColorConverters = void 0;
-          function k(q) {
+          function L(q) {
             return Math.floor(Math.max(0, Math.min(1, q)) * 255).toString(16).padStart(2, "0");
           }
           function n(q) {
             return Math.max(0, Math.min(255, 255 * q));
           }
-          class u {
+          class f {
             static CMYK_G([V, I, c, d]) {
               return ["G", 1 - Math.min(1, 0.3 * V + 0.59 * c + 0.11 * I + d)];
             }
@@ -10744,7 +10744,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return V = n(V), [V, V, V];
             }
             static G_HTML([V]) {
-              const I = k(V);
+              const I = L(V);
               return `#${I}${I}${I}`;
             }
             static RGB_G([V, I, c]) {
@@ -10754,7 +10754,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return V.map(n);
             }
             static RGB_HTML(V) {
-              return `#${V.map(k).join("")}`;
+              return `#${V.map(L).join("")}`;
             }
             static T_HTML() {
               return "#00000000";
@@ -10777,7 +10777,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return ["CMYK", d, r, F, M];
             }
           }
-          e.ColorConverters = u;
+          e.ColorConverters = f;
         },
         /* 31 */
         /***/
@@ -10785,7 +10785,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.NullL10n = void 0, e.getL10nFallback = n;
-          const k = {
+          const L = {
             of_pages: "of {{pagesCount}}",
             page_of_pages: "({{pageNumber}} of {{pagesCount}})",
             document_properties_kb: "{{size_kb}} KB ({{size_b}} bytes)",
@@ -10833,7 +10833,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             editor_ink2_aria_label: "Draw Editor",
             editor_ink_canvas_aria_label: "User-created image"
           };
-          k.print_progress_percent = "{{progress}}%";
+          L.print_progress_percent = "{{progress}}%";
           function n(V, I) {
             switch (V) {
               case "find_match_count":
@@ -10843,9 +10843,9 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 V = `find_match_count_limit[${I.limit === 1 ? "one" : "other"}]`;
                 break;
             }
-            return k[V] || "";
+            return L[V] || "";
           }
-          function u(V, I) {
+          function f(V, I) {
             return I ? V.replaceAll(/\{\{\s*(\w+)\s*\}\}/g, (c, d) => d in I ? I[d] : "{{" + d + "}}") : V;
           }
           const q = {
@@ -10856,7 +10856,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return "ltr";
             },
             async get(V, I = null, c = n(V, I)) {
-              return u(c, I);
+              return f(c, I);
             },
             async translate(V) {
             }
@@ -10865,12 +10865,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 32 */
         /***/
-        (A, e, k) => {
+        (A, e, L) => {
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.XfaLayer = void 0;
-          var n = k(25);
-          class u {
+          var n = L(25);
+          class f {
             static setupStorage(V, I, c, d, r) {
               const F = d.getValue(I, {
                 value: null
@@ -10963,18 +10963,18 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               });
               const M = [[d, -1, F]], S = V.div;
               if (S.append(F), V.viewport) {
-                const f = `matrix(${V.viewport.transform.join(",")})`;
-                S.style.transform = f;
+                const u = `matrix(${V.viewport.transform.join(",")})`;
+                S.style.transform = u;
               }
               r !== "richText" && S.setAttribute("class", "xfaLayer xfaFont");
               const h = [];
               for (; M.length > 0; ) {
-                const [f, y, b] = M.at(-1);
-                if (y + 1 === f.children.length) {
+                const [u, y, b] = M.at(-1);
+                if (y + 1 === u.children.length) {
                   M.pop();
                   continue;
                 }
-                const g = f.children[++M.at(-1)[1]];
+                const g = u.children[++M.at(-1)[1]];
                 if (g === null)
                   continue;
                 const {
@@ -10999,8 +10999,8 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                   n.XfaText.shouldBuildText(w) && h.push(i), s.append(i);
                 }
               }
-              for (const f of S.querySelectorAll(".xfaNonInteractive input, .xfaNonInteractive textarea"))
-                f.setAttribute("readOnly", !0);
+              for (const u of S.querySelectorAll(".xfaNonInteractive input, .xfaNonInteractive textarea"))
+                u.setAttribute("readOnly", !0);
               return {
                 textDivs: h
               };
@@ -11010,17 +11010,17 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               V.div.style.transform = I, V.div.hidden = !1;
             }
           }
-          e.XfaLayer = u;
+          e.XfaLayer = f;
         },
         /* 33 */
         /***/
-        (A, e, k) => {
-          var c, d, r, F, M, S, h, p, f, y, b, g, w, s, i, E, un, o, fn, P, pn, tt, gn, K, ui, Q, mn, j, fi, lt, _n, L, bn, l, vn, $, yn, nt, An, ut, ne, yt, pi, ot, ke, St, Le, Bt, he, Ut, gi, J, Re, dt, Sn, Ot, mi, Wt, En, Ht, wn, Gt, _i, m, Fe, ht, de;
+        (A, e, L) => {
+          var c, d, r, F, M, S, h, p, u, y, b, g, w, s, i, E, un, o, fn, P, pn, tt, gn, K, ui, Q, mn, j, fi, lt, _n, k, bn, l, vn, $, yn, nt, An, ut, ne, yt, pi, ot, ke, St, Le, Bt, he, Ut, gi, J, Re, dt, Sn, Ot, mi, Wt, En, Ht, wn, Gt, _i, m, Fe, ht, de;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.InkEditor = void 0;
-          var n = k(1), u = k(4), q = k(29), V = k(5);
-          const Pt = class Pt extends u.AnnotationEditor {
+          var n = L(1), f = L(4), q = L(29), V = L(5);
+          const Pt = class Pt extends f.AnnotationEditor {
             constructor(U) {
               super({
                 ...U,
@@ -11034,7 +11034,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, Q);
               N(this, j);
               N(this, lt);
-              N(this, L);
+              N(this, k);
               N(this, l);
               N(this, $);
               N(this, nt);
@@ -11057,7 +11057,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, S, this.canvasPointerup.bind(this));
               N(this, h, this.canvasPointerdown.bind(this));
               N(this, p, new Path2D());
-              N(this, f, !1);
+              N(this, u, !1);
               N(this, y, !1);
               N(this, b, !1);
               N(this, g, null);
@@ -11096,10 +11096,10 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             }
             static get defaultPropertiesToUpdate() {
-              return [[n.AnnotationEditorParamsType.INK_THICKNESS, Pt._defaultThickness], [n.AnnotationEditorParamsType.INK_COLOR, Pt._defaultColor || u.AnnotationEditor._defaultLineColor], [n.AnnotationEditorParamsType.INK_OPACITY, Math.round(Pt._defaultOpacity * 100)]];
+              return [[n.AnnotationEditorParamsType.INK_THICKNESS, Pt._defaultThickness], [n.AnnotationEditorParamsType.INK_COLOR, Pt._defaultColor || f.AnnotationEditor._defaultLineColor], [n.AnnotationEditorParamsType.INK_OPACITY, Math.round(Pt._defaultOpacity * 100)]];
             }
             get propertiesToUpdate() {
-              return [[n.AnnotationEditorParamsType.INK_THICKNESS, this.thickness || Pt._defaultThickness], [n.AnnotationEditorParamsType.INK_COLOR, this.color || Pt._defaultColor || u.AnnotationEditor._defaultLineColor], [n.AnnotationEditorParamsType.INK_OPACITY, Math.round(100 * (this.opacity ?? Pt._defaultOpacity))]];
+              return [[n.AnnotationEditorParamsType.INK_THICKNESS, this.thickness || Pt._defaultThickness], [n.AnnotationEditorParamsType.INK_COLOR, this.color || Pt._defaultColor || f.AnnotationEditor._defaultLineColor], [n.AnnotationEditorParamsType.INK_OPACITY, Math.round(100 * (this.opacity ?? Pt._defaultOpacity))]];
             }
             rebuild() {
               this.parent && (super.rebuild(), this.div !== null && (this.canvas || (X(this, ot, ke).call(this), X(this, St, Le).call(this)), this.isAttachedToDOM || (this.parent.add(this), X(this, Bt, he).call(this)), X(this, ht, de).call(this)));
@@ -11115,7 +11115,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this.setDimensions(Ft, bt);
             }
             enableEditMode() {
-              t(this, f) || this.canvas === null || (super.enableEditMode(), this._isDraggable = !1, this.canvas.addEventListener("pointerdown", t(this, h)));
+              t(this, u) || this.canvas === null || (super.enableEditMode(), this._isDraggable = !1, this.canvas.addEventListener("pointerdown", t(this, h)));
             }
             disableEditMode() {
               !this.isInEditMode() || this.canvas === null || (super.disableEditMode(), this._isDraggable = !this.isEmpty(), this.div.classList.remove("editing"), this.canvas.removeEventListener("pointerdown", t(this, h)));
@@ -11127,7 +11127,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return this.paths.length === 0 || this.paths.length === 1 && this.paths[0].length === 0;
             }
             commit() {
-              t(this, f) || (super.commit(), this.isEditing = !1, this.disableEditMode(), this.setInForeground(), it(this, f, !0), this.div.classList.add("disabled"), X(this, ht, de).call(this, !0), this.makeResizable(), this.parent.addInkEditorIfNeeded(!0), this.moveInDOM(), this.div.focus({
+              t(this, u) || (super.commit(), this.isEditing = !1, this.disableEditMode(), this.setInForeground(), it(this, u, !0), this.div.classList.add("disabled"), X(this, ht, de).call(this, !0), this.makeResizable(), this.parent.addInkEditorIfNeeded(!0), this.moveInDOM(), this.div.focus({
                 preventScroll: !0
               }));
             }
@@ -11135,7 +11135,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               this._focusEventsAllowed && (super.focusin(U), this.enableEditMode());
             }
             canvasPointerdown(U) {
-              U.button !== 0 || !this.isInEditMode() || t(this, f) || (this.setInForeground(), U.preventDefault(), U.type !== "mouse" && this.div.focus(), X(this, Q, mn).call(this, U.offsetX, U.offsetY));
+              U.button !== 0 || !this.isInEditMode() || t(this, u) || (this.setInForeground(), U.preventDefault(), U.type !== "mouse" && this.div.focus(), X(this, Q, mn).call(this, U.offsetX, U.offsetY));
             }
             canvasContextMenu(U) {
               U.preventDefault();
@@ -11150,7 +11150,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               X(this, yt, pi).call(this, U);
             }
             get isResizable() {
-              return !this.isEmpty() && t(this, f);
+              return !this.isEmpty() && t(this, u);
             }
             render() {
               if (this.div)
@@ -11174,7 +11174,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 return;
               it(this, w, Ft), it(this, s, bt), this.canvas.style.visibility = "hidden";
               const [O, C] = this.parentDimensions;
-              this.width = U / O, this.height = gt / C, this.fixAndSetPosition(), t(this, f) && X(this, Ut, gi).call(this, U, gt), X(this, Bt, he).call(this), X(this, ut, ne).call(this), this.canvas.style.visibility = "visible", this.fixDims();
+              this.width = U / O, this.height = gt / C, this.fixAndSetPosition(), t(this, u) && X(this, Ut, gi).call(this, U, gt), X(this, Bt, he).call(this), X(this, ut, ne).call(this), this.canvas.style.visibility = "visible", this.fixDims();
             }
             static deserialize(U, gt, Ft) {
               var It, Tt, Dt;
@@ -11183,7 +11183,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               const bt = super.deserialize(U, gt, Ft);
               bt.thickness = U.thickness, bt.color = n.Util.makeHexColor(...U.color), bt.opacity = U.opacity;
               const [O, C] = bt.pageDimensions, z = bt.width * O, H = bt.height * C, et = bt.parentScale, ft = U.thickness / 2;
-              it(bt, f, !0), it(bt, w, Math.round(z)), it(bt, s, Math.round(H));
+              it(bt, u, !0), it(bt, w, Math.round(z)), it(bt, s, Math.round(H));
               const {
                 paths: Mt,
                 rect: G,
@@ -11204,12 +11204,12 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 bt.bezierPath2D.push(Qt);
               }
               const mt = X(Tt = bt, Gt, _i).call(Tt);
-              return it(bt, d, Math.max(u.AnnotationEditor.MIN_SIZE, mt[2] - mt[0])), it(bt, c, Math.max(u.AnnotationEditor.MIN_SIZE, mt[3] - mt[1])), X(Dt = bt, Ut, gi).call(Dt, z, H), bt;
+              return it(bt, d, Math.max(f.AnnotationEditor.MIN_SIZE, mt[2] - mt[0])), it(bt, c, Math.max(f.AnnotationEditor.MIN_SIZE, mt[3] - mt[1])), X(Dt = bt, Ut, gi).call(Dt, z, H), bt;
             }
             serialize() {
               if (this.isEmpty())
                 return null;
-              const U = this.getRect(0, 0), gt = u.AnnotationEditor._colorManager.convert(this.ctx.strokeStyle);
+              const U = this.getRect(0, 0), gt = f.AnnotationEditor._colorManager.convert(this.ctx.strokeStyle);
               return {
                 annotationType: n.AnnotationEditorType.INK,
                 color: gt,
@@ -11222,7 +11222,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               };
             }
           };
-          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakMap(), s = new WeakMap(), i = new WeakMap(), E = new WeakSet(), un = function(U) {
+          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakMap(), s = new WeakMap(), i = new WeakMap(), E = new WeakSet(), un = function(U) {
             const gt = this.thickness;
             this.addCommands({
               cmd: () => {
@@ -11291,7 +11291,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             } = this;
             U.lineWidth = bt * O / C, U.lineCap = "round", U.lineJoin = "round", U.miterLimit = 10, U.strokeStyle = `${gt}${(0, V.opacityToHex)(Ft)}`;
           }, Q = new WeakSet(), mn = function(U, gt) {
-            this.canvas.addEventListener("contextmenu", t(this, r)), this.canvas.addEventListener("pointerleave", t(this, M)), this.canvas.addEventListener("pointermove", t(this, F)), this.canvas.addEventListener("pointerup", t(this, S)), this.canvas.removeEventListener("pointerdown", t(this, h)), this.isEditing = !0, t(this, b) || (it(this, b, !0), X(this, Bt, he).call(this), this.thickness || (this.thickness = Pt._defaultThickness), this.color || (this.color = Pt._defaultColor || u.AnnotationEditor._defaultLineColor), this.opacity ?? (this.opacity = Pt._defaultOpacity)), this.currentPath.push([U, gt]), it(this, y, !1), X(this, K, ui).call(this), it(this, i, () => {
+            this.canvas.addEventListener("contextmenu", t(this, r)), this.canvas.addEventListener("pointerleave", t(this, M)), this.canvas.addEventListener("pointermove", t(this, F)), this.canvas.addEventListener("pointerup", t(this, S)), this.canvas.removeEventListener("pointerdown", t(this, h)), this.isEditing = !0, t(this, b) || (it(this, b, !0), X(this, Bt, he).call(this), this.thickness || (this.thickness = Pt._defaultThickness), this.color || (this.color = Pt._defaultColor || f.AnnotationEditor._defaultLineColor), this.opacity ?? (this.opacity = Pt._defaultOpacity)), this.currentPath.push([U, gt]), it(this, y, !1), X(this, K, ui).call(this), it(this, i, () => {
               X(this, l, vn).call(this), t(this, i) && window.requestAnimationFrame(t(this, i));
             }), window.requestAnimationFrame(t(this, i));
           }, j = new WeakSet(), fi = function(U, gt) {
@@ -11310,7 +11310,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               return;
             const U = this.currentPath.at(-1);
             t(this, p).lineTo(...U);
-          }, L = new WeakSet(), bn = function(U, gt) {
+          }, k = new WeakSet(), bn = function(U, gt) {
             it(this, i, null), U = Math.min(Math.max(U, 0), this.canvas.width), gt = Math.min(Math.max(gt, 0), this.canvas.height), X(this, j, fi).call(this, U, gt), X(this, lt, _n).call(this);
             let Ft;
             if (this.currentPath.length !== 1)
@@ -11375,7 +11375,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           }, yt = new WeakSet(), pi = function(U) {
             this.canvas.removeEventListener("pointerleave", t(this, M)), this.canvas.removeEventListener("pointermove", t(this, F)), this.canvas.removeEventListener("pointerup", t(this, S)), this.canvas.addEventListener("pointerdown", t(this, h)), setTimeout(() => {
               this.canvas.removeEventListener("contextmenu", t(this, r));
-            }, 10), X(this, L, bn).call(this, U.offsetX, U.offsetY), this.addToAnnotationStorage(), this.setInBackground();
+            }, 10), X(this, k, bn).call(this, U.offsetX, U.offsetY), this.addToAnnotationStorage(), this.setInBackground();
           }, ot = new WeakSet(), ke = function() {
             this.canvas = document.createElement("canvas"), this.canvas.width = this.canvas.height = 0, this.canvas.className = "inkEditorCanvas", Pt._l10nPromise.get("editor_ink_canvas_aria_label").then((U) => {
               var gt;
@@ -11482,16 +11482,16 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               }
             return [U, Ft, gt, bt];
           }, m = new WeakSet(), Fe = function() {
-            return t(this, f) ? Math.ceil(this.thickness * this.parentScale) : 0;
+            return t(this, u) ? Math.ceil(this.thickness * this.parentScale) : 0;
           }, ht = new WeakSet(), de = function(U = !1) {
             if (this.isEmpty())
               return;
-            if (!t(this, f)) {
+            if (!t(this, u)) {
               X(this, ut, ne).call(this);
               return;
             }
             const gt = X(this, Gt, _i).call(this), Ft = X(this, m, Fe).call(this);
-            it(this, d, Math.max(u.AnnotationEditor.MIN_SIZE, gt[2] - gt[0])), it(this, c, Math.max(u.AnnotationEditor.MIN_SIZE, gt[3] - gt[1]));
+            it(this, d, Math.max(f.AnnotationEditor.MIN_SIZE, gt[2] - gt[0])), it(this, c, Math.max(f.AnnotationEditor.MIN_SIZE, gt[3] - gt[1]));
             const bt = Math.ceil(Ft + t(this, d) * this.scaleFactor), O = Math.ceil(Ft + t(this, c) * this.scaleFactor), [C, z] = this.parentDimensions;
             this.width = bt / C, this.height = O / z, this.setAspectRatio(bt, O);
             const H = this.translationX, et = this.translationY;
@@ -11504,16 +11504,16 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         },
         /* 34 */
         /***/
-        (A, e, k) => {
-          var c, d, r, F, M, S, h, p, f, y, b, be, w, ve, i, Ie, _, bi, T, Pn, Y, Cn, x, vi, Z, De, v, Tn;
+        (A, e, L) => {
+          var c, d, r, F, M, S, h, p, u, y, b, be, w, ve, i, Ie, _, bi, T, Pn, Y, Cn, x, vi, Z, De, v, Tn;
           Object.defineProperty(e, "__esModule", {
             value: !0
           }), e.StampEditor = void 0;
-          var n = k(1), u = k(4), q = k(6), V = k(29);
-          const D = class D extends u.AnnotationEditor {
-            constructor(L) {
+          var n = L(1), f = L(4), q = L(6), V = L(29);
+          const D = class D extends f.AnnotationEditor {
+            constructor(k) {
               super({
-                ...L,
+                ...k,
                 name: "stampEditor"
               });
               N(this, b);
@@ -11533,28 +11533,28 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               N(this, S, null);
               N(this, h, null);
               N(this, p, null);
-              N(this, f, !1);
+              N(this, u, !1);
               N(this, y, !1);
-              it(this, F, L.bitmapUrl), it(this, M, L.bitmapFile);
+              it(this, F, k.bitmapUrl), it(this, M, k.bitmapFile);
             }
             static get supportedTypes() {
-              const L = ["apng", "avif", "bmp", "gif", "jpeg", "png", "svg+xml", "webp", "x-icon"];
-              return (0, n.shadow)(this, "supportedTypes", L.map((a) => `image/${a}`));
+              const k = ["apng", "avif", "bmp", "gif", "jpeg", "png", "svg+xml", "webp", "x-icon"];
+              return (0, n.shadow)(this, "supportedTypes", k.map((a) => `image/${a}`));
             }
             static get supportedTypesStr() {
               return (0, n.shadow)(this, "supportedTypesStr", this.supportedTypes.join(","));
             }
-            static isHandlingMimeForPasting(L) {
-              return this.supportedTypes.includes(L);
+            static isHandlingMimeForPasting(k) {
+              return this.supportedTypes.includes(k);
             }
-            static paste(L, a) {
+            static paste(k, a) {
               a.pasteEditor(n.AnnotationEditorType.STAMP, {
-                bitmapFile: L.getAsFile()
+                bitmapFile: k.getAsFile()
               });
             }
             remove() {
-              var L, a;
-              t(this, d) && (it(this, c, null), this._uiManager.imageManager.deleteId(t(this, d)), (L = t(this, S)) == null || L.remove(), it(this, S, null), (a = t(this, h)) == null || a.disconnect(), it(this, h, null)), super.remove();
+              var k, a;
+              t(this, d) && (it(this, c, null), this._uiManager.imageManager.deleteId(t(this, d)), (k = t(this, S)) == null || k.remove(), it(this, S, null), (a = t(this, h)) == null || a.disconnect(), it(this, h, null)), super.remove();
             }
             rebuild() {
               if (!this.parent) {
@@ -11575,27 +11575,27 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             render() {
               if (this.div)
                 return this.div;
-              let L, a;
-              if (this.width && (L = this.x, a = this.y), super.render(), this.div.hidden = !0, t(this, c) ? X(this, _, bi).call(this) : X(this, i, Ie).call(this), this.width) {
+              let k, a;
+              if (this.width && (k = this.x, a = this.y), super.render(), this.div.hidden = !0, t(this, c) ? X(this, _, bi).call(this) : X(this, i, Ie).call(this), this.width) {
                 const [l, R] = this.parentDimensions;
-                this.setAt(L * l, a * R, this.width * l, this.height * R);
+                this.setAt(k * l, a * R, this.width * l, this.height * R);
               }
               return this.div;
             }
-            static deserialize(L, a, l) {
-              if (L instanceof V.StampAnnotationElement)
+            static deserialize(k, a, l) {
+              if (k instanceof V.StampAnnotationElement)
                 return null;
-              const R = super.deserialize(L, a, l), {
+              const R = super.deserialize(k, a, l), {
                 rect: $,
                 bitmapUrl: W,
                 bitmapId: nt,
                 isSvg: st
-              } = L;
-              nt && l.imageManager.isValidId(nt) ? it(R, d, nt) : it(R, F, W), it(R, f, st);
+              } = k;
+              nt && l.imageManager.isValidId(nt) ? it(R, d, nt) : it(R, F, W), it(R, u, st);
               const [ut, wt] = R.pageDimensions;
               return R.width = ($[2] - $[0]) / ut, R.height = ($[3] - $[1]) / wt, R;
             }
-            serialize(L = !1, a = null) {
+            serialize(k = !1, a = null) {
               if (this.isEmpty())
                 return null;
               const l = {
@@ -11604,32 +11604,32 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 pageIndex: this.pageIndex,
                 rect: this.getRect(0, 0),
                 rotation: this.rotation,
-                isSvg: t(this, f)
+                isSvg: t(this, u)
               };
-              if (L)
+              if (k)
                 return l.bitmapUrl = X(this, Z, De).call(this, !0), l;
               if (a === null)
                 return l;
               a.stamps || (a.stamps = /* @__PURE__ */ new Map());
-              const R = t(this, f) ? (l.rect[2] - l.rect[0]) * (l.rect[3] - l.rect[1]) : null;
+              const R = t(this, u) ? (l.rect[2] - l.rect[0]) * (l.rect[3] - l.rect[1]) : null;
               if (!a.stamps.has(t(this, d)))
                 a.stamps.set(t(this, d), {
                   area: R,
                   serialized: l
                 }), l.bitmap = X(this, Z, De).call(this, !1);
-              else if (t(this, f)) {
+              else if (t(this, u)) {
                 const $ = a.stamps.get(t(this, d));
                 R > $.area && ($.area = R, $.serialized.bitmap.close(), $.serialized.bitmap = X(this, Z, De).call(this, !1));
               }
               return l;
             }
           };
-          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakMap(), b = new WeakSet(), be = function(L, a = !1) {
-            if (!L) {
+          c = new WeakMap(), d = new WeakMap(), r = new WeakMap(), F = new WeakMap(), M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakMap(), b = new WeakSet(), be = function(k, a = !1) {
+            if (!k) {
               this.remove();
               return;
             }
-            it(this, c, L.bitmap), a || (it(this, d, L.id), it(this, f, L.isSvg)), X(this, _, bi).call(this);
+            it(this, c, k.bitmap), a || (it(this, d, k.id), it(this, u, k.isSvg)), X(this, _, bi).call(this);
           }, w = new WeakSet(), ve = function() {
             it(this, r, null), this._uiManager.enableWaiting(!1), t(this, S) && this.div.focus();
           }, i = new WeakSet(), Ie = function() {
@@ -11647,24 +11647,24 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
               it(this, M, null), this._uiManager.enableWaiting(!0), it(this, r, this._uiManager.imageManager.getFromFile(a).then((l) => X(this, b, be).call(this, l)).finally(() => X(this, w, ve).call(this)));
               return;
             }
-            const L = document.createElement("input");
-            L.type = "file", L.accept = D.supportedTypesStr, it(this, r, new Promise((a) => {
-              L.addEventListener("change", async () => {
-                if (!L.files || L.files.length === 0)
+            const k = document.createElement("input");
+            k.type = "file", k.accept = D.supportedTypesStr, it(this, r, new Promise((a) => {
+              k.addEventListener("change", async () => {
+                if (!k.files || k.files.length === 0)
                   this.remove();
                 else {
                   this._uiManager.enableWaiting(!0);
-                  const l = await this._uiManager.imageManager.getFromFile(L.files[0]);
+                  const l = await this._uiManager.imageManager.getFromFile(k.files[0]);
                   X(this, b, be).call(this, l);
                 }
                 a();
-              }), L.addEventListener("cancel", () => {
+              }), k.addEventListener("cancel", () => {
                 this.remove(), a();
               });
-            }).finally(() => X(this, w, ve).call(this))), L.click();
+            }).finally(() => X(this, w, ve).call(this))), k.click();
           }, _ = new WeakSet(), bi = function() {
             const {
-              div: L
+              div: k
             } = this;
             let {
               width: a,
@@ -11680,37 +11680,37 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
             const [nt, st] = this.parentDimensions;
             this.setDims(a * nt / R, l * st / $), this._uiManager.enableWaiting(!1);
             const ut = it(this, S, document.createElement("canvas"));
-            L.append(ut), L.hidden = !1, X(this, x, vi).call(this, a, l), X(this, v, Tn).call(this), t(this, y) || (this.parent.addUndoableEditor(this), it(this, y, !0));
-          }, T = new WeakSet(), Pn = function(L, a) {
+            k.append(ut), k.hidden = !1, X(this, x, vi).call(this, a, l), X(this, v, Tn).call(this), t(this, y) || (this.parent.addUndoableEditor(this), it(this, y, !0));
+          }, T = new WeakSet(), Pn = function(k, a) {
             var W;
             const [l, R] = this.parentDimensions;
-            this.width = L / l, this.height = a / R, this.setDims(L, a), (W = this._initialOptions) != null && W.isCentered ? this.center() : this.fixAndSetPosition(), this._initialOptions = null, t(this, p) !== null && clearTimeout(t(this, p)), it(this, p, setTimeout(() => {
-              it(this, p, null), X(this, x, vi).call(this, L, a);
+            this.width = k / l, this.height = a / R, this.setDims(k, a), (W = this._initialOptions) != null && W.isCentered ? this.center() : this.fixAndSetPosition(), this._initialOptions = null, t(this, p) !== null && clearTimeout(t(this, p)), it(this, p, setTimeout(() => {
+              it(this, p, null), X(this, x, vi).call(this, k, a);
             }, 200));
-          }, Y = new WeakSet(), Cn = function(L, a) {
+          }, Y = new WeakSet(), Cn = function(k, a) {
             const {
               width: l,
               height: R
             } = t(this, c);
             let $ = l, W = R, nt = t(this, c);
-            for (; $ > 2 * L || W > 2 * a; ) {
+            for (; $ > 2 * k || W > 2 * a; ) {
               const st = $, ut = W;
-              $ > 2 * L && ($ = $ >= 16384 ? Math.floor($ / 2) - 1 : Math.ceil($ / 2)), W > 2 * a && (W = W >= 16384 ? Math.floor(W / 2) - 1 : Math.ceil(W / 2));
+              $ > 2 * k && ($ = $ >= 16384 ? Math.floor($ / 2) - 1 : Math.ceil($ / 2)), W > 2 * a && (W = W >= 16384 ? Math.floor(W / 2) - 1 : Math.ceil(W / 2));
               const wt = new OffscreenCanvas($, W);
               wt.getContext("2d").drawImage(nt, 0, 0, st, ut, 0, 0, $, W), nt = wt.transferToImageBitmap();
             }
             return nt;
-          }, x = new WeakSet(), vi = function(L, a) {
-            L = Math.ceil(L), a = Math.ceil(a);
+          }, x = new WeakSet(), vi = function(k, a) {
+            k = Math.ceil(k), a = Math.ceil(a);
             const l = t(this, S);
-            if (!l || l.width === L && l.height === a)
+            if (!l || l.width === k && l.height === a)
               return;
-            l.width = L, l.height = a;
-            const R = t(this, f) ? t(this, c) : X(this, Y, Cn).call(this, L, a), $ = l.getContext("2d");
-            $.filter = this._uiManager.hcmFilter, $.drawImage(R, 0, 0, R.width, R.height, 0, 0, L, a);
-          }, Z = new WeakSet(), De = function(L) {
-            if (L) {
-              if (t(this, f)) {
+            l.width = k, l.height = a;
+            const R = t(this, u) ? t(this, c) : X(this, Y, Cn).call(this, k, a), $ = l.getContext("2d");
+            $.filter = this._uiManager.hcmFilter, $.drawImage(R, 0, 0, R.width, R.height, 0, 0, k, a);
+          }, Z = new WeakSet(), De = function(k) {
+            if (k) {
+              if (t(this, u)) {
                 const R = this._uiManager.imageManager.getSvgUrl(t(this, d));
                 if (R)
                   return R;
@@ -11721,14 +11721,14 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
                 height: a.height
               } = t(this, c), a.getContext("2d").drawImage(t(this, c), 0, 0), a.toDataURL();
             }
-            if (t(this, f)) {
+            if (t(this, u)) {
               const [a, l] = this.pageDimensions, R = Math.round(this.width * a * q.PixelsPerInch.PDF_TO_CSS_UNITS), $ = Math.round(this.height * l * q.PixelsPerInch.PDF_TO_CSS_UNITS), W = new OffscreenCanvas(R, $);
               return W.getContext("2d").drawImage(t(this, c), 0, 0, t(this, c).width, t(this, c).height, 0, 0, R, $), W.transferToImageBitmap();
             }
             return structuredClone(t(this, c));
           }, v = new WeakSet(), Tn = function() {
-            it(this, h, new ResizeObserver((L) => {
-              const a = L[0].contentRect;
+            it(this, h, new ResizeObserver((k) => {
+              const a = k[0].contentRect;
               a.width && a.height && X(this, T, Pn).call(this, a.width, a.height);
             })), t(this, h).observe(this.div);
           }, Zt(D, "_type", "stamp");
@@ -11741,7 +11741,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         var e = __webpack_module_cache__[A];
         if (e !== void 0)
           return e.exports;
-        var k = __webpack_module_cache__[A] = {
+        var L = __webpack_module_cache__[A] = {
           /******/
           // no module.id needed
           /******/
@@ -11750,7 +11750,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
           exports: {}
           /******/
         };
-        return __webpack_modules__[A](k, k.exports, __w_pdfjs_require__), k.exports;
+        return __webpack_modules__[A](L, L.exports, __w_pdfjs_require__), L.exports;
       }
       var __webpack_exports__ = {};
       return (() => {
@@ -11830,7 +11830,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "PDFDataRangeTransport", {
           enumerable: !0,
           get: function() {
-            return k.PDFDataRangeTransport;
+            return L.PDFDataRangeTransport;
           }
         }), Object.defineProperty(A, "PDFDateString", {
           enumerable: !0,
@@ -11840,7 +11840,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "PDFWorker", {
           enumerable: !0,
           get: function() {
-            return k.PDFWorker;
+            return L.PDFWorker;
           }
         }), Object.defineProperty(A, "PasswordResponses", {
           enumerable: !0,
@@ -11870,7 +11870,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "SVGGraphics", {
           enumerable: !0,
           get: function() {
-            return k.SVGGraphics;
+            return L.SVGGraphics;
           }
         }), Object.defineProperty(A, "UnexpectedResponseException", {
           enumerable: !0,
@@ -11895,7 +11895,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "build", {
           enumerable: !0,
           get: function() {
-            return k.build;
+            return L.build;
           }
         }), Object.defineProperty(A, "createValidAbsoluteUrl", {
           enumerable: !0,
@@ -11905,7 +11905,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "getDocument", {
           enumerable: !0,
           get: function() {
-            return k.getDocument;
+            return L.getDocument;
           }
         }), Object.defineProperty(A, "getFilenameFromUrl", {
           enumerable: !0,
@@ -11945,7 +11945,7 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "renderTextLayer", {
           enumerable: !0,
           get: function() {
-            return u.renderTextLayer;
+            return f.renderTextLayer;
           }
         }), Object.defineProperty(A, "setLayerDimensions", {
           enumerable: !0,
@@ -11960,32 +11960,32 @@ const __viteBrowserExternal = {}, __viteBrowserExternal$1 = /* @__PURE__ */ Obje
         }), Object.defineProperty(A, "updateTextLayer", {
           enumerable: !0,
           get: function() {
-            return u.updateTextLayer;
+            return f.updateTextLayer;
           }
         }), Object.defineProperty(A, "version", {
           enumerable: !0,
           get: function() {
-            return k.version;
+            return L.version;
           }
         });
-        var e = __w_pdfjs_require__(1), k = __w_pdfjs_require__(2), n = __w_pdfjs_require__(6), u = __w_pdfjs_require__(26), q = __w_pdfjs_require__(27), V = __w_pdfjs_require__(5), I = __w_pdfjs_require__(29), c = __w_pdfjs_require__(14), d = __w_pdfjs_require__(32);
+        var e = __w_pdfjs_require__(1), L = __w_pdfjs_require__(2), n = __w_pdfjs_require__(6), f = __w_pdfjs_require__(26), q = __w_pdfjs_require__(27), V = __w_pdfjs_require__(5), I = __w_pdfjs_require__(29), c = __w_pdfjs_require__(14), d = __w_pdfjs_require__(32);
       })(), __webpack_exports__;
     })()
   ));
 })(pdf);
 var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
 (function(A, e) {
-  (function(n, u) {
-    A.exports = n.pdfjsViewer = u();
+  (function(n, f) {
+    A.exports = n.pdfjsViewer = f();
   })(globalThis, () => (
     /******/
     (() => {
-      var k = [
+      var L = [
         ,
         /* 1 */
         /***/
         (V, I, c) => {
-          var Z, Q, v, j, xn, lt, yi, L, Ai, l, Mn, $, kn, nt, Ln, ut, Si, yt, Rn, ot, Fn, St, Oe, Bt, ye, Ut, ue, J, In, dt, Ei, Ot, wi, Wt, Ne, Ht, Dn, Gt, Pi, m, Ci, ht, Ae;
+          var Z, Q, v, j, xn, lt, yi, k, Ai, l, Mn, $, kn, nt, Ln, ut, Si, yt, Rn, ot, Fn, St, Oe, Bt, ye, Ut, ue, J, In, dt, Ei, Ot, wi, Wt, Ne, Ht, Dn, Gt, Pi, m, Ci, ht, Ae;
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.PDFFindController = I.FindState = void 0;
@@ -11997,7 +11997,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             PENDING: 3
           };
           I.FindState = M;
-          const S = 250, h = -50, p = -400, f = {
+          const S = 250, h = -50, p = -400, u = {
             "‐": "-",
             "‘": "'",
             "’": "'",
@@ -12032,7 +12032,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             else if (pt.length > 0 && Y)
               U = Y;
             else {
-              const Mt = Object.keys(f).join(""), G = (0, r.getNormalizeWithNFKC)(), It = `([${Mt}])|([${G}])|((?:゙|゚)\\n)|(\\p{M}+(?:-\\n)?)|(\\S-\\n)|((?:\\p{Ideographic}|[぀-ヿ])\\n)|(\\n)`;
+              const Mt = Object.keys(u).join(""), G = (0, r.getNormalizeWithNFKC)(), It = `([${Mt}])|([${G}])|((?:゙|゚)\\n)|(\\p{M}+(?:-\\n)?)|(\\S-\\n)|((?:\\p{Ideographic}|[぀-ヿ])\\n)|(\\n)`;
               pt.length === 0 ? U = P = new RegExp(It + "|(\\u0000)", "gum") : U = Y = new RegExp(It + `|(${o})`, "gum");
             }
             const gt = [];
@@ -12044,7 +12044,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             return Ft = Ft.replace(U, (Mt, G, ct, mt, It, Tt, Dt, Vt, zt, Xt) => {
               var qt, Qt, Yt;
               if (Xt -= H, G) {
-                const Kt = f[G], te = Kt.length;
+                const Kt = u[G], te = Kt.length;
                 for (let Jt = 1; Jt < te; Jt++)
                   bt.push([Xt - z + Jt, z - Jt]);
                 return z -= te - 1, Kt;
@@ -12108,7 +12108,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             }) {
               N(this, j);
               N(this, lt);
-              N(this, L);
+              N(this, k);
               N(this, l);
               N(this, $);
               N(this, nt);
@@ -12194,7 +12194,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               matchIdx: null,
               wrapped: !1
             }, this._extractTextPromises = [], this._pageContents = [], this._pageDiffs = [], this._hasDiacritics = [], this._matchesCountTotal = 0, this._pagesToSearch = null, this._pendingFindMatches = /* @__PURE__ */ new Set(), this._resumePageIdx = null, this._dirtyMatch = !1, clearTimeout(this._findTimeout), this._findTimeout = null, this._firstPageCapability = new F.PromiseCapability();
-          }, L = new WeakSet(), Ai = function() {
+          }, k = new WeakSet(), Ai = function() {
             const {
               query: pt
             } = t(this, Z);
@@ -12251,7 +12251,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             const Ft = "[ ]*";
             return pt.endsWith(Ft) && (pt = pt.slice(0, pt.length - Ft.length)), U && vt && (b || (b = String.fromCharCode(...y)), gt = !0, pt = `${pt}(?=[${b}]|[^\\p{M}]|$)`), [gt, pt];
           }, yt = new WeakSet(), Rn = function(pt) {
-            let vt = t(this, L, Ai);
+            let vt = t(this, k, Ai);
             if (vt.length === 0)
               return;
             const {
@@ -12305,7 +12305,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                   this._pendingFindMatches.delete(bt), X(this, yt, Rn).call(this, bt);
                 }));
             }
-            if (t(this, L, Ai).length === 0) {
+            if (t(this, k, Ai).length === 0) {
               X(this, ht, Ae).call(this, M.FOUND);
               return;
             }
@@ -12388,7 +12388,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           var St, Rt, Bt, kt, Ut;
           Object.defineProperty(I, "__esModule", {
             value: !0
-          }), I.animationStarted = I.VERTICAL_PADDING = I.UNKNOWN_SCALE = I.TextLayerMode = I.SpreadMode = I.SidebarView = I.ScrollMode = I.SCROLLBAR_PADDING = I.RenderingStates = I.ProgressBar = I.PresentationModeState = I.OutputScale = I.MIN_SCALE = I.MAX_SCALE = I.MAX_AUTO_SCALE = I.DEFAULT_SCALE_VALUE = I.DEFAULT_SCALE_DELTA = I.DEFAULT_SCALE = I.CursorTool = I.AutoPrintRegExp = void 0, I.apiPageLayoutToViewerModes = yt, I.apiPageModeToSidebarView = Et, I.approximateFraction = Z, I.backtrackBeforeAllVisibleElements = j, I.binarySearchFirstItem = K, I.docStyle = void 0, I.getActiveOrFocusedElement = wt, I.getPageSizeInches = v, I.getVisibleElements = D, I.isPortraitOrientation = $, I.isValidRotation = a, I.isValidScrollMode = l, I.isValidSpreadMode = R, I.noContextMenuHandler = lt, I.normalizeWheelEventDelta = L, I.normalizeWheelEventDirection = _t, I.parseQueryString = Y, I.removeNullCharacters = x, I.roundToDivide = Q, I.scrollIntoView = T, I.toggleCheckedBtn = ot, I.toggleExpandedBtn = At, I.watchScroll = P;
+          }), I.animationStarted = I.VERTICAL_PADDING = I.UNKNOWN_SCALE = I.TextLayerMode = I.SpreadMode = I.SidebarView = I.ScrollMode = I.SCROLLBAR_PADDING = I.RenderingStates = I.ProgressBar = I.PresentationModeState = I.OutputScale = I.MIN_SCALE = I.MAX_SCALE = I.MAX_AUTO_SCALE = I.DEFAULT_SCALE_VALUE = I.DEFAULT_SCALE_DELTA = I.DEFAULT_SCALE = I.CursorTool = I.AutoPrintRegExp = void 0, I.apiPageLayoutToViewerModes = yt, I.apiPageModeToSidebarView = Et, I.approximateFraction = Z, I.backtrackBeforeAllVisibleElements = j, I.binarySearchFirstItem = K, I.docStyle = void 0, I.getActiveOrFocusedElement = wt, I.getPageSizeInches = v, I.getVisibleElements = D, I.isPortraitOrientation = $, I.isValidRotation = a, I.isValidScrollMode = l, I.isValidSpreadMode = R, I.noContextMenuHandler = lt, I.normalizeWheelEventDelta = k, I.normalizeWheelEventDirection = _t, I.parseQueryString = Y, I.removeNullCharacters = x, I.roundToDivide = Q, I.scrollIntoView = T, I.toggleCheckedBtn = ot, I.toggleExpandedBtn = At, I.watchScroll = P;
           const c = "auto";
           I.DEFAULT_SCALE_VALUE = c;
           const d = 1;
@@ -12405,8 +12405,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           I.MAX_AUTO_SCALE = h;
           const p = 40;
           I.SCROLLBAR_PADDING = p;
-          const f = 5;
-          I.VERTICAL_PADDING = f;
+          const u = 5;
+          I.VERTICAL_PADDING = u;
           const y = {
             INITIAL: 0,
             RUNNING: 1,
@@ -12622,7 +12622,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             const rt = Math.atan2(at.deltaY, at.deltaX);
             return -0.25 * Math.PI < rt && rt < 0.75 * Math.PI && (J = -J), J;
           }
-          function L(at) {
+          function k(at) {
             const J = at.deltaMode;
             let rt = _t(at);
             const dt = 30, xt = 30;
@@ -12777,7 +12777,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           function p(i) {
             return i >= 12448 && i <= 12543;
           }
-          function f(i) {
+          function u(i) {
             return i >= 12352 && i <= 12447;
           }
           function y(i) {
@@ -12787,7 +12787,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             return (i & 65408) === 3584;
           }
           function g(i) {
-            return d(i) ? r(i) ? S(i) ? c.SPACE : F(i) || M(i) || i === 95 ? c.ALPHA_LETTER : c.PUNCT : b(i) ? c.THAI_LETTER : i === 160 ? c.SPACE : c.ALPHA_LETTER : h(i) ? c.HAN_LETTER : p(i) ? c.KATAKANA_LETTER : f(i) ? c.HIRAGANA_LETTER : y(i) ? c.HALFWIDTH_KATAKANA_LETTER : c.ALPHA_LETTER;
+            return d(i) ? r(i) ? S(i) ? c.SPACE : F(i) || M(i) || i === 95 ? c.ALPHA_LETTER : c.PUNCT : b(i) ? c.THAI_LETTER : i === 160 ? c.SPACE : c.ALPHA_LETTER : h(i) ? c.HAN_LETTER : p(i) ? c.KATAKANA_LETTER : u(i) ? c.HIRAGANA_LETTER : y(i) ? c.HALFWIDTH_KATAKANA_LETTER : c.ALPHA_LETTER;
           }
           let w;
           function s() {
@@ -12802,7 +12802,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         /* 5 */
         /***/
         (V, I, c) => {
-          var p, f, Ti, b, On;
+          var p, u, Ti, b, On;
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.SimpleLinkService = I.PDFLinkService = I.LinkTarget = void 0;
@@ -12851,7 +12851,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               externalLinkRel: _ = null,
               ignoreDestinationZoom: o = !1
             } = {}) {
-              N(this, f);
+              N(this, u);
               N(this, p, /* @__PURE__ */ new Map());
               this.eventBus = i, this.externalLinkTarget = E, this.externalLinkRel = _, this.externalLinkEnabled = !0, this._ignoreDestinationZoom = o, this.baseUrl = null, this.pdfDocument = null, this.pdfViewer = null, this.pdfHistory = null;
             }
@@ -12890,7 +12890,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 console.error(`PDFLinkService.goToDestination: "${_}" is not a valid destination array, for dest="${i}".`);
                 return;
               }
-              X(this, f, Ti).call(this, i, E, _);
+              X(this, u, Ti).call(this, i, E, _);
             }
             goToPage(i) {
               if (!this.pdfDocument)
@@ -13041,13 +13041,13 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               return t(this, p).get(E) || null;
             }
           };
-          p = new WeakMap(), f = new WeakSet(), Ti = function(i, E = null, _) {
+          p = new WeakMap(), u = new WeakSet(), Ti = function(i, E = null, _) {
             const o = _[0];
             let T;
             if (typeof o == "object" && o !== null) {
               if (T = this._cachedPageNumber(o), !T) {
                 this.pdfDocument.getPageIndex(o).then((P) => {
-                  this.cachePageRef(P + 1, o), X(this, f, Ti).call(this, i, E, _);
+                  this.cachePageRef(P + 1, o), X(this, u, Ti).call(this, i, E, _);
                 }).catch(() => {
                   console.error(`PDFLinkService.#goToDestinationHelper: "${o}" is not a valid page reference, for dest="${i}".`);
                 });
@@ -13364,26 +13364,26 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             constructor() {
               N(this, M, /* @__PURE__ */ new WeakMap());
             }
-            downloadUrl(h, p, f) {
+            downloadUrl(h, p, u) {
               if (!(0, d.createValidAbsoluteUrl)(h, "http://example.com")) {
                 console.error(`downloadUrl - not a valid URL: ${h}`);
                 return;
               }
               r(h + "#pdfjs.action=download", p);
             }
-            downloadData(h, p, f) {
+            downloadData(h, p, u) {
               const y = URL.createObjectURL(new Blob([h], {
-                type: f
+                type: u
               }));
               r(y, p);
             }
-            openOrDownloadData(h, p, f) {
-              const b = (0, d.isPdfFile)(f) ? "application/pdf" : "";
-              return this.downloadData(p, f, b), !1;
+            openOrDownloadData(h, p, u) {
+              const b = (0, d.isPdfFile)(u) ? "application/pdf" : "";
+              return this.downloadData(p, u, b), !1;
             }
-            download(h, p, f, y) {
+            download(h, p, u, y) {
               const b = URL.createObjectURL(h);
-              r(b, f);
+              r(b, u);
             }
           }
           M = new WeakMap(), I.DownloadManager = F;
@@ -13405,11 +13405,11 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             name: h,
             delay: p = 0
           }) {
-            return new Promise(function(f, y) {
+            return new Promise(function(u, y) {
               if (typeof S != "object" || !(h && typeof h == "string") || !(Number.isInteger(p) && p >= 0))
                 throw new Error("waitOnEventOrTimeout - invalid parameters.");
               function b(i) {
-                S instanceof r ? S._off(h, g) : S.removeEventListener(h, g), s && clearTimeout(s), f(i);
+                S instanceof r ? S._off(h, g) : S.removeEventListener(h, g), s && clearTimeout(s), u(i);
               }
               const g = b.bind(null, c.EVENT);
               S instanceof r ? S._on(h, g) : S.addEventListener(h, g);
@@ -13420,28 +13420,28 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             constructor() {
               N(this, M, /* @__PURE__ */ Object.create(null));
             }
-            on(h, p, f = null) {
+            on(h, p, u = null) {
               this._on(h, p, {
                 external: !0,
-                once: f == null ? void 0 : f.once
+                once: u == null ? void 0 : u.once
               });
             }
-            off(h, p, f = null) {
+            off(h, p, u = null) {
               this._off(h, p, {
                 external: !0,
-                once: f == null ? void 0 : f.once
+                once: u == null ? void 0 : u.once
               });
             }
             dispatch(h, p) {
-              const f = t(this, M)[h];
-              if (!f || f.length === 0)
+              const u = t(this, M)[h];
+              if (!u || u.length === 0)
                 return;
               let y;
               for (const {
                 listener: b,
                 external: g,
                 once: w
-              } of f.slice(0)) {
+              } of u.slice(0)) {
                 if (w && this._off(h, b), g) {
                   (y || (y = [])).push(b);
                   continue;
@@ -13454,15 +13454,15 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 y = null;
               }
             }
-            _on(h, p, f = null) {
+            _on(h, p, u = null) {
               var b;
               ((b = t(this, M))[h] || (b[h] = [])).push({
                 listener: p,
-                external: (f == null ? void 0 : f.external) === !0,
-                once: (f == null ? void 0 : f.once) === !0
+                external: (u == null ? void 0 : u.external) === !0,
+                once: (u == null ? void 0 : u.once) === !0
               });
             }
-            _off(h, p, f = null) {
+            _off(h, p, u = null) {
               const y = t(this, M)[h];
               if (y) {
                 for (let b = 0, g = y.length; b < g; b++)
@@ -13512,9 +13512,9 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               const {
                 webL10n: p
               } = document;
-              this._lang = h, this._ready = new Promise((f, y) => {
+              this._lang = h, this._ready = new Promise((u, y) => {
                 p.setLanguage(F(h), () => {
-                  f(p);
+                  u(p);
                 });
               });
             }
@@ -13524,8 +13524,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             async getDirection() {
               return (await this._ready).getDirection();
             }
-            async get(h, p = null, f = (0, d.getL10nFallback)(h, p)) {
-              return (await this._ready).get(h, p, f);
+            async get(h, p = null, u = (0, d.getL10nFallback)(h, p)) {
+              return (await this._ready).get(h, p, u);
             }
             async translate(h) {
               return (await this._ready).translate(h);
@@ -13541,7 +13541,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             function p() {
               return I.querySelectorAll('link[type="application/l10n"]');
             }
-            function f() {
+            function u() {
               var x = I.querySelector('script[type="application/l10n"]');
               return x ? JSON.parse(x.innerHTML) : null;
             }
@@ -13584,7 +13584,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
 `).replace(/\\r/g, "\r").replace(/\\t/g, "	").replace(/\\b/g, "\b").replace(/\\f/g, "\f").replace(/\\{/g, "{").replace(/\\}/g, "}").replace(/\\"/g, '"').replace(/\\'/g, "'");
               }
               function D(lt, _t) {
-                var L = {}, a = /^\s*|\s*$/, l = /^\s*#|^\s*$/, R = /^\s*\[(.*)\]\s*$/, $ = /^\s*@import\s+url\((.*)\)\s*$/i, W = /^([^=\s]*)\s*=\s*(.+)$/;
+                var k = {}, a = /^\s*|\s*$/, l = /^\s*#|^\s*$/, R = /^\s*\[(.*)\]\s*$/, $ = /^\s*@import\s+url\((.*)\)\s*$/i, W = /^([^=\s]*)\s*=\s*(.+)$/;
                 function nt(ut, wt, yt) {
                   var Et = ut.replace(a, "").split(/[\r\n]+/), ot = "*", At = K.split("-", 1)[0], St = !1, Rt = "";
                   function Bt() {
@@ -13607,7 +13607,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                           }
                         }
                         var Ut = kt.match(W);
-                        Ut && Ut.length == 3 && (L[Ut[1]] = j(Ut[2]));
+                        Ut && Ut.length == 3 && (k[Ut[1]] = j(Ut[2]));
                       }
                     }
                   }
@@ -13621,14 +13621,14 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                   });
                 }
                 nt(lt, !0, function() {
-                  _t(L);
+                  _t(k);
                 });
               }
               g(x, function(lt) {
                 d += lt, D(lt, function(_t) {
-                  for (var L in _t) {
-                    var a, l, R = L.lastIndexOf(".");
-                    R > 0 ? (a = L.substring(0, R), l = L.substring(R + 1)) : (a = L, l = r), c[a] || (c[a] = {}), c[a][l] = _t[L];
+                  for (var k in _t) {
+                    var a, l, R = k.lastIndexOf(".");
+                    R > 0 ? (a = k.substring(0, R), l = k.substring(R + 1)) : (a = k, l = r), c[a] || (c[a] = {}), c[a][l] = _t[k];
                   }
                   Z && Z();
                 });
@@ -13639,7 +13639,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               }, i(), F = x;
               var Z = p(), Q = Z.length;
               if (Q === 0) {
-                var v = f();
+                var v = u();
                 if (v && v.locales && v.default_locale) {
                   if (console.log("using the embedded JSON directory, early way out"), c = v.locales[x], !c) {
                     var j = v.default_locale.toLowerCase();
@@ -13660,7 +13660,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               lt = function() {
                 _t++, _t >= Q && (K(), S = "complete");
               };
-              function L(R) {
+              function k(R) {
                 var $ = R.href;
                 this.load = function(W, nt) {
                   w($, W, nt, function() {
@@ -13669,7 +13669,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 };
               }
               for (var a = 0; a < Q; a++) {
-                var l = new L(Z[a]);
+                var l = new k(Z[a]);
                 l.load(x, lt);
               }
             }
@@ -13964,8 +13964,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 return x;
               var D = j[1], lt = j[2], _t;
               if (K && lt in K ? _t = K[lt] : lt in c && (_t = c[lt]), D in M) {
-                var L = M[D];
-                x = L(x, _t, Z, Q);
+                var k = M[D];
+                x = k(x, _t, Z, Q);
               }
               return x;
             }
@@ -14064,7 +14064,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         (V, I, c) => {
           Object.defineProperty(I, "__esModule", {
             value: !0
-          }), I.PDFHistory = void 0, I.isDestArraysEqual = y, I.isDestHashesEqual = f;
+          }), I.PDFHistory = void 0, I.isDestArraysEqual = y, I.isDestHashesEqual = u;
           var d = c(2), r = c(9);
           const F = 1e3, M = 50, S = 1e3;
           function h() {
@@ -14142,7 +14142,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               if (!i)
                 return;
               let E = !1;
-              if (this._destination && (f(this._destination.hash, i) || y(this._destination.dest, w))) {
+              if (this._destination && (u(this._destination.hash, i) || y(this._destination.dest, w))) {
                 if (this._destination.page)
                   return;
                 E = !0;
@@ -14321,7 +14321,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             }
           }
           I.PDFHistory = p;
-          function f(b, g) {
+          function u(b, g) {
             return typeof b != "string" || typeof g != "string" ? !1 : b === g || (0, d.parseQueryString)(b).get("nameddest") === g;
           }
           function y(b, g) {
@@ -14353,7 +14353,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.PDFPageView = void 0;
-          var d = c(4), r = c(2), F = c(14), M = c(6), S = c(15), h = c(7), p = c(5), f = c(16), y = c(17), b = c(18), g = c(19), w = c(20);
+          var d = c(4), r = c(2), F = c(14), M = c(6), S = c(15), h = c(7), p = c(5), u = c(16), y = c(17), b = c(18), g = c(19), w = c(20);
           const s = S.compatibilityParams.maxCanvasPixels || 16777216, i = () => ({
             annotationEditorUIManager: null,
             annotationStorage: null,
@@ -14825,7 +14825,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             var St, Rt, Bt;
             if (!this.textLayer)
               return;
-            this.structTreeLayer || (this.structTreeLayer = new f.StructTreeLayerBuilder());
+            this.structTreeLayer || (this.structTreeLayer = new u.StructTreeLayerBuilder());
             const ot = await (this.structTreeLayer.renderingDone ? null : this.pdfPage.getStructTree()), At = (St = this.structTreeLayer) == null ? void 0 : St.render(ot);
             At && ((Rt = this.canvas) == null || Rt.append(At)), (Bt = this.structTreeLayer) == null || Bt.show();
           }, st = new WeakSet(), Bn = async function(ot) {
@@ -14862,8 +14862,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               N(this, S, void 0);
               this.pageDiv = p.pageDiv, this.pdfPage = p.pdfPage, this.accessibilityManager = p.accessibilityManager, this.l10n = p.l10n || r.NullL10n, this.annotationEditorLayer = null, this.div = null, this._cancelled = !1, it(this, S, p.uiManager), it(this, M, p.annotationLayer || null);
             }
-            async render(p, f = "display") {
-              if (f !== "display" || this._cancelled)
+            async render(p, u = "display") {
+              if (u !== "display" || this._cancelled)
                 return;
               const y = p.clone({
                 dontFlip: !0
@@ -14888,7 +14888,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 viewport: y,
                 div: b,
                 annotations: null,
-                intent: f
+                intent: u
               };
               this.annotationEditorLayer.render(g), this.show();
             }
@@ -14913,9 +14913,9 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           const c = /* @__PURE__ */ Object.create(null);
           I.compatibilityParams = c;
           {
-            const S = navigator.userAgent || "", h = navigator.platform || "", p = navigator.maxTouchPoints || 1, f = /Android/.test(S), y = /\b(iPad|iPhone|iPod)(?=;)/.test(S) || h === "MacIntel" && p > 1;
+            const S = navigator.userAgent || "", h = navigator.platform || "", p = navigator.maxTouchPoints || 1, u = /Android/.test(S), y = /\b(iPad|iPhone|iPod)(?=;)/.test(S) || h === "MacIntel" && p > 1;
             (function() {
-              (y || f) && (c.maxCanvasPixels = 5242880);
+              (y || u) && (c.maxCanvasPixels = 5242880);
             })();
           }
           const d = {
@@ -15129,28 +15129,28 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               const p = F[h];
               if (p !== void 0)
                 return p;
-              const f = r[h];
-              if (f !== void 0)
-                return c[h] ?? f.value;
+              const u = r[h];
+              if (u !== void 0)
+                return c[h] ?? u.value;
             }
             static getAll(h = null) {
               const p = /* @__PURE__ */ Object.create(null);
-              for (const f in r) {
-                const y = r[f];
+              for (const u in r) {
+                const y = r[u];
                 if (h) {
                   if (!(h & y.kind))
                     continue;
                   if (h === d.PREFERENCE) {
                     const g = y.value, w = typeof g;
                     if (w === "boolean" || w === "string" || w === "number" && Number.isInteger(g)) {
-                      p[f] = g;
+                      p[u] = g;
                       continue;
                     }
-                    throw new Error(`Invalid type for preference: ${f}`);
+                    throw new Error(`Invalid type for preference: ${u}`);
                   }
                 }
-                const b = F[f];
-                p[f] = b !== void 0 ? b : c[f] ?? y.value;
+                const b = F[u];
+                p[u] = b !== void 0 ? b : c[u] ?? y.value;
               }
               return p;
             }
@@ -15412,7 +15412,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 textContentItemsStr: M
               } = this;
               let S = 0, h = 0;
-              const p = M.length - 1, f = [];
+              const p = M.length - 1, u = [];
               for (let y = 0, b = r.length; y < b; y++) {
                 let g = r[y];
                 for (; S !== p && g >= h + M[S].length; )
@@ -15429,9 +15429,9 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 w.end = {
                   divIdx: S,
                   offset: g - h
-                }, f.push(w);
+                }, u.push(w);
               }
-              return f;
+              return u;
             }
             _renderMatches(r) {
               if (r.length === 0)
@@ -15442,7 +15442,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               } = this, {
                 textContentItemsStr: S,
                 textDivs: h
-              } = this, p = M === F.selected.pageIdx, f = F.selected.matchIdx, y = F.state.highlightAll;
+              } = this, p = M === F.selected.pageIdx, u = F.selected.matchIdx, y = F.state.highlightAll;
               let b = null;
               const g = {
                 divIdx: -1,
@@ -15465,7 +15465,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 }
                 return x.append(Z), 0;
               }
-              let i = f, E = i + 1;
+              let i = u, E = i + 1;
               if (y)
                 i = 0, E = r.length;
               else if (!p)
@@ -15476,7 +15476,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 if (Y.divIdx === _ && Y.offset === o)
                   continue;
                 _ = Y.divIdx, o = Y.offset;
-                const tt = P.end, x = p && T === f, K = x ? " selected" : "";
+                const tt = P.end, x = p && T === u, K = x ? " selected" : "";
                 let Z = 0;
                 if (!b || Y.divIdx !== b.divIdx ? (b !== null && s(b.divIdx, b.offset, g.offset), w(Y)) : s(b.divIdx, b.offset, Y.offset), Y.divIdx === tt.divIdx)
                   Z = s(Y.divIdx, Y.offset, tt.offset, "highlight" + K);
@@ -15490,7 +15490,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                   element: h[Y.divIdx],
                   selectedLeft: Z,
                   pageIndex: M,
-                  matchIndex: f
+                  matchIndex: u
                 });
               }
               b && s(b.divIdx, b.offset, g.offset);
@@ -15506,14 +15506,14 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 textContentItemsStr: h,
                 textDivs: p
               } = this;
-              let f = -1;
+              let u = -1;
               for (const g of M) {
-                const w = Math.max(f, g.begin.divIdx);
+                const w = Math.max(u, g.begin.divIdx);
                 for (let s = w, i = g.end.divIdx; s <= i; s++) {
                   const E = p[s];
                   E.textContent = h[s], E.className = "";
                 }
-                f = g.end.divIdx + 1;
+                u = g.end.divIdx + 1;
               }
               if (!(F != null && F.highlightMatches) || r)
                 return;
@@ -15526,7 +15526,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         /* 19 */
         /***/
         (V, I, c) => {
-          var M, S, h, p, f, Vn, b, Un;
+          var M, S, h, p, u, Vn, b, Un;
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.TextLayerBuilder = void 0;
@@ -15538,7 +15538,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               isOffscreenCanvasSupported: E = !0,
               enablePermissions: _ = !1
             }) {
-              N(this, f);
+              N(this, u);
               N(this, b);
               N(this, M, !1);
               N(this, S, 0);
@@ -15577,7 +15577,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 textDivProperties: this.textDivProperties,
                 textContentItemsStr: this.textContentItemsStr,
                 isOffscreenCanvasSupported: this.isOffscreenCanvasSupported
-              }), await this.textLayerRenderTask.promise, X(this, f, Vn).call(this), it(this, h, i), it(this, S, E), this.show(), (T = this.accessibilityManager) == null || T.enable();
+              }), await this.textLayerRenderTask.promise, X(this, u, Vn).call(this), it(this, h, i), it(this, S, E), this.show(), (T = this.accessibilityManager) == null || T.enable();
             }
             hide() {
               var s;
@@ -15595,7 +15595,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               this.cancel(), it(this, p, s);
             }
           }
-          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakSet(), Vn = function() {
+          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakSet(), Vn = function() {
             this.renderingDone = !0;
             const s = document.createElement("div");
             s.className = "endOfContent", this.div.append(s), X(this, b, Un).call(this);
@@ -15638,13 +15638,13 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               pdfPage: S,
               annotationStorage: h = null,
               linkService: p,
-              xfaHtml: f = null
+              xfaHtml: u = null
             }) {
-              this.pageDiv = M, this.pdfPage = S, this.annotationStorage = h, this.linkService = p, this.xfaHtml = f, this.div = null, this._cancelled = !1;
+              this.pageDiv = M, this.pdfPage = S, this.annotationStorage = h, this.linkService = p, this.xfaHtml = u, this.div = null, this._cancelled = !1;
             }
             async render(M, S = "display") {
               if (S === "print") {
-                const f = {
+                const u = {
                   viewport: M.clone({
                     dontFlip: !0
                   }),
@@ -15654,7 +15654,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                   linkService: this.linkService,
                   intent: S
                 }, y = document.createElement("div");
-                return this.pageDiv.append(y), f.div = y, d.XfaLayer.render(f);
+                return this.pageDiv.append(y), u.div = y, d.XfaLayer.render(u);
               }
               const h = await this.pdfPage.getXfa();
               if (this._cancelled || !h)
@@ -15716,7 +15716,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             const S = "", h = S.split("#")[0];
             let {
               info: p,
-              metadata: f,
+              metadata: u,
               contentDispositionFilename: y,
               contentLength: b
             } = await M.getMetadata();
@@ -15731,8 +15731,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               baseURL: h,
               filesize: b,
               filename: y || (0, d.getPdfFilenameFromUrl)(S),
-              metadata: f == null ? void 0 : f.getRaw(),
-              authors: f == null ? void 0 : f.get("dc:creator"),
+              metadata: u == null ? void 0 : u.getRaw(),
+              authors: u == null ? void 0 : u.get("dc:creator"),
               numPages: M.numPages,
               URL: S
             };
@@ -15757,7 +15757,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         /* 23 */
         /***/
         (V, I, c) => {
-          var M, S, h, p, f, y, b, g, w, s, i, E, Hn, o, Ue, P, Ni, tt, jn, K, Se;
+          var M, S, h, p, u, y, b, g, w, s, i, E, Hn, o, Ue, P, Ni, tt, jn, K, Se;
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.PDFScriptingManager = void 0;
@@ -15778,14 +15778,14 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               N(this, S, null);
               N(this, h, null);
               N(this, p, null);
-              N(this, f, null);
+              N(this, u, null);
               N(this, y, null);
               N(this, b, null);
               N(this, g, !1);
               N(this, w, null);
               N(this, s, null);
               N(this, i, null);
-              it(this, p, v), it(this, w, j), it(this, f, D), it(this, h, lt);
+              it(this, p, v), it(this, w, j), it(this, u, D), it(this, h, lt);
             }
             setViewer(v) {
               it(this, b, v);
@@ -15802,35 +15802,35 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               if (v === t(this, y)) {
                 try {
                   it(this, s, X(this, tt, jn).call(this));
-                } catch (L) {
-                  console.error(`setDocument: "${L.message}".`), await X(this, K, Se).call(this);
+                } catch (k) {
+                  console.error(`setDocument: "${k.message}".`), await X(this, K, Se).call(this);
                   return;
                 }
-                this._internalEvents.set("updatefromsandbox", (L) => {
-                  (L == null ? void 0 : L.source) === window && X(this, E, Hn).call(this, L.detail);
-                }), this._internalEvents.set("dispatcheventinsandbox", (L) => {
+                this._internalEvents.set("updatefromsandbox", (k) => {
+                  (k == null ? void 0 : k.source) === window && X(this, E, Hn).call(this, k.detail);
+                }), this._internalEvents.set("dispatcheventinsandbox", (k) => {
                   var a;
-                  (a = t(this, s)) == null || a.dispatchEventInSandbox(L.detail);
+                  (a = t(this, s)) == null || a.dispatchEventInSandbox(k.detail);
                 }), this._internalEvents.set("pagechanging", ({
-                  pageNumber: L,
+                  pageNumber: k,
                   previous: a
                 }) => {
-                  L !== a && (X(this, P, Ni).call(this, a), X(this, o, Ue).call(this, L));
+                  k !== a && (X(this, P, Ni).call(this, a), X(this, o, Ue).call(this, k));
                 }), this._internalEvents.set("pagerendered", ({
-                  pageNumber: L
+                  pageNumber: k
                 }) => {
-                  this._pageOpenPending.has(L) && L === t(this, b).currentPageNumber && X(this, o, Ue).call(this, L);
+                  this._pageOpenPending.has(k) && k === t(this, b).currentPageNumber && X(this, o, Ue).call(this, k);
                 }), this._internalEvents.set("pagesdestroy", async () => {
-                  var L, a;
-                  await X(this, P, Ni).call(this, t(this, b).currentPageNumber), await ((L = t(this, s)) == null ? void 0 : L.dispatchEventInSandbox({
+                  var k, a;
+                  await X(this, P, Ni).call(this, t(this, b).currentPageNumber), await ((k = t(this, s)) == null ? void 0 : k.dispatchEventInSandbox({
                     id: "doc",
                     name: "WillClose"
                   })), (a = t(this, M)) == null || a.resolve();
                 });
-                for (const [L, a] of this._internalEvents)
-                  t(this, p)._on(L, a);
+                for (const [k, a] of this._internalEvents)
+                  t(this, p)._on(k, a);
                 try {
-                  const L = await t(this, h).call(this, v);
+                  const k = await t(this, h).call(this, v);
                   if (v !== t(this, y))
                     return;
                   await t(this, s).createSandbox({
@@ -15841,14 +15841,14 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                       language: navigator.language
                     },
                     docInfo: {
-                      ...L,
+                      ...k,
                       actions: lt
                     }
                   }), t(this, p).dispatch("sandboxcreated", {
                     source: this
                   });
-                } catch (L) {
-                  console.error(`setDocument: "${L.message}".`), await X(this, K, Se).call(this);
+                } catch (k) {
+                  console.error(`setDocument: "${k.message}".`), await X(this, K, Se).call(this);
                   return;
                 }
                 await ((_t = t(this, s)) == null ? void 0 : _t.dispatchEventInSandbox({
@@ -15912,16 +15912,16 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               return (0, r.shadow)(this, "_visitedPages", /* @__PURE__ */ new Map());
             }
           }
-          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), f = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakMap(), s = new WeakMap(), i = new WeakMap(), E = new WeakSet(), Hn = async function(v) {
+          M = new WeakMap(), S = new WeakMap(), h = new WeakMap(), p = new WeakMap(), u = new WeakMap(), y = new WeakMap(), b = new WeakMap(), g = new WeakMap(), w = new WeakMap(), s = new WeakMap(), i = new WeakMap(), E = new WeakSet(), Hn = async function(v) {
             var R, $;
             const j = t(this, b), D = j.isInPresentationMode || j.isChangingPresentationMode, {
               id: lt,
               siblings: _t,
-              command: L,
+              command: k,
               value: a
             } = v;
             if (!lt) {
-              switch (L) {
+              switch (k) {
                 case "clear":
                   console.clear();
                   break;
@@ -15997,7 +15997,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               return;
             }
             this._pageOpenPending.delete(v);
-            const L = (async () => {
+            const k = (async () => {
               var l, R;
               const a = await (lt.has(v) ? null : (l = _t.pdfPage) == null ? void 0 : l.getJSActions());
               D === t(this, y) && await ((R = t(this, s)) == null ? void 0 : R.dispatchEventInSandbox({
@@ -16007,7 +16007,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 actions: a
               }));
             })();
-            lt.set(v, L);
+            lt.set(v, k);
           }, P = new WeakSet(), Ni = async function(v) {
             var _t;
             const j = t(this, y), D = this._visitedPages;
@@ -16022,7 +16022,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           }, tt = new WeakSet(), jn = function() {
             if (it(this, S, new r.PromiseCapability()), t(this, s))
               throw new Error("#initScripting: Scripting already exists.");
-            return t(this, f).createScripting({
+            return t(this, u).createScripting({
               sandboxBundleSrc: t(this, w)
             });
           }, K = new WeakSet(), Se = async function() {
@@ -16070,17 +16070,17 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         /* 25 */
         /***/
         (V, I, c) => {
-          var w, s, i, Bi, _, o, T, P, Y, tt, x, K, Z, Q, v, j, D, lt, _t, L, a, Wn, R, zn, W, Gn, st, $n, wt, Ee, Et, He, At, Xn, Rt, Vi, kt, qn, at, se, rt, Ui, xt, Yn, jt, Kn, Nt, Hi, $t, Qn;
+          var w, s, i, Bi, _, o, T, P, Y, tt, x, K, Z, Q, v, j, D, lt, _t, k, a, Wn, R, zn, W, Gn, st, $n, wt, Ee, Et, He, At, Xn, Rt, Vi, kt, qn, at, se, rt, Ui, xt, Yn, jt, Kn, Nt, Hi, $t, Qn;
           Object.defineProperty(I, "__esModule", {
             value: !0
           }), I.PagesCountLimit = I.PDFViewer = I.PDFPageViewBuffer = void 0;
           var d = c(4), r = c(2), F = c(7), M = c(13), S = c(26), h = c(5);
-          const p = 10, f = {
+          const p = 10, u = {
             FORCE_SCROLL_MODE_PAGE: 15e3,
             FORCE_LAZY_PAGE_INIT: 7500,
             PAUSE_EAGER_PAGE_INIT: 250
           };
-          I.PagesCountLimit = f;
+          I.PagesCountLimit = u;
           function y(Ct) {
             return Object.values(d.AnnotationEditorType).includes(Ct) && Ct !== d.AnnotationEditorType.DISABLE;
           }
@@ -16151,7 +16151,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               N(this, D, null);
               N(this, lt, null);
               N(this, _t, null);
-              N(this, L, r.TextLayerMode.ENABLE);
+              N(this, k, r.TextLayerMode.ENABLE);
               var ht, Lt;
               const B = "3.10.111";
               if (d.version !== B)
@@ -16160,7 +16160,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                 throw new Error("Invalid `container` and/or `viewer` option.");
               if (this.container.offsetParent && getComputedStyle(this.container).position !== "absolute")
                 throw new Error("The `container` must be absolutely positioned.");
-              t(this, j).observe(this.container), this.eventBus = m.eventBus, this.linkService = m.linkService || new h.SimpleLinkService(), this.downloadManager = m.downloadManager || null, this.findController = m.findController || null, this.findController && (this.findController.onIsPageVisible = (Pt) => this._getVisiblePages().ids.has(Pt)), this._scriptingManager = m.scriptingManager || null, it(this, L, m.textLayerMode ?? r.TextLayerMode.ENABLE), it(this, P, m.annotationMode ?? d.AnnotationMode.ENABLE_FORMS), it(this, o, m.annotationEditorMode ?? d.AnnotationEditorType.NONE), this.imageResourcesPath = m.imageResourcesPath || "", this.enablePrintAutoRotate = m.enablePrintAutoRotate || !1, this.removePageBorders = m.removePageBorders || !1, m.useOnlyCssZoom && (console.error("useOnlyCssZoom was removed, please use `maxCanvasPixels = 0` instead."), m.maxCanvasPixels = 0), this.isOffscreenCanvasSupported = m.isOffscreenCanvasSupported ?? !0, this.maxCanvasPixels = m.maxCanvasPixels, this.l10n = m.l10n || F.NullL10n, it(this, x, m.enablePermissions || !1), this.pageColors = m.pageColors || null, this.defaultRenderingQueue = !m.renderingQueue, this.defaultRenderingQueue ? (this.renderingQueue = new S.PDFRenderingQueue(), this.renderingQueue.setViewer(this)) : this.renderingQueue = m.renderingQueue, this.scroll = (0, r.watchScroll)(this.container, this._scrollUpdate.bind(this)), this.presentationModeState = r.PresentationModeState.UNKNOWN, this._onBeforeDraw = this._onAfterDraw = null, this._resetView(), this.removePageBorders && this.viewer.classList.add("removePageBorders"), X(this, Nt, Hi).call(this), this.eventBus._on("thumbnailrendered", ({
+              t(this, j).observe(this.container), this.eventBus = m.eventBus, this.linkService = m.linkService || new h.SimpleLinkService(), this.downloadManager = m.downloadManager || null, this.findController = m.findController || null, this.findController && (this.findController.onIsPageVisible = (Pt) => this._getVisiblePages().ids.has(Pt)), this._scriptingManager = m.scriptingManager || null, it(this, k, m.textLayerMode ?? r.TextLayerMode.ENABLE), it(this, P, m.annotationMode ?? d.AnnotationMode.ENABLE_FORMS), it(this, o, m.annotationEditorMode ?? d.AnnotationEditorType.NONE), this.imageResourcesPath = m.imageResourcesPath || "", this.enablePrintAutoRotate = m.enablePrintAutoRotate || !1, this.removePageBorders = m.removePageBorders || !1, m.useOnlyCssZoom && (console.error("useOnlyCssZoom was removed, please use `maxCanvasPixels = 0` instead."), m.maxCanvasPixels = 0), this.isOffscreenCanvasSupported = m.isOffscreenCanvasSupported ?? !0, this.maxCanvasPixels = m.maxCanvasPixels, this.l10n = m.l10n || F.NullL10n, it(this, x, m.enablePermissions || !1), this.pageColors = m.pageColors || null, this.defaultRenderingQueue = !m.renderingQueue, this.defaultRenderingQueue ? (this.renderingQueue = new S.PDFRenderingQueue(), this.renderingQueue.setViewer(this)) : this.renderingQueue = m.renderingQueue, this.scroll = (0, r.watchScroll)(this.container, this._scrollUpdate.bind(this)), this.presentationModeState = r.PresentationModeState.UNKNOWN, this._onBeforeDraw = this._onAfterDraw = null, this._resetView(), this.removePageBorders && this.viewer.classList.add("removePageBorders"), X(this, Nt, Hi).call(this), this.eventBus._on("thumbnailrendered", ({
                 pageNumber: Pt,
                 pdfPage: pt
               }) => {
@@ -16293,7 +16293,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               }), this._cancelRendering(), this._resetView(), (pt = this.findController) == null || pt.setDocument(null), (vt = this._scriptingManager) == null || vt.setDocument(null), t(this, T) && (t(this, T).destroy(), it(this, T, null))), this.pdfDocument = m, !m)
                 return;
               const B = m.numPages, ht = m.getPage(1), Lt = m.getOptionalContentConfig(), Pt = t(this, x) ? m.getPermissions() : Promise.resolve();
-              if (B > f.FORCE_SCROLL_MODE_PAGE) {
+              if (B > u.FORCE_SCROLL_MODE_PAGE) {
                 console.warn("Forcing PAGE-scrolling for performance reasons, given the length of the document.");
                 const U = this._scrollMode = r.ScrollMode.PAGE;
                 this.eventBus.dispatch("scrollmodechanged", {
@@ -16362,7 +16362,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                   if ((mt = this.findController) == null || mt.setDocument(m), (It = this._scriptingManager) == null || It.setDocument(m), t(this, Z) && (it(this, tt, X(this, st, $n).bind(this, O)), document.addEventListener("copy", t(this, tt))), t(this, T) && this.eventBus.dispatch("annotationeditormodechanged", {
                     source: this,
                     mode: t(this, o)
-                  }), m.loadingParams.disableAutoFetch || B > f.FORCE_LAZY_PAGE_INIT) {
+                  }), m.loadingParams.disableAutoFetch || B > u.FORCE_LAZY_PAGE_INIT) {
                     this._pagesCapability.resolve();
                     return;
                   }
@@ -16378,7 +16378,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                     }, (Vt) => {
                       console.error(`Unable to get page ${Tt} to initialize viewer`, Vt), --ct === 0 && this._pagesCapability.resolve();
                     });
-                    Tt % f.PAUSE_EAGER_PAGE_INIT === 0 && await Dt;
+                    Tt % u.PAUSE_EAGER_PAGE_INIT === 0 && await Dt;
                   }
                 }), this.eventBus.dispatch("pagesinit", {
                   source: this
@@ -16599,7 +16599,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               if (this._scrollMode !== m) {
                 if (!(0, r.isValidScrollMode)(m))
                   throw new Error(`Invalid scroll mode: ${m}`);
-                this.pagesCount > f.FORCE_SCROLL_MODE_PAGE || (this._previousScrollMode = this._scrollMode, this._scrollMode = m, this.eventBus.dispatch("scrollmodechanged", {
+                this.pagesCount > u.FORCE_SCROLL_MODE_PAGE || (this._previousScrollMode = this._scrollMode, this._scrollMode = m, this.eventBus.dispatch("scrollmodechanged", {
                   source: this,
                   mode: m
                 }), this._updateScrollMode(this._currentPageNumber));
@@ -16814,7 +16814,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               }
             }
           }
-          _ = new WeakMap(), o = new WeakMap(), T = new WeakMap(), P = new WeakMap(), Y = new WeakMap(), tt = new WeakMap(), x = new WeakMap(), K = new WeakMap(), Z = new WeakMap(), Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), L = new WeakMap(), a = new WeakSet(), Wn = function() {
+          _ = new WeakMap(), o = new WeakMap(), T = new WeakMap(), P = new WeakMap(), Y = new WeakMap(), tt = new WeakMap(), x = new WeakMap(), K = new WeakMap(), Z = new WeakMap(), Q = new WeakMap(), v = new WeakMap(), j = new WeakMap(), D = new WeakMap(), lt = new WeakMap(), _t = new WeakMap(), k = new WeakMap(), a = new WeakSet(), Wn = function() {
             const m = this;
             return {
               get annotationEditorUIManager() {
@@ -16849,9 +16849,9 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             const B = {
               annotationEditorMode: t(this, o),
               annotationMode: t(this, P),
-              textLayerMode: t(this, L)
+              textLayerMode: t(this, k)
             };
-            return m && (!m.includes(d.PermissionFlag.COPY) && t(this, L) === r.TextLayerMode.ENABLE && (B.textLayerMode = r.TextLayerMode.ENABLE_PERMISSIONS), m.includes(d.PermissionFlag.MODIFY_CONTENTS) || (B.annotationEditorMode = d.AnnotationEditorType.DISABLE), !m.includes(d.PermissionFlag.MODIFY_ANNOTATIONS) && !m.includes(d.PermissionFlag.FILL_INTERACTIVE_FORMS) && t(this, P) === d.AnnotationMode.ENABLE_FORMS && (B.annotationMode = d.AnnotationMode.ENABLE)), B;
+            return m && (!m.includes(d.PermissionFlag.COPY) && t(this, k) === r.TextLayerMode.ENABLE && (B.textLayerMode = r.TextLayerMode.ENABLE_PERMISSIONS), m.includes(d.PermissionFlag.MODIFY_CONTENTS) || (B.annotationEditorMode = d.AnnotationEditorType.DISABLE), !m.includes(d.PermissionFlag.MODIFY_ANNOTATIONS) && !m.includes(d.PermissionFlag.FILL_INTERACTIVE_FORMS) && t(this, P) === d.AnnotationMode.ENABLE_FORMS && (B.annotationMode = d.AnnotationMode.ENABLE)), B;
           }, W = new WeakSet(), Gn = function() {
             if (document.visibilityState === "hidden" || !this.container.offsetParent || this._getVisiblePages().views.length === 0)
               return Promise.resolve();
@@ -17059,7 +17059,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               var p;
               this.idleTimeout && (clearTimeout(this.idleTimeout), this.idleTimeout = null), !this.pdfViewer.forceRendering(h) && (this.isThumbnailViewEnabled && ((p = this.pdfThumbnailViewer) != null && p.forceRendering()) || this.printing || this.onIdle && (this.idleTimeout = setTimeout(this.onIdle.bind(this), F)));
             }
-            getHighestPriority(h, p, f, y = !1) {
+            getHighestPriority(h, p, u, y = !1) {
               const b = h.views, g = b.length;
               if (g === 0)
                 return null;
@@ -17072,7 +17072,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
               if (s - w + 1 > g) {
                 const _ = h.ids;
                 for (let o = 1, T = s - w; o < T; o++) {
-                  const P = f ? w + o : s - o;
+                  const P = u ? w + o : s - o;
                   if (_.has(P))
                     continue;
                   const Y = p[P - 1];
@@ -17080,8 +17080,8 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
                     return Y;
                 }
               }
-              let i = f ? s : w - 2, E = p[i];
-              return E && !this.isViewFinished(E) || y && (i += f ? 1 : -1, E = p[i], E && !this.isViewFinished(E)) ? E : null;
+              let i = u ? s : w - 2, E = p[i];
+              return E && !this.isViewFinished(E) || y && (i += u ? 1 : -1, E = p[i], E && !this.isViewFinished(E)) ? E : null;
             }
             isViewFinished(h) {
               return h.renderingState === r.RenderingStates.FINISHED;
@@ -17111,7 +17111,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         }
         /******/
       ], n = {};
-      function u(V) {
+      function f(V) {
         var I = n[V];
         if (I !== void 0)
           return I.exports;
@@ -17124,7 +17124,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
           exports: {}
           /******/
         };
-        return k[V](c, c.exports, u), c.exports;
+        return L[V](c, c.exports, f), c.exports;
       }
       var q = {};
       return (() => {
@@ -17184,7 +17184,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
         }), Object.defineProperty(V, "PDFPageView", {
           enumerable: !0,
           get: function() {
-            return f.PDFPageView;
+            return u.PDFPageView;
           }
         }), Object.defineProperty(V, "PDFScriptingManager", {
           enumerable: !0,
@@ -17247,7 +17247,7 @@ var pdfExports = pdf.exports, pdf_viewer$1 = { exports: {} };
             return d.parseQueryString;
           }
         });
-        var I = u(1), c = u(5), d = u(2), r = u(6), F = u(8), M = u(9), S = u(10), h = u(7), p = u(12), f = u(13), y = u(21), b = u(24), g = u(25), w = u(16), s = u(19), i = u(20);
+        var I = f(1), c = f(5), d = f(2), r = f(6), F = f(8), M = f(9), S = f(10), h = f(7), p = f(12), u = f(13), y = f(21), b = f(24), g = f(25), w = f(16), s = f(19), i = f(20);
       })(), q;
     })()
   ));
@@ -17272,44 +17272,45 @@ class ViewThumbnailsButton {
   }
   prepareContainer(e) {
     e.style.position = "relative", e.style.display = "flex", this.thumbnailContainer = document.createElement("div");
-    let k = e.getBoundingClientRect(), n = 10, u = window.innerHeight - k.top - n;
-    this.thumbnailContainer.className = "gap-y-2 py-2 px-4 fixed w-44 bg-gray-50 z-10 rounded h-full flex flex-col overflow-y-auto left-2", this.thumbnailContainer.style.height = u + "px", this.thumbnailContainer.style.display = "none", e.prepend(this.thumbnailContainer);
+    let L = e.getBoundingClientRect(), n = 10, f = window.innerHeight - L.top - n;
+    this.thumbnailContainer.className = "gap-y-2 py-2 px-4 fixed w-44 bg-gray-50 z-10 rounded h-full flex flex-col overflow-y-auto left-2", this.thumbnailContainer.style.height = f + "px", this.thumbnailContainer.style.display = "none", e.prepend(this.thumbnailContainer);
   }
   async _build(e) {
-    let k = e.pdfDocument.numPages;
-    for (let n = 1; n <= k; n++) {
-      let u = await e.pdfDocument.getPage(n), q = await this.generateThumbnail(u);
+    let L = e.pdfDocument.numPages;
+    for (let n = 1; n <= L; n++) {
+      let f = await e.pdfDocument.getPage(n), q = await this.generateThumbnail(f);
       q.dataset.id = n.toString(), q.title = "Page " + n, q.classList.add("cursor-pointer", "border"), q.addEventListener("click", () => {
-        e.bodyContainer.scrollTop = parseFloat(q.dataset.offsetY);
+        let V = e.pdfContainer.querySelector(
+          `[data-page-number="${n}"]`
+        );
+        e.bodyContainer.scrollTop = e.bodyContainer.scrollTop + parseFloat(V.getBoundingClientRect().top.toString()) - 100;
       }), this.thumbnailContainer.append(q);
-      let V = e.pdfContainer.querySelector(`[data-page-number="${n}"]`);
-      q.dataset.offsetY = V == null ? void 0 : V.getBoundingClientRect().top.toString();
     }
   }
   async generateThumbnail(e) {
-    let k = document.createElement("img"), n = await this.renderPage(e);
-    return k.src = n.toDataURL(), k;
+    let L = document.createElement("img"), n = await this.renderPage(e);
+    return L.src = n.toDataURL(), L;
   }
   async renderPage(e) {
-    let k = document.createElement("canvas"), n = k.getContext("2d");
-    const u = e.getViewport({ scale: 0.5 });
-    k.width = Math.floor(u.width), k.height = Math.floor(u.height), k.style.width = Math.floor(u.width) + "px", k.style.height = Math.floor(u.height) + "px";
+    let L = document.createElement("canvas"), n = L.getContext("2d");
+    const f = e.getViewport({ scale: 0.5 });
+    L.width = Math.floor(f.width), L.height = Math.floor(f.height), L.style.width = Math.floor(f.width) + "px", L.style.height = Math.floor(f.height) + "px";
     const q = {
       canvasContext: n,
-      viewport: u
+      viewport: f
     };
-    return await e.render(q).promise, this._reduceImage(k), k;
+    return await e.render(q).promise, this._reduceImage(L), L;
   }
   /**
    * @private
    */
   _reduceImage(e) {
-    let k = e.width << MAX_NUM_SCALING_STEPS, n = e.height << MAX_NUM_SCALING_STEPS;
-    const u = document.createElement("canvas");
-    u.width = k, u.height = n;
-    const q = u.getContext("2d", { alpha: !1 });
-    for (q.save(), q.fillStyle = "rgb(255, 255, 255)", q.fillRect(0, 0, k, n), q.restore(); k > e.width || n > e.height; )
-      k >>= 1, n >>= 1;
+    let L = e.width << MAX_NUM_SCALING_STEPS, n = e.height << MAX_NUM_SCALING_STEPS;
+    const f = document.createElement("canvas");
+    f.width = L, f.height = n;
+    const q = f.getContext("2d", { alpha: !1 });
+    for (q.save(), q.fillStyle = "rgb(255, 255, 255)", q.fillRect(0, 0, L, n), q.restore(); L > e.width || n > e.height; )
+      L >>= 1, n >>= 1;
     for (q.drawImage(
       e,
       0,
@@ -17318,25 +17319,25 @@ class ViewThumbnailsButton {
       e.height,
       0,
       0,
-      k,
+      L,
       n
-    ); k > 2 * e.width; )
+    ); L > 2 * e.width; )
       q.drawImage(
-        u,
+        f,
         0,
         0,
-        k,
+        L,
         n,
         0,
         0,
-        k >> 1,
+        L >> 1,
         n >> 1
-      ), k >>= 1, n >>= 1;
+      ), L >>= 1, n >>= 1;
     return e.getContext("2d").drawImage(
-      u,
+      f,
       0,
       0,
-      k,
+      L,
       n,
       0,
       0,
@@ -17345,8 +17346,8 @@ class ViewThumbnailsButton {
     ), e;
   }
   reset() {
-    var e, k;
-    this.show = !1, this.hasBuilt = !1, (e = this.thumbnailContainer) == null || e.remove(), (k = this.btn) == null || k.remove();
+    var e, L;
+    this.show = !1, this.hasBuilt = !1, (e = this.thumbnailContainer) == null || e.remove(), (L = this.btn) == null || L.remove();
   }
 }
 class DownloadButton {
@@ -17360,6 +17361,8 @@ class DownloadButton {
     return "right";
   }
   reset() {
+    var e;
+    (e = this.btn) == null || e.remove();
   }
 }
 var defaultInstanceSettings = {
@@ -17385,8 +17388,8 @@ var defaultInstanceSettings = {
   CSS: {},
   springs: {}
 };
-function minMax(A, e, k) {
-  return Math.min(Math.max(A, e), k);
+function minMax(A, e, L) {
+  return Math.min(Math.max(A, e), L);
 }
 function stringContains(A, e) {
   return A.indexOf(e) > -1;
@@ -17443,12 +17446,12 @@ var is = {
 };
 function parseEasingParameters(A) {
   var e = /\(([^)]+)\)/.exec(A);
-  return e ? e[1].split(",").map(function(k) {
-    return parseFloat(k);
+  return e ? e[1].split(",").map(function(L) {
+    return parseFloat(L);
   }) : [];
 }
 function spring(A, e) {
-  var k = parseEasingParameters(A), n = minMax(is.und(k[0]) ? 1 : k[0], 0.1, 100), u = minMax(is.und(k[1]) ? 100 : k[1], 0.1, 100), q = minMax(is.und(k[2]) ? 10 : k[2], 0.1, 100), V = minMax(is.und(k[3]) ? 0 : k[3], 0.1, 100), I = Math.sqrt(u / n), c = q / (2 * Math.sqrt(u * n)), d = c < 1 ? I * Math.sqrt(1 - c * c) : 0, r = 1, F = c < 1 ? (c * I + -V) / d : -V + I;
+  var L = parseEasingParameters(A), n = minMax(is.und(L[0]) ? 1 : L[0], 0.1, 100), f = minMax(is.und(L[1]) ? 100 : L[1], 0.1, 100), q = minMax(is.und(L[2]) ? 10 : L[2], 0.1, 100), V = minMax(is.und(L[3]) ? 0 : L[3], 0.1, 100), I = Math.sqrt(f / n), c = q / (2 * Math.sqrt(f * n)), d = c < 1 ? I * Math.sqrt(1 - c * c) : 0, r = 1, F = c < 1 ? (c * I + -V) / d : -V + I;
   function M(h) {
     var p = e ? e * h / 1e3 : h;
     return c < 1 ? p = Math.exp(-p * c * I) * (r * Math.cos(d * p) + F * Math.sin(d * p)) : p = (r + F * p) * Math.exp(-p * I), h === 0 || h === 1 ? h : 1 - p;
@@ -17457,13 +17460,13 @@ function spring(A, e) {
     var h = cache.springs[A];
     if (h)
       return h;
-    for (var p = 1 / 6, f = 0, y = 0; ; )
-      if (f += p, M(f) === 1) {
+    for (var p = 1 / 6, u = 0, y = 0; ; )
+      if (u += p, M(u) === 1) {
         if (y++, y >= 16)
           break;
       } else
         y = 0;
-    var b = f * p * 1e3;
+    var b = u * p * 1e3;
     return cache.springs[A] = b, b;
   }
   return e ? M : S;
@@ -17475,35 +17478,35 @@ function steps(A) {
 }
 var bezier = function() {
   var A = 11, e = 1 / (A - 1);
-  function k(r, F) {
+  function L(r, F) {
     return 1 - 3 * F + 3 * r;
   }
   function n(r, F) {
     return 3 * F - 6 * r;
   }
-  function u(r) {
+  function f(r) {
     return 3 * r;
   }
   function q(r, F, M) {
-    return ((k(F, M) * r + n(F, M)) * r + u(F)) * r;
+    return ((L(F, M) * r + n(F, M)) * r + f(F)) * r;
   }
   function V(r, F, M) {
-    return 3 * k(F, M) * r * r + 2 * n(F, M) * r + u(F);
+    return 3 * L(F, M) * r * r + 2 * n(F, M) * r + f(F);
   }
   function I(r, F, M, S, h) {
-    var p, f, y = 0;
+    var p, u, y = 0;
     do
-      f = F + (M - F) / 2, p = q(f, S, h) - r, p > 0 ? M = f : F = f;
+      u = F + (M - F) / 2, p = q(u, S, h) - r, p > 0 ? M = u : F = u;
     while (Math.abs(p) > 1e-7 && ++y < 10);
-    return f;
+    return u;
   }
   function c(r, F, M, S) {
     for (var h = 0; h < 4; ++h) {
       var p = V(F, M, S);
       if (p === 0)
         return F;
-      var f = q(F, M, S) - r;
-      F -= f / p;
+      var u = q(F, M, S) - r;
+      F -= u / p;
     }
     return F;
   }
@@ -17514,7 +17517,7 @@ var bezier = function() {
     if (r !== F || M !== S)
       for (var p = 0; p < A; ++p)
         h[p] = q(p * e, r, M);
-    function f(y) {
+    function u(y) {
       for (var b = 0, g = 1, w = A - 1; g !== w && h[g] <= y; ++g)
         b += e;
       --g;
@@ -17522,7 +17525,7 @@ var bezier = function() {
       return E >= 1e-3 ? c(y, i, r, M) : E === 0 ? i : I(y, b, b + e, r, M);
     }
     return function(y) {
-      return r === F && M === S || y === 0 || y === 1 ? y : q(f(y), F, S);
+      return r === F && M === S || y === 0 || y === 1 ? y : q(u(y), F, S);
     };
   }
   return d;
@@ -17549,38 +17552,38 @@ var bezier = function() {
     },
     Bounce: function() {
       return function(n) {
-        for (var u, q = 4; n < ((u = Math.pow(2, --q)) - 1) / 11; )
+        for (var f, q = 4; n < ((f = Math.pow(2, --q)) - 1) / 11; )
           ;
-        return 1 / Math.pow(4, 3 - q) - 7.5625 * Math.pow((u * 3 - 2) / 22 - n, 2);
+        return 1 / Math.pow(4, 3 - q) - 7.5625 * Math.pow((f * 3 - 2) / 22 - n, 2);
       };
     },
-    Elastic: function(n, u) {
-      n === void 0 && (n = 1), u === void 0 && (u = 0.5);
-      var q = minMax(n, 1, 10), V = minMax(u, 0.1, 2);
+    Elastic: function(n, f) {
+      n === void 0 && (n = 1), f === void 0 && (f = 0.5);
+      var q = minMax(n, 1, 10), V = minMax(f, 0.1, 2);
       return function(I) {
         return I === 0 || I === 1 ? I : -q * Math.pow(2, 10 * (I - 1)) * Math.sin((I - 1 - V / (Math.PI * 2) * Math.asin(1 / q)) * (Math.PI * 2) / V);
       };
     }
-  }, k = ["Quad", "Cubic", "Quart", "Quint", "Expo"];
-  return k.forEach(function(n, u) {
+  }, L = ["Quad", "Cubic", "Quart", "Quint", "Expo"];
+  return L.forEach(function(n, f) {
     e[n] = function() {
       return function(q) {
-        return Math.pow(q, u + 2);
+        return Math.pow(q, f + 2);
       };
     };
   }), Object.keys(e).forEach(function(n) {
-    var u = e[n];
-    A["easeIn" + n] = u, A["easeOut" + n] = function(q, V) {
+    var f = e[n];
+    A["easeIn" + n] = f, A["easeOut" + n] = function(q, V) {
       return function(I) {
-        return 1 - u(q, V)(1 - I);
+        return 1 - f(q, V)(1 - I);
       };
     }, A["easeInOut" + n] = function(q, V) {
       return function(I) {
-        return I < 0.5 ? u(q, V)(I * 2) / 2 : 1 - u(q, V)(I * -2 + 2) / 2;
+        return I < 0.5 ? f(q, V)(I * 2) / 2 : 1 - f(q, V)(I * -2 + 2) / 2;
       };
     }, A["easeOutIn" + n] = function(q, V) {
       return function(I) {
-        return I < 0.5 ? (1 - u(q, V)(1 - I * 2)) / 2 : (u(q, V)(I * 2 - 1) + 1) / 2;
+        return I < 0.5 ? (1 - f(q, V)(1 - I * 2)) / 2 : (f(q, V)(I * 2 - 1) + 1) / 2;
       };
     };
   }), A;
@@ -17588,16 +17591,16 @@ var bezier = function() {
 function parseEasings(A, e) {
   if (is.fnc(A))
     return A;
-  var k = A.split("(")[0], n = penner[k], u = parseEasingParameters(A);
-  switch (k) {
+  var L = A.split("(")[0], n = penner[L], f = parseEasingParameters(A);
+  switch (L) {
     case "spring":
       return spring(A, e);
     case "cubicBezier":
-      return applyArguments(bezier, u);
+      return applyArguments(bezier, f);
     case "steps":
-      return applyArguments(steps, u);
+      return applyArguments(steps, f);
     default:
-      return applyArguments(n, u);
+      return applyArguments(n, f);
   }
 }
 function selectString(A) {
@@ -17609,65 +17612,65 @@ function selectString(A) {
   }
 }
 function filterArray(A, e) {
-  for (var k = A.length, n = arguments.length >= 2 ? arguments[1] : void 0, u = [], q = 0; q < k; q++)
+  for (var L = A.length, n = arguments.length >= 2 ? arguments[1] : void 0, f = [], q = 0; q < L; q++)
     if (q in A) {
       var V = A[q];
-      e.call(n, V, q, A) && u.push(V);
+      e.call(n, V, q, A) && f.push(V);
     }
-  return u;
+  return f;
 }
 function flattenArray(A) {
-  return A.reduce(function(e, k) {
-    return e.concat(is.arr(k) ? flattenArray(k) : k);
+  return A.reduce(function(e, L) {
+    return e.concat(is.arr(L) ? flattenArray(L) : L);
   }, []);
 }
 function toArray(A) {
   return is.arr(A) ? A : (is.str(A) && (A = selectString(A) || A), A instanceof NodeList || A instanceof HTMLCollection ? [].slice.call(A) : [A]);
 }
 function arrayContains(A, e) {
-  return A.some(function(k) {
-    return k === e;
+  return A.some(function(L) {
+    return L === e;
   });
 }
 function cloneObject(A) {
   var e = {};
-  for (var k in A)
-    e[k] = A[k];
+  for (var L in A)
+    e[L] = A[L];
   return e;
 }
 function replaceObjectProps(A, e) {
-  var k = cloneObject(A);
+  var L = cloneObject(A);
   for (var n in A)
-    k[n] = e.hasOwnProperty(n) ? e[n] : A[n];
-  return k;
+    L[n] = e.hasOwnProperty(n) ? e[n] : A[n];
+  return L;
 }
 function mergeObjects(A, e) {
-  var k = cloneObject(A);
+  var L = cloneObject(A);
   for (var n in e)
-    k[n] = is.und(A[n]) ? e[n] : A[n];
-  return k;
+    L[n] = is.und(A[n]) ? e[n] : A[n];
+  return L;
 }
 function rgbToRgba(A) {
   var e = /rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(A);
   return e ? "rgba(" + e[1] + ",1)" : A;
 }
 function hexToRgba(A) {
-  var e = /^#?([a-f\d])([a-f\d])([a-f\d])$/i, k = A.replace(e, function(I, c, d, r) {
+  var e = /^#?([a-f\d])([a-f\d])([a-f\d])$/i, L = A.replace(e, function(I, c, d, r) {
     return c + c + d + d + r + r;
-  }), n = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(k), u = parseInt(n[1], 16), q = parseInt(n[2], 16), V = parseInt(n[3], 16);
-  return "rgba(" + u + "," + q + "," + V + ",1)";
+  }), n = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(L), f = parseInt(n[1], 16), q = parseInt(n[2], 16), V = parseInt(n[3], 16);
+  return "rgba(" + f + "," + q + "," + V + ",1)";
 }
 function hslToRgba(A) {
-  var e = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(A) || /hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(A), k = parseInt(e[1], 10) / 360, n = parseInt(e[2], 10) / 100, u = parseInt(e[3], 10) / 100, q = e[4] || 1;
+  var e = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(A) || /hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(A), L = parseInt(e[1], 10) / 360, n = parseInt(e[2], 10) / 100, f = parseInt(e[3], 10) / 100, q = e[4] || 1;
   function V(M, S, h) {
     return h < 0 && (h += 1), h > 1 && (h -= 1), h < 1 / 6 ? M + (S - M) * 6 * h : h < 1 / 2 ? S : h < 2 / 3 ? M + (S - M) * (2 / 3 - h) * 6 : M;
   }
   var I, c, d;
   if (n == 0)
-    I = c = d = u;
+    I = c = d = f;
   else {
-    var r = u < 0.5 ? u * (1 + n) : u + n - u * n, F = 2 * u - r;
-    I = V(F, r, k + 1 / 3), c = V(F, r, k), d = V(F, r, k - 1 / 3);
+    var r = f < 0.5 ? f * (1 + n) : f + n - f * n, F = 2 * f - r;
+    I = V(F, r, L + 1 / 3), c = V(F, r, L), d = V(F, r, L - 1 / 3);
   }
   return "rgba(" + I * 255 + "," + c * 255 + "," + d * 255 + "," + q + ")";
 }
@@ -17696,24 +17699,24 @@ function getFunctionValue(A, e) {
 function getAttribute(A, e) {
   return A.getAttribute(e);
 }
-function convertPxToUnit(A, e, k) {
+function convertPxToUnit(A, e, L) {
   var n = getUnit(e);
-  if (arrayContains([k, "deg", "rad", "turn"], n))
+  if (arrayContains([L, "deg", "rad", "turn"], n))
     return e;
-  var u = cache.CSS[e + k];
-  if (!is.und(u))
-    return u;
+  var f = cache.CSS[e + L];
+  if (!is.und(f))
+    return f;
   var q = 100, V = document.createElement(A.tagName), I = A.parentNode && A.parentNode !== document ? A.parentNode : document.body;
-  I.appendChild(V), V.style.position = "absolute", V.style.width = q + k;
+  I.appendChild(V), V.style.position = "absolute", V.style.width = q + L;
   var c = q / V.offsetWidth;
   I.removeChild(V);
   var d = c * parseFloat(e);
-  return cache.CSS[e + k] = d, d;
+  return cache.CSS[e + L] = d, d;
 }
-function getCSSValue(A, e, k) {
+function getCSSValue(A, e, L) {
   if (e in A.style) {
-    var n = e.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(), u = A.style[e] || getComputedStyle(A).getPropertyValue(n) || "0";
-    return k ? convertPxToUnit(A, u, k) : u;
+    var n = e.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(), f = A.style[e] || getComputedStyle(A).getPropertyValue(n) || "0";
+    return L ? convertPxToUnit(A, f, L) : f;
   }
 }
 function getAnimationType(A, e) {
@@ -17728,21 +17731,21 @@ function getAnimationType(A, e) {
 }
 function getElementTransforms(A) {
   if (is.dom(A)) {
-    for (var e = A.style.transform || "", k = /(\w+)\(([^)]*)\)/g, n = /* @__PURE__ */ new Map(), u; u = k.exec(e); )
-      n.set(u[1], u[2]);
+    for (var e = A.style.transform || "", L = /(\w+)\(([^)]*)\)/g, n = /* @__PURE__ */ new Map(), f; f = L.exec(e); )
+      n.set(f[1], f[2]);
     return n;
   }
 }
-function getTransformValue(A, e, k, n) {
-  var u = stringContains(e, "scale") ? 1 : 0 + getTransformUnit(e), q = getElementTransforms(A).get(e) || u;
-  return k && (k.transforms.list.set(e, q), k.transforms.last = e), n ? convertPxToUnit(A, q, n) : q;
+function getTransformValue(A, e, L, n) {
+  var f = stringContains(e, "scale") ? 1 : 0 + getTransformUnit(e), q = getElementTransforms(A).get(e) || f;
+  return L && (L.transforms.list.set(e, q), L.transforms.last = e), n ? convertPxToUnit(A, q, n) : q;
 }
-function getOriginalTargetValue(A, e, k, n) {
+function getOriginalTargetValue(A, e, L, n) {
   switch (getAnimationType(A, e)) {
     case "transform":
-      return getTransformValue(A, e, n, k);
+      return getTransformValue(A, e, n, L);
     case "css":
-      return getCSSValue(A, e, k);
+      return getCSSValue(A, e, L);
     case "attribute":
       return getAttribute(A, e);
     default:
@@ -17750,17 +17753,17 @@ function getOriginalTargetValue(A, e, k, n) {
   }
 }
 function getRelativeValue(A, e) {
-  var k = /^(\*=|\+=|-=)/.exec(A);
-  if (!k)
+  var L = /^(\*=|\+=|-=)/.exec(A);
+  if (!L)
     return A;
-  var n = getUnit(A) || 0, u = parseFloat(e), q = parseFloat(A.replace(k[0], ""));
-  switch (k[0][0]) {
+  var n = getUnit(A) || 0, f = parseFloat(e), q = parseFloat(A.replace(L[0], ""));
+  switch (L[0][0]) {
     case "+":
-      return u + q + n;
+      return f + q + n;
     case "-":
-      return u - q + n;
+      return f - q + n;
     case "*":
-      return u * q + n;
+      return f * q + n;
   }
 }
 function validateValue(A, e) {
@@ -17768,7 +17771,7 @@ function validateValue(A, e) {
     return colorToRgb(A);
   if (/\s/g.test(A))
     return A;
-  var k = getUnit(A), n = k ? A.substr(0, A.length - k.length) : A;
+  var L = getUnit(A), n = L ? A.substr(0, A.length - L.length) : A;
   return e ? n + e : n;
 }
 function getDistance(A, e) {
@@ -17787,11 +17790,11 @@ function getLineLength(A) {
   );
 }
 function getPolylineLength(A) {
-  for (var e = A.points, k = 0, n, u = 0; u < e.numberOfItems; u++) {
-    var q = e.getItem(u);
-    u > 0 && (k += getDistance(n, q)), n = q;
+  for (var e = A.points, L = 0, n, f = 0; f < e.numberOfItems; f++) {
+    var q = e.getItem(f);
+    f > 0 && (L += getDistance(n, q)), n = q;
   }
-  return k;
+  return L;
 }
 function getPolygonLength(A) {
   var e = A.points;
@@ -17823,7 +17826,7 @@ function getParentSvgEl(A) {
   return e;
 }
 function getParentSvg(A, e) {
-  var k = e || {}, n = k.el || getParentSvgEl(A), u = n.getBoundingClientRect(), q = getAttribute(n, "viewBox"), V = u.width, I = u.height, c = k.viewBox || (q ? q.split(" ") : [0, 0, V, I]);
+  var L = e || {}, n = L.el || getParentSvgEl(A), f = n.getBoundingClientRect(), q = getAttribute(n, "viewBox"), V = f.width, I = f.height, c = L.viewBox || (q ? q.split(" ") : [0, 0, V, I]);
   return {
     el: n,
     viewBox: c,
@@ -17836,64 +17839,64 @@ function getParentSvg(A, e) {
   };
 }
 function getPath(A, e) {
-  var k = is.str(A) ? selectString(A)[0] : A, n = e || 100;
-  return function(u) {
+  var L = is.str(A) ? selectString(A)[0] : A, n = e || 100;
+  return function(f) {
     return {
-      property: u,
-      el: k,
-      svg: getParentSvg(k),
-      totalLength: getTotalLength(k) * (n / 100)
+      property: f,
+      el: L,
+      svg: getParentSvg(L),
+      totalLength: getTotalLength(L) * (n / 100)
     };
   };
 }
-function getPathProgress(A, e, k) {
+function getPathProgress(A, e, L) {
   function n(r) {
     r === void 0 && (r = 0);
     var F = e + r >= 1 ? e + r : 0;
     return A.el.getPointAtLength(F);
   }
-  var u = getParentSvg(A.el, A.svg), q = n(), V = n(-1), I = n(1), c = k ? 1 : u.w / u.vW, d = k ? 1 : u.h / u.vH;
+  var f = getParentSvg(A.el, A.svg), q = n(), V = n(-1), I = n(1), c = L ? 1 : f.w / f.vW, d = L ? 1 : f.h / f.vH;
   switch (A.property) {
     case "x":
-      return (q.x - u.x) * c;
+      return (q.x - f.x) * c;
     case "y":
-      return (q.y - u.y) * d;
+      return (q.y - f.y) * d;
     case "angle":
       return Math.atan2(I.y - V.y, I.x - V.x) * 180 / Math.PI;
   }
 }
 function decomposeValue(A, e) {
-  var k = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g, n = validateValue(is.pth(A) ? A.totalLength : A, e) + "";
+  var L = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g, n = validateValue(is.pth(A) ? A.totalLength : A, e) + "";
   return {
     original: n,
-    numbers: n.match(k) ? n.match(k).map(Number) : [0],
-    strings: is.str(A) || e ? n.split(k) : []
+    numbers: n.match(L) ? n.match(L).map(Number) : [0],
+    strings: is.str(A) || e ? n.split(L) : []
   };
 }
 function parseTargets(A) {
   var e = A ? flattenArray(is.arr(A) ? A.map(toArray) : toArray(A)) : [];
-  return filterArray(e, function(k, n, u) {
-    return u.indexOf(k) === n;
+  return filterArray(e, function(L, n, f) {
+    return f.indexOf(L) === n;
   });
 }
 function getAnimatables(A) {
   var e = parseTargets(A);
-  return e.map(function(k, n) {
-    return { target: k, id: n, total: e.length, transforms: { list: getElementTransforms(k) } };
+  return e.map(function(L, n) {
+    return { target: L, id: n, total: e.length, transforms: { list: getElementTransforms(L) } };
   });
 }
 function normalizePropertyTweens(A, e) {
-  var k = cloneObject(e);
-  if (/^spring/.test(k.easing) && (k.duration = spring(k.easing)), is.arr(A)) {
-    var n = A.length, u = n === 2 && !is.obj(A[0]);
-    u ? A = { value: A } : is.fnc(e.duration) || (k.duration = e.duration / n);
+  var L = cloneObject(e);
+  if (/^spring/.test(L.easing) && (L.duration = spring(L.easing)), is.arr(A)) {
+    var n = A.length, f = n === 2 && !is.obj(A[0]);
+    f ? A = { value: A } : is.fnc(e.duration) || (L.duration = e.duration / n);
   }
   var q = is.arr(A) ? A : [A];
   return q.map(function(V, I) {
     var c = is.obj(V) && !is.pth(V) ? V : { value: V };
     return is.und(c.delay) && (c.delay = I ? 0 : e.delay), is.und(c.endDelay) && (c.endDelay = I === q.length - 1 ? e.endDelay : 0), c;
   }).map(function(V) {
-    return mergeObjects(V, k);
+    return mergeObjects(V, L);
   });
 }
 function flattenKeyframes(A) {
@@ -17903,57 +17906,57 @@ function flattenKeyframes(A) {
     return is.key(q);
   }).reduce(function(q, V) {
     return q.indexOf(V) < 0 && q.push(V), q;
-  }, []), k = {}, n = function(q) {
+  }, []), L = {}, n = function(q) {
     var V = e[q];
-    k[V] = A.map(function(I) {
+    L[V] = A.map(function(I) {
       var c = {};
       for (var d in I)
         is.key(d) ? d == V && (c.value = I[d]) : c[d] = I[d];
       return c;
     });
-  }, u = 0; u < e.length; u++)
-    n(u);
-  return k;
+  }, f = 0; f < e.length; f++)
+    n(f);
+  return L;
 }
 function getProperties(A, e) {
-  var k = [], n = e.keyframes;
+  var L = [], n = e.keyframes;
   n && (e = mergeObjects(flattenKeyframes(n), e));
-  for (var u in e)
-    is.key(u) && k.push({
-      name: u,
-      tweens: normalizePropertyTweens(e[u], A)
+  for (var f in e)
+    is.key(f) && L.push({
+      name: f,
+      tweens: normalizePropertyTweens(e[f], A)
     });
-  return k;
+  return L;
 }
 function normalizeTweenValues(A, e) {
-  var k = {};
+  var L = {};
   for (var n in A) {
-    var u = getFunctionValue(A[n], e);
-    is.arr(u) && (u = u.map(function(q) {
+    var f = getFunctionValue(A[n], e);
+    is.arr(f) && (f = f.map(function(q) {
       return getFunctionValue(q, e);
-    }), u.length === 1 && (u = u[0])), k[n] = u;
+    }), f.length === 1 && (f = f[0])), L[n] = f;
   }
-  return k.duration = parseFloat(k.duration), k.delay = parseFloat(k.delay), k;
+  return L.duration = parseFloat(L.duration), L.delay = parseFloat(L.delay), L;
 }
 function normalizeTweens(A, e) {
-  var k;
+  var L;
   return A.tweens.map(function(n) {
-    var u = normalizeTweenValues(n, e), q = u.value, V = is.arr(q) ? q[1] : q, I = getUnit(V), c = getOriginalTargetValue(e.target, A.name, I, e), d = k ? k.to.original : c, r = is.arr(q) ? q[0] : d, F = getUnit(r) || getUnit(c), M = I || F;
-    return is.und(V) && (V = d), u.from = decomposeValue(r, M), u.to = decomposeValue(getRelativeValue(V, r), M), u.start = k ? k.end : 0, u.end = u.start + u.delay + u.duration + u.endDelay, u.easing = parseEasings(u.easing, u.duration), u.isPath = is.pth(q), u.isPathTargetInsideSVG = u.isPath && is.svg(e.target), u.isColor = is.col(u.from.original), u.isColor && (u.round = 1), k = u, u;
+    var f = normalizeTweenValues(n, e), q = f.value, V = is.arr(q) ? q[1] : q, I = getUnit(V), c = getOriginalTargetValue(e.target, A.name, I, e), d = L ? L.to.original : c, r = is.arr(q) ? q[0] : d, F = getUnit(r) || getUnit(c), M = I || F;
+    return is.und(V) && (V = d), f.from = decomposeValue(r, M), f.to = decomposeValue(getRelativeValue(V, r), M), f.start = L ? L.end : 0, f.end = f.start + f.delay + f.duration + f.endDelay, f.easing = parseEasings(f.easing, f.duration), f.isPath = is.pth(q), f.isPathTargetInsideSVG = f.isPath && is.svg(e.target), f.isColor = is.col(f.from.original), f.isColor && (f.round = 1), L = f, f;
   });
 }
 var setProgressValue = {
-  css: function(A, e, k) {
-    return A.style[e] = k;
+  css: function(A, e, L) {
+    return A.style[e] = L;
   },
-  attribute: function(A, e, k) {
-    return A.setAttribute(e, k);
+  attribute: function(A, e, L) {
+    return A.setAttribute(e, L);
   },
-  object: function(A, e, k) {
-    return A[e] = k;
+  object: function(A, e, L) {
+    return A[e] = L;
   },
-  transform: function(A, e, k, n, u) {
-    if (n.list.set(e, k), e === n.last || u) {
+  transform: function(A, e, L, n, f) {
+    if (n.list.set(e, L), e === n.last || f) {
       var q = "";
       n.list.forEach(function(V, I) {
         q += I + "(" + V + ") ";
@@ -17962,57 +17965,57 @@ var setProgressValue = {
   }
 };
 function setTargetsValue(A, e) {
-  var k = getAnimatables(A);
-  k.forEach(function(n) {
-    for (var u in e) {
-      var q = getFunctionValue(e[u], n), V = n.target, I = getUnit(q), c = getOriginalTargetValue(V, u, I, n), d = I || getUnit(c), r = getRelativeValue(validateValue(q, d), c), F = getAnimationType(V, u);
-      setProgressValue[F](V, u, r, n.transforms, !0);
+  var L = getAnimatables(A);
+  L.forEach(function(n) {
+    for (var f in e) {
+      var q = getFunctionValue(e[f], n), V = n.target, I = getUnit(q), c = getOriginalTargetValue(V, f, I, n), d = I || getUnit(c), r = getRelativeValue(validateValue(q, d), c), F = getAnimationType(V, f);
+      setProgressValue[F](V, f, r, n.transforms, !0);
     }
   });
 }
 function createAnimation(A, e) {
-  var k = getAnimationType(A.target, e.name);
-  if (k) {
-    var n = normalizeTweens(e, A), u = n[n.length - 1];
+  var L = getAnimationType(A.target, e.name);
+  if (L) {
+    var n = normalizeTweens(e, A), f = n[n.length - 1];
     return {
-      type: k,
+      type: L,
       property: e.name,
       animatable: A,
       tweens: n,
-      duration: u.end,
+      duration: f.end,
       delay: n[0].delay,
-      endDelay: u.endDelay
+      endDelay: f.endDelay
     };
   }
 }
 function getAnimations(A, e) {
-  return filterArray(flattenArray(A.map(function(k) {
+  return filterArray(flattenArray(A.map(function(L) {
     return e.map(function(n) {
-      return createAnimation(k, n);
+      return createAnimation(L, n);
     });
-  })), function(k) {
-    return !is.und(k);
+  })), function(L) {
+    return !is.und(L);
   });
 }
 function getInstanceTimings(A, e) {
-  var k = A.length, n = function(q) {
+  var L = A.length, n = function(q) {
     return q.timelineOffset ? q.timelineOffset : 0;
-  }, u = {};
-  return u.duration = k ? Math.max.apply(Math, A.map(function(q) {
+  }, f = {};
+  return f.duration = L ? Math.max.apply(Math, A.map(function(q) {
     return n(q) + q.duration;
-  })) : e.duration, u.delay = k ? Math.min.apply(Math, A.map(function(q) {
+  })) : e.duration, f.delay = L ? Math.min.apply(Math, A.map(function(q) {
     return n(q) + q.delay;
-  })) : e.delay, u.endDelay = k ? u.duration - Math.max.apply(Math, A.map(function(q) {
+  })) : e.delay, f.endDelay = L ? f.duration - Math.max.apply(Math, A.map(function(q) {
     return n(q) + q.duration - q.endDelay;
-  })) : e.endDelay, u;
+  })) : e.endDelay, f;
 }
 var instanceID = 0;
 function createNewInstance(A) {
-  var e = replaceObjectProps(defaultInstanceSettings, A), k = replaceObjectProps(defaultTweenSettings, A), n = getProperties(k, A), u = getAnimatables(A.targets), q = getAnimations(u, n), V = getInstanceTimings(q, k), I = instanceID;
+  var e = replaceObjectProps(defaultInstanceSettings, A), L = replaceObjectProps(defaultTweenSettings, A), n = getProperties(L, A), f = getAnimatables(A.targets), q = getAnimations(f, n), V = getInstanceTimings(q, L), I = instanceID;
   return instanceID++, mergeObjects(e, {
     id: I,
     children: [],
-    animatables: u,
+    animatables: f,
     animations: q,
     duration: V.duration,
     delay: V.delay,
@@ -18022,19 +18025,19 @@ function createNewInstance(A) {
 var activeInstances = [], engine = function() {
   var A;
   function e() {
-    !A && (!isDocumentHidden() || !anime.suspendWhenDocumentHidden) && activeInstances.length > 0 && (A = requestAnimationFrame(k));
+    !A && (!isDocumentHidden() || !anime.suspendWhenDocumentHidden) && activeInstances.length > 0 && (A = requestAnimationFrame(L));
   }
-  function k(u) {
+  function L(f) {
     for (var q = activeInstances.length, V = 0; V < q; ) {
       var I = activeInstances[V];
-      I.paused ? (activeInstances.splice(V, 1), q--) : (I.tick(u), V++);
+      I.paused ? (activeInstances.splice(V, 1), q--) : (I.tick(f), V++);
     }
-    A = V > 0 ? requestAnimationFrame(k) : void 0;
+    A = V > 0 ? requestAnimationFrame(L) : void 0;
   }
   function n() {
     anime.suspendWhenDocumentHidden && (isDocumentHidden() ? A = cancelAnimationFrame(A) : (activeInstances.forEach(
-      function(u) {
-        return u._onDocumentVisibility();
+      function(f) {
+        return f._onDocumentVisibility();
       }
     ), engine()));
   }
@@ -18045,7 +18048,7 @@ function isDocumentHidden() {
 }
 function anime(A) {
   A === void 0 && (A = {});
-  var e = 0, k = 0, n = 0, u, q = 0, V = null;
+  var e = 0, L = 0, n = 0, f, q = 0, V = null;
   function I(b) {
     var g = window.Promise && new Promise(function(w) {
       return V = w;
@@ -18056,7 +18059,7 @@ function anime(A) {
   I(c);
   function d() {
     var b = c.direction;
-    b !== "alternate" && (c.direction = b !== "normal" ? "normal" : "reverse"), c.reversed = !c.reversed, u.forEach(function(g) {
+    b !== "alternate" && (c.direction = b !== "normal" ? "normal" : "reverse"), c.reversed = !c.reversed, f.forEach(function(g) {
       return g.reversed = c.reversed;
     });
   }
@@ -18064,7 +18067,7 @@ function anime(A) {
     return c.reversed ? c.duration - b : b;
   }
   function F() {
-    e = 0, k = r(c.currentTime) * (1 / anime.speed);
+    e = 0, L = r(c.currentTime) * (1 / anime.speed);
   }
   function M(b, g) {
     g && g.seek(b - g.timelineOffset);
@@ -18072,10 +18075,10 @@ function anime(A) {
   function S(b) {
     if (c.reversePlayback)
       for (var w = q; w--; )
-        M(b, u[w]);
+        M(b, f[w]);
     else
       for (var g = 0; g < q; g++)
-        M(b, u[g]);
+        M(b, f[g]);
   }
   function h(b) {
     for (var g = 0, w = c.animations, s = w.length; g < s; ) {
@@ -18092,9 +18095,9 @@ function anime(A) {
         Q = K[0];
       else {
         Q = tt[0];
-        for (var L = 0; L < _t; L++) {
-          tt[L];
-          var a = tt[L + 1], l = K[L];
+        for (var k = 0; k < _t; k++) {
+          tt[k];
+          var a = tt[k + 1], l = K[k];
           isNaN(l) || (a ? Q += l + a : Q += l + " ");
         }
       }
@@ -18104,23 +18107,23 @@ function anime(A) {
   function p(b) {
     c[b] && !c.passThrough && c[b](c);
   }
-  function f() {
+  function u() {
     c.remaining && c.remaining !== !0 && c.remaining--;
   }
   function y(b) {
     var g = c.duration, w = c.delay, s = g - c.endDelay, i = r(b);
-    c.progress = minMax(i / g * 100, 0, 100), c.reversePlayback = i < c.currentTime, u && S(i), !c.began && c.currentTime > 0 && (c.began = !0, p("begin")), !c.loopBegan && c.currentTime > 0 && (c.loopBegan = !0, p("loopBegin")), i <= w && c.currentTime !== 0 && h(0), (i >= s && c.currentTime !== g || !g) && h(g), i > w && i < s ? (c.changeBegan || (c.changeBegan = !0, c.changeCompleted = !1, p("changeBegin")), p("change"), h(i)) : c.changeBegan && (c.changeCompleted = !0, c.changeBegan = !1, p("changeComplete")), c.currentTime = minMax(i, 0, g), c.began && p("update"), b >= g && (k = 0, f(), c.remaining ? (e = n, p("loopComplete"), c.loopBegan = !1, c.direction === "alternate" && d()) : (c.paused = !0, c.completed || (c.completed = !0, p("loopComplete"), p("complete"), !c.passThrough && "Promise" in window && (V(), I(c)))));
+    c.progress = minMax(i / g * 100, 0, 100), c.reversePlayback = i < c.currentTime, f && S(i), !c.began && c.currentTime > 0 && (c.began = !0, p("begin")), !c.loopBegan && c.currentTime > 0 && (c.loopBegan = !0, p("loopBegin")), i <= w && c.currentTime !== 0 && h(0), (i >= s && c.currentTime !== g || !g) && h(g), i > w && i < s ? (c.changeBegan || (c.changeBegan = !0, c.changeCompleted = !1, p("changeBegin")), p("change"), h(i)) : c.changeBegan && (c.changeCompleted = !0, c.changeBegan = !1, p("changeComplete")), c.currentTime = minMax(i, 0, g), c.began && p("update"), b >= g && (L = 0, u(), c.remaining ? (e = n, p("loopComplete"), c.loopBegan = !1, c.direction === "alternate" && d()) : (c.paused = !0, c.completed || (c.completed = !0, p("loopComplete"), p("complete"), !c.passThrough && "Promise" in window && (V(), I(c)))));
   }
   return c.reset = function() {
     var b = c.direction;
-    c.passThrough = !1, c.currentTime = 0, c.progress = 0, c.paused = !0, c.began = !1, c.loopBegan = !1, c.changeBegan = !1, c.completed = !1, c.changeCompleted = !1, c.reversePlayback = !1, c.reversed = b === "reverse", c.remaining = c.loop, u = c.children, q = u.length;
+    c.passThrough = !1, c.currentTime = 0, c.progress = 0, c.paused = !0, c.began = !1, c.loopBegan = !1, c.changeBegan = !1, c.completed = !1, c.changeCompleted = !1, c.reversePlayback = !1, c.reversed = b === "reverse", c.remaining = c.loop, f = c.children, q = f.length;
     for (var g = q; g--; )
       c.children[g].reset();
     (c.reversed && c.loop !== !0 || b === "alternate" && c.loop === 1) && c.remaining++, h(c.reversed ? c.duration : 0);
   }, c._onDocumentVisibility = F, c.set = function(b, g) {
     return setTargetsValue(b, g), c;
   }, c.tick = function(b) {
-    n = b, e || (e = n), y((n + (k - e)) * anime.speed);
+    n = b, e || (e = n), y((n + (L - e)) * anime.speed);
   }, c.seek = function(b) {
     y(r(b));
   }, c.pause = function() {
@@ -18137,60 +18140,60 @@ function anime(A) {
   }, c.reset(), c.autoplay && c.play(), c;
 }
 function removeTargetsFromAnimations(A, e) {
-  for (var k = e.length; k--; )
-    arrayContains(A, e[k].animatable.target) && e.splice(k, 1);
+  for (var L = e.length; L--; )
+    arrayContains(A, e[L].animatable.target) && e.splice(L, 1);
 }
 function removeTargetsFromInstance(A, e) {
-  var k = e.animations, n = e.children;
-  removeTargetsFromAnimations(A, k);
-  for (var u = n.length; u--; ) {
-    var q = n[u], V = q.animations;
-    removeTargetsFromAnimations(A, V), !V.length && !q.children.length && n.splice(u, 1);
+  var L = e.animations, n = e.children;
+  removeTargetsFromAnimations(A, L);
+  for (var f = n.length; f--; ) {
+    var q = n[f], V = q.animations;
+    removeTargetsFromAnimations(A, V), !V.length && !q.children.length && n.splice(f, 1);
   }
-  !k.length && !n.length && e.pause();
+  !L.length && !n.length && e.pause();
 }
 function removeTargetsFromActiveInstances(A) {
-  for (var e = parseTargets(A), k = activeInstances.length; k--; ) {
-    var n = activeInstances[k];
+  for (var e = parseTargets(A), L = activeInstances.length; L--; ) {
+    var n = activeInstances[L];
     removeTargetsFromInstance(e, n);
   }
 }
 function stagger(A, e) {
   e === void 0 && (e = {});
-  var k = e.direction || "normal", n = e.easing ? parseEasings(e.easing) : null, u = e.grid, q = e.axis, V = e.from || 0, I = V === "first", c = V === "center", d = V === "last", r = is.arr(A), F = parseFloat(r ? A[0] : A), M = r ? parseFloat(A[1]) : 0, S = getUnit(r ? A[1] : A) || 0, h = e.start || 0 + (r ? F : 0), p = [], f = 0;
+  var L = e.direction || "normal", n = e.easing ? parseEasings(e.easing) : null, f = e.grid, q = e.axis, V = e.from || 0, I = V === "first", c = V === "center", d = V === "last", r = is.arr(A), F = parseFloat(r ? A[0] : A), M = r ? parseFloat(A[1]) : 0, S = getUnit(r ? A[1] : A) || 0, h = e.start || 0 + (r ? F : 0), p = [], u = 0;
   return function(y, b, g) {
     if (I && (V = 0), c && (V = (g - 1) / 2), d && (V = g - 1), !p.length) {
       for (var w = 0; w < g; w++) {
-        if (!u)
+        if (!f)
           p.push(Math.abs(V - w));
         else {
-          var s = c ? (u[0] - 1) / 2 : V % u[0], i = c ? (u[1] - 1) / 2 : Math.floor(V / u[0]), E = w % u[0], _ = Math.floor(w / u[0]), o = s - E, T = i - _, P = Math.sqrt(o * o + T * T);
+          var s = c ? (f[0] - 1) / 2 : V % f[0], i = c ? (f[1] - 1) / 2 : Math.floor(V / f[0]), E = w % f[0], _ = Math.floor(w / f[0]), o = s - E, T = i - _, P = Math.sqrt(o * o + T * T);
           q === "x" && (P = -o), q === "y" && (P = -T), p.push(P);
         }
-        f = Math.max.apply(Math, p);
+        u = Math.max.apply(Math, p);
       }
       n && (p = p.map(function(tt) {
-        return n(tt / f) * f;
-      })), k === "reverse" && (p = p.map(function(tt) {
-        return q ? tt < 0 ? tt * -1 : -tt : Math.abs(f - tt);
+        return n(tt / u) * u;
+      })), L === "reverse" && (p = p.map(function(tt) {
+        return q ? tt < 0 ? tt * -1 : -tt : Math.abs(u - tt);
       }));
     }
-    var Y = r ? (M - F) / f : F;
+    var Y = r ? (M - F) / u : F;
     return h + Y * (Math.round(p[b] * 100) / 100) + S;
   };
 }
 function timeline(A) {
   A === void 0 && (A = {});
   var e = anime(A);
-  return e.duration = 0, e.add = function(k, n) {
-    var u = activeInstances.indexOf(e), q = e.children;
-    u > -1 && activeInstances.splice(u, 1);
+  return e.duration = 0, e.add = function(L, n) {
+    var f = activeInstances.indexOf(e), q = e.children;
+    f > -1 && activeInstances.splice(f, 1);
     function V(M) {
       M.passThrough = !0;
     }
     for (var I = 0; I < q.length; I++)
       V(q[I]);
-    var c = mergeObjects(k, replaceObjectProps(defaultTweenSettings, A));
+    var c = mergeObjects(L, replaceObjectProps(defaultTweenSettings, A));
     c.targets = c.targets || A.targets;
     var d = e.duration;
     c.autoplay = !1, c.direction = e.direction, c.timelineOffset = is.und(n) ? d : getRelativeValue(n, d), V(e), e.seek(c.timelineOffset);
@@ -18218,9 +18221,9 @@ anime.random = function(A, e) {
   return Math.floor(Math.random() * (e - A + 1)) + A;
 };
 function onClickOutside(A, e) {
-  document.addEventListener("click", (k) => {
-    const n = A.getBoundingClientRect(), q = k.target.getBoundingClientRect();
-    (q.left < n.left || q.right > n.right || q.top < n.top || q.bottom > n.bottom) && e(k);
+  document.addEventListener("click", (L) => {
+    const n = A.getBoundingClientRect(), q = L.target.getBoundingClientRect();
+    (q.left < n.left || q.right > n.right || q.top < n.top || q.bottom > n.bottom) && e(L);
   });
 }
 var je, Jn;
@@ -18231,8 +18234,8 @@ class SearchButton {
   }
   build(e) {
     this.eventBus = e.eventBus, this.pdfFindController = e.pdfFindController, this.btnContainer = document.createElement("div"), this.btnContainer.className = "relative";
-    let k = document.createElement("button");
-    return k.className = "outline-none border-none hover:bg-gray-100  p-2", k.title = "search in the document", k.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>', this.btnContainer.append(k), k.addEventListener("click", () => {
+    let L = document.createElement("button");
+    return L.className = "outline-none border-none hover:bg-gray-100  p-2", L.title = "search in the document", L.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>', this.btnContainer.append(L), L.addEventListener("click", () => {
       setTimeout(() => {
         this.toggleBox();
       }, 300);
@@ -18242,8 +18245,8 @@ class SearchButton {
           setTimeout(() => {
             if (!n.source.highlightMatches)
               return;
-            let u = n.source._matchesCountTotal > 0 && n.matchesCount.current === 0 ? 1 : n.matchesCount.current;
-            this.statusIndicator.innerText = `Showing ${u} of ${n.source._matchesCountTotal}`;
+            let f = n.source._matchesCountTotal > 0 && n.matchesCount.current === 0 ? 1 : n.matchesCount.current;
+            this.statusIndicator.innerText = `Showing ${f} of ${n.source._matchesCountTotal}`;
             let q = document.querySelector(".highlight.selected.appended");
             e.bodyContainer.scrollTop = e.bodyContainer.scrollTop + parseFloat(q == null ? void 0 : q.getBoundingClientRect().top.toString()) - 100;
           }, 100);
@@ -18285,18 +18288,18 @@ class SearchButton {
   buildInput() {
     let e = document.createElement("div");
     e.className = "flex gap-x-1";
-    let k = document.createElement("input");
-    k.className = "focus:outline-none px-2 py-1 border rounded", k.placeholder = "Search...", k.addEventListener("change", (q) => {
+    let L = document.createElement("input");
+    L.className = "focus:outline-none px-2 py-1 border rounded", L.placeholder = "Search...", L.addEventListener("change", (q) => {
       this.query = q.target.value, this.search();
     });
     let n = document.createElement("button");
     n.className = "p-1 rounded border", n.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>', n.addEventListener("click", () => {
       this.search("again", !0);
     });
-    let u = document.createElement("button");
-    u.className = "p-1 rounded border", u.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>', u.addEventListener("click", () => {
+    let f = document.createElement("button");
+    f.className = "p-1 rounded border", f.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>', f.addEventListener("click", () => {
       this.search("again");
-    }), e.append(k), e.append(n), e.append(u), this.container.append(e);
+    }), e.append(L), e.append(n), e.append(f), this.container.append(e);
   }
   buildButtons() {
     let e = document.createElement("div");
@@ -18329,7 +18332,7 @@ class SearchButton {
       e.append(X(this, je, Jn).call(this, n.label, n.callback));
     }), this.container.append(e);
   }
-  search(e = "", k = !1) {
+  search(e = "", L = !1) {
     if (this.query.trim().length === 0) {
       this.statusIndicator.innerText = "Please specify search text";
       return;
@@ -18341,7 +18344,7 @@ class SearchButton {
       caseSensitive: this.caseSensitive,
       entireWord: this.entireWord,
       highlightAll: this.highlightAll,
-      findPrevious: k,
+      findPrevious: L,
       matchDiacritics: this.matchDiacritics
     });
   }
@@ -18358,39 +18361,39 @@ class SearchButton {
     (e = this.btnContainer) == null || e.remove(), this.btnContainer = null, this.eventBus = null, this.pdfFindController = null, this.resetValues();
   }
 }
-je = new WeakSet(), Jn = function(e, k) {
+je = new WeakSet(), Jn = function(e, L) {
   let n = document.createElement("button");
-  return n.className = "px-2 py-1 rounded border text-sm whitespace-nowrap", n.innerText = e, n.addEventListener("click", (u) => {
-    k(u), n.classList.toggle("bg-gray-100");
+  return n.className = "px-2 py-1 rounded border text-sm whitespace-nowrap", n.innerText = e, n.addEventListener("click", (f) => {
+    L(f), n.classList.toggle("bg-gray-100");
   }), n;
 };
 class ZoomButton {
   build(e) {
-    return this.pdfViewer = e.pdfViewer, this.container = document.createElement("div"), this.buildButtons(this.container), this.buildDropdown(this.container), e.eventBus.on("scalechanging", (k) => {
-      this.currentScaleTracker.innerText = Math.round(k.scale * 100) + "%", this.currentScaleTracker.selected = !0;
+    return this.pdfViewer = e.pdfViewer, this.container = document.createElement("div"), this.buildButtons(this.container), this.buildDropdown(this.container), e.eventBus.on("scalechanging", (L) => {
+      this.currentScaleTracker.innerText = Math.round(L.scale * 100) + "%", this.currentScaleTracker.selected = !0;
     }), this.container;
   }
   onClick(e) {
   }
   buildButtons(e) {
     e.className = "flex items-center gap-x-2 text-gray-600 fill-current";
-    let k = document.createElement("button");
-    k.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 lucide lucide-zoom-out"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg>', k.addEventListener("click", () => {
+    let L = document.createElement("button");
+    L.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 lucide lucide-zoom-out"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg>', L.addEventListener("click", () => {
       this.pdfViewer.decreaseScale();
-    }), e.append(k);
+    }), e.append(L);
     let n = document.createElement("button");
     n.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-zoom-in"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>', n.addEventListener("click", () => {
       this.pdfViewer.increaseScale();
     }), e.append(n);
   }
   buildDropdown(e) {
-    let k = document.createElement("select");
-    this.currentScaleTracker = document.createElement("option"), this.currentScaleTracker.disabled = !0, k.append(this.currentScaleTracker), ["page-width", " page-actual", "page-height", "page-fit", "auto"].forEach((u) => {
+    let L = document.createElement("select");
+    this.currentScaleTracker = document.createElement("option"), this.currentScaleTracker.disabled = !0, L.append(this.currentScaleTracker), ["page-width", " page-actual", "page-height", "page-fit", "auto"].forEach((f) => {
       let q = document.createElement("option");
-      q.value = u, q.innerText = u, k.append(q);
-    }), k.addEventListener("change", (u) => {
-      this.pdfViewer.currentScaleValue = u.target.value;
-    }), e.append(k);
+      q.value = f, q.innerText = f, L.append(q);
+    }), L.addEventListener("change", (f) => {
+      this.pdfViewer.currentScaleValue = f.target.value;
+    }), e.append(L);
   }
   position() {
     return "center";
@@ -18405,23 +18408,22 @@ class ViewPropertiesButton {
     this.isVisible = !1;
   }
   build(e) {
-    let k = document.createElement("button");
-    return k.className = "outline-none border-none hover:bg-gray-100 p-2", k.title = "view properties", k.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>', e.pdfDocument.getMetadata().then((n) => {
-      let u = n.info;
-      this.name = pdfExports.getPdfFilenameFromUrl(e.url), this.computeFilesize(n.contentLength), this.computeCreatedDate(u.CreationDate), this.author = u.Creator, this.pdfProducer = u.Producer, this.pdfVersion = u.PDFFormatVersion, this.totalPages = e.pdfDocument.numPages.toString(), this.preparePopover();
-    }), k;
+    return this.btn = document.createElement("button"), this.btn.className = "outline-none border-none hover:bg-gray-100 p-2", this.btn.title = "view properties", this.btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide w-5 h-5 lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>', e.pdfDocument.getMetadata().then((L) => {
+      let n = L.info;
+      this.name = pdfExports.getPdfFilenameFromUrl(e.url), this.computeFilesize(L.contentLength), this.computeCreatedDate(n.CreationDate), this.author = n.Creator, this.pdfProducer = n.Producer, this.pdfVersion = n.PDFFormatVersion, this.totalPages = e.pdfDocument.numPages.toString(), this.preparePopover();
+    }), this.btn;
   }
   preparePopover() {
     this.popOver = document.createElement("div"), this.popOver.className = "flex-col fixed gap-y-2 p-4 top-1/2 z-[10000] bg-gray-50 border-2 shadow-lg rounded-lg left-1/2 transform -translate-x-1/2 -translate-y-1/2", this.popOver.style.display = "none";
     let e = document.createElement("h1");
-    e.className = "font-semibold text-lg border-b py-2", e.innerText = "Document Properties", this.popOver.append(e), Object.getOwnPropertyNames(this).forEach((k) => {
-      if (typeof this[k] == "string") {
+    e.className = "font-semibold text-lg border-b py-2", e.innerText = "Document Properties", this.popOver.append(e), Object.getOwnPropertyNames(this).forEach((L) => {
+      if (typeof this[L] == "string") {
         let n = document.createElement("div");
         n.className = "flex items-center mt-2";
-        let u = document.createElement("span");
-        u.className = "w-32", u.innerText = k;
+        let f = document.createElement("span");
+        f.className = "w-32", f.innerText = L;
         let q = document.createElement("p");
-        q.className = "w-64", q.innerText = this[k], n.append(u), n.append(q), this.popOver.append(n);
+        q.className = "w-64", q.innerText = this[L], n.append(f), n.append(q), this.popOver.append(n);
       }
     }), document.body.append(this.popOver), onClickOutside(this.popOver, () => {
       this.isVisible && this.toggleVisibility();
@@ -18434,7 +18436,13 @@ class ViewPropertiesButton {
     e < 1e6 ? this.size = e / 1e3 + "kb" : this.size = e / 1e6 + "mb";
   }
   computeCreatedDate(e) {
-    const k = e.substring(2, e.length - 7), n = k.substring(0, 4), u = k.substring(4, 6) - 1, q = k.substring(6, 8), V = k.substring(8, 10), I = k.substring(10, 12), c = k.substring(12, 14), d = new Date(Date.UTC(n, u, q, V, I, c)), r = e.substring(e.length - 7), F = parseInt(r.substring(1, 3), 10), M = parseInt(r.substring(4, 6), 10);
+    const L = e.substring(2, e.length - 7), n = L.substring(0, 4), f = L.substring(4, 6) - 1, q = L.substring(6, 8), V = L.substring(8, 10), I = L.substring(10, 12), c = L.substring(12, 14), d = new Date(Date.UTC(n, f, q, V, I, c)), r = e.substring(e.length - 7), F = parseInt(
+      r.substring(1, 3),
+      10
+    ), M = parseInt(
+      r.substring(4, 6),
+      10
+    );
     d.setUTCHours(d.getUTCHours() - F), d.setUTCMinutes(d.getUTCMinutes() - M), this.created = d.toDateString() + " " + d.toTimeString();
   }
   position() {
@@ -18446,8 +18454,8 @@ class ViewPropertiesButton {
     }, 100);
   }
   reset() {
-    var e, k;
-    this.isVisible = !1, (e = this.popOver) == null || e.remove(), (k = this.btn) == null || k.remove(), this.size = null, this.name = null, this.author = null, this.created = null, this.pdfProducer = null, this.pdfVersion = null, this.numPages = null;
+    var e, L;
+    this.isVisible = !1, (e = this.popOver) == null || e.remove(), (L = this.btn) == null || L.remove(), this.size = null, this.name = null, this.author = null, this.created = null, this.pdfProducer = null, this.pdfVersion = null, this.totalPages = null;
   }
 }
 pdfExports.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfExports.version}/build/pdf.worker`;
@@ -18515,32 +18523,32 @@ class PDFViewer {
     );
     let e = document.createElement("div");
     e.className = "flex flex-col w-full", this.buttonsContainer = document.createElement("div"), this.buttonsContainer.className = "w-full grid grid-cols-3 gap-x-2 rounded items-center border shadow-lg p-1 bg-white";
-    let k = document.createElement("div");
-    k.className = "flex items-center";
+    let L = document.createElement("div");
+    L.className = "flex items-center";
     let n = document.createElement("div");
     n.className = "flex justify-center items-center";
-    let u = document.createElement("div");
-    u.className = "flex justify-end items-center", this.buttonsContainer.append(k), this.buttonsContainer.append(n), this.buttonsContainer.append(u), e.append(this.buttonsContainer), this.bodyContainer = document.createElement("div"), this.bodyContainer.className = "w-full h-full mt-2 relative overflow-y-auto flex justify-center", this.bodyContainer.style.scrollBehavior = "smooth", this.pdfContainer = document.createElement("div"), this.pdfContainer.style.position = "absolute", this.pdfContainer.style.width = "100%";
+    let f = document.createElement("div");
+    f.className = "flex justify-end items-center", this.buttonsContainer.append(L), this.buttonsContainer.append(n), this.buttonsContainer.append(f), e.append(this.buttonsContainer), this.bodyContainer = document.createElement("div"), this.bodyContainer.className = "w-full h-full mt-2 relative overflow-y-auto flex justify-center", this.bodyContainer.style.scrollBehavior = "smooth", this.pdfContainer = document.createElement("div"), this.pdfContainer.style.position = "absolute", this.pdfContainer.style.width = "100%";
     let q = document.createElement("div");
     q.id = "viewer", q.className = "pdfViewer", this.pdfContainer.append(q), this.bodyContainer.append(this.pdfContainer), e.append(this.bodyContainer), this.container.append(e);
   }
   buildButtons() {
     this.buttons.forEach((e) => {
       e.reset();
-      let k = e.build(this.data);
-      if (k) {
+      let L = e.build(this.data);
+      if (L) {
         switch (e.position()) {
           case "left":
-            this.buttonsContainer.children[0].append(k);
+            this.buttonsContainer.children[0].append(L);
             break;
           case "center":
-            this.buttonsContainer.children[1].append(k);
+            this.buttonsContainer.children[1].append(L);
             break;
           case "right":
-            this.buttonsContainer.children[2].append(k);
+            this.buttonsContainer.children[2].append(L);
             break;
         }
-        k.onclick = () => e.onClick(this.data);
+        L.onclick = () => e.onClick(this.data);
       }
     });
   }
@@ -18549,10 +18557,10 @@ class PDFViewer {
       this.pdfViewer.currentScaleValue = "auto";
     });
   }
-  async init(e, k = {}) {
+  async init(e, L = {}) {
     let n = `https://unpkg.com/pdfjs-dist@${pdfExports.version}/cmaps/`;
     this.url = e;
-    const u = pdfExports.getDocument({
+    const f = pdfExports.getDocument({
       url: e,
       enableXfa: !0,
       cMapPacked: !0,
@@ -18561,7 +18569,7 @@ class PDFViewer {
       disableFontFace: !1,
       cMapUrl: n
     });
-    (async () => (this.pdfDocument = await u.promise, this.pdfViewer.setDocument(this.pdfDocument), this.pdfLinkService.setDocument(this.pdfDocument, null), this.listenEvents(), this.buildButtons()))();
+    (async () => (this.pdfDocument = await f.promise, this.pdfViewer.setDocument(this.pdfDocument), this.pdfLinkService.setDocument(this.pdfDocument, null), this.listenEvents(), this.buildButtons()))();
   }
 }
 const app = "";

@@ -27,6 +27,7 @@ export default class DownloadButton implements Button {
     }
 
     reset() {
+        this.btn?.remove();
     }
 
 }

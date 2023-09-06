@@ -1,12 +1,8 @@
 import * as pdfjsLib from "pdfjs-dist";
 import * as pdfjsViewer from "pdfjs-dist/web/pdf_viewer";
 
-// @ts-ignore
-// import pdfjsWorkerUrl from 'pdfjs-dist/build/pdf.worker?url';
 import "pdfjs-dist/web/pdf_viewer.css";
 import Button from "./interfaces/Button";
-// @ts-ignore
-// import pdfjsSandboxUrl from "pdfjs-dist/build/pdf.sandbox?url";
 import ViewThumbnailsButton from "./buttons/view-thumbnails-button";
 import DownloadButton from "./buttons/download-button";
 import SearchButton from "./buttons/search-button";
