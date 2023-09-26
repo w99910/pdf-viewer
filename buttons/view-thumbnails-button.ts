@@ -72,7 +72,7 @@ export default class ViewThumbnailsButton implements Button {
             data.bodyContainer.scrollTop =
               data.bodyContainer.scrollTop +
               parseFloat(pageElement!.getBoundingClientRect().top.toString()) -
-              100;
+              data.buttonsContainer.getBoundingClientRect().height;
           });
           this.thumbnailContainer.append(img);
           // let pageElement = data.pdfContainer.querySelector(`[data-page-number="${i}"]`);

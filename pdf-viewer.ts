@@ -8,22 +8,26 @@ import DownloadButton from "./buttons/download-button";
 import SearchButton from "./buttons/search-button";
 import ZoomButton from "./buttons/zoom-button";
 import ViewPropertiesButton from "./buttons/view-properties-button";
+import { PDFPageViewOptions } from "pdfjs-dist/types/web/pdf_page_view";
+import { DocumentInitParameters } from "pdfjs-dist/types/src/display/api";
 
 type Data = {
-    pdfDocument: pdfjsLib.PDFDocumentProxy,
-    buttonsContainer: HTMLDivElement,
-    pdfContainer: HTMLDivElement,
-    mainContainer: HTMLDivElement,
-    bodyContainer: HTMLDivElement,
-    eventBus: pdfjsViewer.EventBus,
-    pdfLinkService: pdfjsViewer.PDFLinkService,
-    pdfFindController: pdfjsViewer.PDFFindController,
-    pdfScriptingManager: pdfjsViewer.PDFScriptingManager,
-    pdfViewer: pdfjsViewer.PDFViewer,
-    url: string,
-}
-
-export {Data};
+  pdfDocument: pdfjsLib.PDFDocumentProxy;
+  buttonsContainer: HTMLDivElement;
+  pdfContainer: HTMLDivElement;
+  mainContainer: HTMLDivElement;
+  bodyContainer: HTMLDivElement;
+  eventBus: pdfjsViewer.EventBus;
+  pdfLinkService: pdfjsViewer.PDFLinkService;
+  pdfFindController: pdfjsViewer.PDFFindController;
+  pdfScriptingManager: pdfjsViewer.PDFScriptingManager;
+  pdfViewer: pdfjsViewer.PDFViewer;
+  url: string;
+};
+type PDFViewerOptions = DocumentInitParameters & {
+  initialPageIndex?: number;
+  disableClickoutside?: boolean;
+};
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker`;
 export default class PDFViewer {
@@ -57,6 +61,7 @@ export default class PDFViewer {
 
   protected states = {
     visibility: true,
+    disableClickoutside: false,
   };
 
   addButton(button: Button) {
@@ -211,31 +216,36 @@ export default class PDFViewer {
     });
 
     // listen event when click outside
-    this.pdfContainer.addEventListener("click", (event) => {
-      if (!this.states.visibility) return;
-      let { pageX, pageY } = event;
-      // return if point is located at button container
-      let documentContainerRect = this.pdfContainer
-        .querySelector(".pdfViewer")!
-        .getBoundingClientRect();
-      if (
-        documentContainerRect.left >= pageX &&
-        pageX <= documentContainerRect.right &&
-        pageY >= documentContainerRect.top &&
-        pageY <= documentContainerRect.bottom
-      )
-        return;
-      this.toggleVisibility();
-    });
+    if (!this.states.disableClickoutside) {
+      this.pdfContainer.addEventListener("click", (event) => {
+        if (!this.states.visibility) return;
+        let { pageX, pageY } = event;
+        // return if point is located at button container
+        let documentContainerRect = this.pdfContainer
+          .querySelector(".pdfViewer")!
+          .getBoundingClientRect();
+        if (
+          documentContainerRect.left >= pageX &&
+          pageX <= documentContainerRect.right &&
+          pageY >= documentContainerRect.top &&
+          pageY <= documentContainerRect.bottom
+        )
+          return;
+        this.toggleVisibility();
+      });
+    }
   }
 
-  async init(url: string, options: Object = {}) {
+  async init(url: string, options: PDFViewerOptions = {}) {
     if (!this.states.visibility) {
       this.toggleVisibility();
     }
+    if (options.disableClickoutside) {
+      this.states.disableClickoutside = true;
+    }
     let cMapUrl = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/cmaps/`;
     this.url = url;
-    const loadingTask = pdfjsLib.getDocument({
+    let defaultOptions = {
       url: url,
       enableXfa: true,
       cMapPacked: true,
@@ -243,7 +253,11 @@ export default class PDFViewer {
       disableStream: true,
       disableFontFace: false,
       cMapUrl,
+    };
+    Object.keys(options).forEach((key) => {
+      defaultOptions[key] = options[key];
     });
+    const loadingTask = pdfjsLib.getDocument(defaultOptions);
     (async () => {
       this.pdfDocument = await loadingTask.promise;
 
@@ -251,8 +265,29 @@ export default class PDFViewer {
 
       this.pdfLinkService.setDocument(this.pdfDocument, null);
 
+      if (options.initialPageIndex) {
+        setTimeout(() => {
+          this.viewPage(options.initialPageIndex!);
+        }, 300);
+      }
+
       this.listenEvents();
       this.buildButtons();
     })();
+  }
+
+  viewPage(index: number) {
+    // get top offset of page relative to current scroll
+    let pageElement = this.pdfContainer.querySelector(
+      `[data-page-number="${index}"]`
+    );
+    if (!pageElement) {
+      throw new Error("Page has not yet loaded or invalid");
+    }
+
+    this.bodyContainer.scrollTop =
+      this.bodyContainer.scrollTop +
+      parseFloat(pageElement!.getBoundingClientRect().top.toString()) -
+      this.buttonsContainer.getBoundingClientRect().height;
   }
 }

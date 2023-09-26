@@ -3,7 +3,7 @@
 Easy-to-use PDF Viewer library written in vanilla typescript based on the core pdf
 library [pdfjs](https://github.com/mozilla/pdf.js/).
 
-Example pdf viewer is hosted at [https://w99910.github.io/pdf-viewer/](https://w99910.github.io/pdf-viewer/).
+> DEMO: Example pdf viewer is hosted at [https://w99910.github.io/pdf-viewer/](https://w99910.github.io/pdf-viewer/).
 
 ## Purposes of this library
 
@@ -76,11 +76,13 @@ pdfViewer.addButton(new DownloadButton);
 
   You need to implement `Button` interface in order to create custom button.
 
-```js
-// custom-button.ts
-import {Button} from 'pdf-viewer';
+  - As a `Class`, 
 
-export class CustomButton implements Button {
+  ```js
+  // custom-button.ts
+  import {Button} from 'pdf-viewer';
+
+  export class CustomButton implements Button {
     build(data): HTMLElement | null {
 
     }
@@ -94,10 +96,23 @@ export class CustomButton implements Button {
     } // either left, center, right;
 
     reset() {
-
+       // this is called whenever a new pdf is initialised.
     }
-}
-```
+  }
+
+  // then add button
+  pdfViewer.addButton(new CustomButton);
+  ```
+
+  - As an `Object`,
+  ```js
+  pdfViewer.addButton({
+    build: (data) => {},
+    onClick: (data) => {},
+    position: () => 'left',
+    reset: () => {},
+  });
+  ```
 
 As you can see `data` variable is passed to `build` method and `onClick` method. That `data` variable is an object
 consisting of
@@ -114,6 +129,32 @@ consisting of
 - pdfViewer: pdfjsViewer.PDFViewer,
 - url: string,
 
+## API
+
+- `init(url: string, options: PDFViewerOptions = {})`
+
+  ```js
+  type PDFViewerOptions = DocumentInitParameters & { initialPageIndex?: number, disableClickoutside?:boolean }
+  ```
+
+- `viewPage(index:number)` - Load page into view.
+
+- `data` - Get data of pdfViewer. i.e, 
+  - pdfDocument: pdfjsLib.PDFDocumentProxy,
+  - buttonsContainer: HTMLDivElement,
+  - pdfContainer: HTMLDivElement,
+  - mainContainer: HTMLDivElement,
+  - bodyContainer: HTMLDivElement,
+  - eventBus: pdfjsViewer.EventBus,
+  - pdfLinkService: pdfjsViewer.PDFLinkService,
+  - pdfFindController: pdfjsViewer.PDFFindController, 
+  - pdfScriptingManager: pdfjsViewer.PDFScriptingManager,
+  - pdfViewer: pdfjsViewer.PDFViewer,
+  - url: string,
+
+- `setButtons(buttons:Array<Button>)` - overwrite default buttons.
+
+- `addButton(button:Button)` - add a new button to existing buttons.
 ## Credits
 
 The icons used in this library are from [lucid.dev](https://lucide.dev).

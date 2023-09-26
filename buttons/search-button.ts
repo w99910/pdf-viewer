@@ -65,7 +65,12 @@ export default class SearchButton implements Button {
                         this.statusIndicator.innerText = `Showing ${current} of ${result.source._matchesCountTotal}`;
                         // get hightlight
                         let element = document.querySelector('.highlight.selected.appended');
-                        data.bodyContainer.scrollTop = data.bodyContainer.scrollTop + parseFloat(element?.getBoundingClientRect().top.toString()) - 100;
+                        data.bodyContainer.scrollTop =
+                          data.bodyContainer.scrollTop +
+                          parseFloat(
+                            element?.getBoundingClientRect().top.toString()
+                          ) -
+                          data.buttonsContainer.getBoundingClientRect().height;
                     }, 100)
 
                     break;
@@ -86,7 +91,7 @@ export default class SearchButton implements Button {
         this.container.classList.toggle('hidden');
 
         if (this.show) {
-            this.container.querySelector('input').focus()
+            this.container.querySelector("input")?.focus();
             document.addEventListener('keydown', (e) => this.listenEvents(e));
         } else {
             document.removeEventListener('keydown', (e) => this.listenEvents(e));
