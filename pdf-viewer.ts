@@ -235,18 +235,24 @@ export default class PDFViewer {
     if (!this.states.disableClickoutside) {
       this.pdfContainer.addEventListener("click", (event) => {
         if (!this.states.visibility) return;
-        let { pageX, pageY } = event;
+        let { screenX, screenY } = event;
         // return if point is located at button container
         let documentContainerRect = this.pdfContainer
-          .querySelector(".pdfViewer")!
+          .querySelector(".pdfViewer .page")!
           .getBoundingClientRect();
+        console.log(
+          this.pdfContainer
+            .querySelector(".pdfViewer .page")
+            ?.getBoundingClientRect(),
+          screenX,
+          screenY
+        );
         if (
-          documentContainerRect.left >= pageX &&
-          pageX <= documentContainerRect.right &&
-          pageY >= documentContainerRect.top &&
-          pageY <= documentContainerRect.bottom
-        )
+          screenX >= documentContainerRect.left &&
+          screenX <= documentContainerRect.right
+        ) {
           return;
+        }
         this.toggleVisibility();
       });
     }
