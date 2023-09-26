@@ -55,6 +55,10 @@ export default class PDFViewer {
 
   protected url: string;
 
+  protected states = {
+    visibility: true,
+  };
+
   addButton(button: Button) {
     this.buttons.push(button);
     return this;
@@ -79,6 +83,11 @@ export default class PDFViewer {
       pdfViewer: this.pdfViewer,
       url: this.url,
     };
+  }
+
+  toggleVisibility() {
+    this.states.visibility = !this.states.visibility;
+    this.container.style.display = this.states.visibility ? "" : "none";
   }
 
   constructor(protected container: HTMLDivElement) {
@@ -198,12 +207,32 @@ export default class PDFViewer {
     this.eventBus.on("pagesinit", (s) => {
       // We can use pdfSinglePageViewer now, e.g. let's change default scale.
       this.pdfViewer.currentScaleValue = "auto";
-
       // We can try searching for things.
+    });
+
+    // listen event when click outside
+    this.pdfContainer.addEventListener("click", (event) => {
+      if (!this.states.visibility) return;
+      let { pageX, pageY } = event;
+      // return if point is located at button container
+      let documentContainerRect = this.pdfContainer
+        .querySelector(".pdfViewer")!
+        .getBoundingClientRect();
+      if (
+        documentContainerRect.left >= pageX &&
+        pageX <= documentContainerRect.right &&
+        pageY >= documentContainerRect.top &&
+        pageY <= documentContainerRect.bottom
+      )
+        return;
+      this.toggleVisibility();
     });
   }
 
   async init(url: string, options: Object = {}) {
+    if (!this.states.visibility) {
+      this.toggleVisibility();
+    }
     let cMapUrl = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/cmaps/`;
     this.url = url;
     const loadingTask = pdfjsLib.getDocument({
