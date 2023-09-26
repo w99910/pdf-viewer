@@ -38,7 +38,11 @@ Thus, I implemented this package because
 import 'pdf-viewer/dist/style.css';
 import PDFViewer from "pdf-viewer";
 
-let pdfViewer = new PDFViewer(document.getElementById('pdf'))
+let pdfViewer = new PDFViewer(document.getElementById('pdf'),{
+  fullscreen: false,
+  overlay: false,
+  disableClickoutside: false,
+})
 ```
 
 - Load the pdf

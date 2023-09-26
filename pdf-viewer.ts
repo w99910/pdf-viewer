@@ -11,7 +11,7 @@ import ViewPropertiesButton from "./buttons/view-properties-button";
 import { PDFPageViewOptions } from "pdfjs-dist/types/web/pdf_page_view";
 import { DocumentInitParameters } from "pdfjs-dist/types/src/display/api";
 
-type Data = {
+export type Data = {
   pdfDocument: pdfjsLib.PDFDocumentProxy;
   buttonsContainer: HTMLDivElement;
   pdfContainer: HTMLDivElement;
@@ -26,7 +26,6 @@ type Data = {
 };
 type PDFViewerOptions = DocumentInitParameters & {
   initialPageIndex?: number;
-  disableClickoutside?: boolean;
 };
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker`;
@@ -62,6 +61,8 @@ export default class PDFViewer {
   protected states = {
     visibility: true,
     disableClickoutside: false,
+    fullscreen: true,
+    overlay: true,
   };
 
   addButton(button: Button) {
@@ -95,8 +96,20 @@ export default class PDFViewer {
     this.container.style.display = this.states.visibility ? "" : "none";
   }
 
-  constructor(protected container: HTMLDivElement) {
+  constructor(
+    protected container: HTMLDivElement,
+    options = {
+      fullscreen: true,
+      overlay: true,
+      disableClickoutside: false,
+    }
+  ) {
     if (!container) throw new Error("Please specify valid container");
+    Object.keys(options).forEach((key) => {
+      if (this.states.hasOwnProperty(key)) {
+        this.states[key] = options[key];
+      }
+    });
     this.buildContainers();
     this.initialisePDFService();
   }
@@ -135,17 +148,20 @@ export default class PDFViewer {
   }
 
   protected buildContainers() {
-    this.container.classList.add(
-      "w-screen",
-      "h-screen",
-      "p-2",
-      "top-0",
-      "left-0",
-      "fixed",
-      "z-100",
-      "flex",
-      "bg-[rgba(0,0,0,0.3)]"
-    );
+    this.container.classList.add("p-2", "flex");
+    if (this.states.fullscreen) {
+      this.container.classList.add(
+        "w-screen",
+        "h-screen",
+        "top-0",
+        "left-0",
+        "fixed",
+        "z-100"
+      );
+    }
+    if (this.states.overlay) {
+      this.container.classList.add("bg-[rgba(0,0,0,0.3)]");
+    }
     // prepare buttons container
     let box = document.createElement("div");
     box.className = "flex flex-col w-full";
@@ -240,9 +256,7 @@ export default class PDFViewer {
     if (!this.states.visibility) {
       this.toggleVisibility();
     }
-    if (options.disableClickoutside) {
-      this.states.disableClickoutside = true;
-    }
+
     let cMapUrl = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/cmaps/`;
     this.url = url;
     let defaultOptions = {
@@ -255,7 +269,9 @@ export default class PDFViewer {
       cMapUrl,
     };
     Object.keys(options).forEach((key) => {
-      defaultOptions[key] = options[key];
+      if (defaultOptions.hasOwnProperty(key)) {
+        defaultOptions[key] = options[key];
+      }
     });
     const loadingTask = pdfjsLib.getDocument(defaultOptions);
     (async () => {
