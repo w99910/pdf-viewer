@@ -1,7 +1,7 @@
 import Button from "../interfaces/Button";
-import {Data} from "../pdf-viewer";
-import {EventBus, PDFFindController} from "pdfjs-dist/web/pdf_viewer";
-import {onClickOutside} from 'js-utils';
+import { Data } from "../pdf-viewer";
+import { EventBus, PDFFindController } from "pdfjs-dist/web/pdf_viewer";
+import { onClickOutside } from 'js-utils';
 
 export default class SearchButton implements Button {
     protected btnContainer: HTMLDivElement;
@@ -65,12 +65,13 @@ export default class SearchButton implements Button {
                         this.statusIndicator.innerText = `Showing ${current} of ${result.source._matchesCountTotal}`;
                         // get hightlight
                         let element = document.querySelector('.highlight.selected.appended');
+                        const { top, height } = data.buttonsContainer.getBoundingClientRect();
                         data.bodyContainer.scrollTop =
-                          data.bodyContainer.scrollTop +
-                          parseFloat(
-                            element?.getBoundingClientRect().top.toString()
-                          ) -
-                          data.buttonsContainer.getBoundingClientRect().height;
+                            data.bodyContainer.scrollTop +
+                            parseFloat(
+                                element?.getBoundingClientRect().top.toString() ?? '0'
+                            ) -
+                            height - top - 20;
                     }, 100)
 
                     break;
@@ -103,7 +104,7 @@ export default class SearchButton implements Button {
             case 'Enter':
                 this.search('again');
                 break;
-            case 'Escape' :
+            case 'Escape':
                 this.toggleBox();
                 break;
         }

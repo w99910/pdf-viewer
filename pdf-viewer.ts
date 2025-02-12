@@ -8,7 +8,7 @@ import DownloadButton from "./buttons/download-button";
 import SearchButton from "./buttons/search-button";
 import ZoomButton from "./buttons/zoom-button";
 import ViewPropertiesButton from "./buttons/view-properties-button";
-import {DocumentInitParameters} from "pdfjs-dist/types/src/display/api";
+import { DocumentInitParameters } from "pdfjs-dist/types/src/display/api";
 import ContainerBuilder from "./ContainerBuilder";
 
 export type Data = {
@@ -47,6 +47,8 @@ export default class PDFViewer {
     protected buttonsContainer: HTMLDivElement;
 
     protected bodyContainer: HTMLDivElement;
+
+    protected textLayerDiv: HTMLDivElement;
 
     protected loadingContainer: HTMLDivElement;
 
@@ -184,6 +186,11 @@ export default class PDFViewer {
         box.append(this.bodyContainer);
 
         this.container.append(box);
+
+        this.textLayerDiv = document.createElement("div");
+        this.textLayerDiv.classList.add("textLayer");
+
+        this.bodyContainer.appendChild(this.textLayerDiv);
     }
 
     protected buildButtons() {
@@ -222,7 +229,7 @@ export default class PDFViewer {
         if (!this.states.disableClickoutside) {
             this.pdfContainer.addEventListener("click", (event) => {
                 if (!this.states.visibility) return;
-                let {screenX, screenY} = event;
+                let { screenX, screenY } = event;
                 // return if point is located at button container
                 let documentContainerRect = this.pdfContainer
                     .querySelector(".pdfViewer .page")!
@@ -250,7 +257,8 @@ export default class PDFViewer {
             enableXfa: true,
             cMapPacked: true,
             disableAutoFetch: true,
-            disableStream: true,
+            // disableStream: true,
+            disableStream: false,
             disableFontFace: false,
             cMapUrl,
         };

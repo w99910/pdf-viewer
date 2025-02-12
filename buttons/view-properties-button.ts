@@ -1,7 +1,7 @@
 import Button from "../interfaces/Button";
-import {Data} from "../pdf-viewer";
-import {onClickOutside} from "js-utils";
-import {getPdfFilenameFromUrl} from "pdfjs-dist";
+import { Data } from "../pdf-viewer";
+import { onClickOutside } from "js-utils";
+import { getPdfFilenameFromUrl } from "pdfjs-dist";
 
 export default class ViewPropertiesButton implements Button {
   protected btn: HTMLButtonElement;
@@ -20,7 +20,7 @@ export default class ViewPropertiesButton implements Button {
 
   protected totalPages: string | null;
 
-  protected popOver: HTMLElement;
+  protected popOverContainer: HTMLElement;
 
   protected isVisible: boolean = false;
 
@@ -47,14 +47,17 @@ export default class ViewPropertiesButton implements Button {
   }
 
   protected preparePopover() {
-    this.popOver = document.createElement("div");
-    this.popOver.className =
-      "flex-col fixed gap-y-2 p-4 top-1/2 z-[10000] bg-gray-50 border-2 shadow-lg rounded-lg left-1/2 transform -translate-x-1/2 -translate-y-1/2";
-    this.popOver.style.display = "none";
+    this.popOverContainer = document.createElement("div");
+    this.popOverContainer.className = 'fixed flex z-[10000] items-center justify-center w-screen h-screen bg-[rgba(0,0,0,0.3)] top-0 left-0'
+    const popover = document.createElement('div');
+    popover.className =
+      "flex-col fixed gap-y-2 p-4 top-1/2 bg-gray-50 border-2 shadow-lg rounded-lg left-1/2 transform -translate-x-1/2 -translate-y-1/2";
+    this.popOverContainer.style.display = "none";
+    this.popOverContainer.appendChild(popover);
     let title = document.createElement("h1");
     title.className = "font-semibold text-lg border-b py-2";
     title.innerText = "Document Properties";
-    this.popOver.append(title);
+    popover.append(title);
     Object.getOwnPropertyNames(this).forEach((property) => {
       if (typeof this[property] === "string") {
         let div = document.createElement("div");
@@ -69,11 +72,11 @@ export default class ViewPropertiesButton implements Button {
 
         div.append(label);
         div.append(value);
-        this.popOver.append(div);
+        popover.append(div);
       }
     });
-    document.body.append(this.popOver);
-    onClickOutside(this.popOver, () => {
+    document.body.append(this.popOverContainer);
+    onClickOutside(popover, () => {
       if (this.isVisible) this.toggleVisibility();
     });
   }
@@ -131,13 +134,13 @@ export default class ViewPropertiesButton implements Button {
   toggleVisibility() {
     setTimeout(() => {
       this.isVisible = !this.isVisible;
-      this.popOver.style.display = this.isVisible ? "flex" : "none";
+      this.popOverContainer.style.display = this.isVisible ? "flex" : "none";
     }, 100);
   }
 
   reset() {
     this.isVisible = false;
-    this.popOver?.remove();
+    this.popOverContainer?.remove();
     this.btn?.remove();
     this.size = null;
     this.name = null;
