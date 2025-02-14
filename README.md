@@ -1,5 +1,7 @@
 # PDF Viewer
 
+[![DEMO | PDF Viewer](https://raw.githubusercontent.com/w99910/pdf-viewer/master/thumbnail.png)](https://raw.githubusercontent.com/w99910/pdf-viewer/master/pdf-viewer.mp4)
+
 Easy-to-use PDF Viewer library written in vanilla typescript based on the core pdf
 library [pdfjs](https://github.com/mozilla/pdf.js/).
 
