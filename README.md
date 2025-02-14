@@ -2,6 +2,17 @@
 
 [![DEMO | PDF Viewer](https://raw.githubusercontent.com/w99910/pdf-viewer/master/thumbnail.png)](https://raw.githubusercontent.com/w99910/pdf-viewer/master/pdf-viewer.mp4)
 
+### Features
+
+- View PDF, 
+- Auto Generated Page Thumbnails, 
+- Search, 
+- Highlight, 
+- View Properties, 
+- Download
+- Responsive
+- Integrate your custom button  
+
 Easy-to-use PDF Viewer library written in vanilla typescript based on the core pdf
 library [pdfjs](https://github.com/mozilla/pdf.js/).
 
@@ -26,7 +37,7 @@ Thus, I implemented this package because
 
 ### Basic
 
-- Specify the pdf container
+- Create Or Get the pdf container
 
 ```html
 
@@ -164,6 +175,10 @@ consisting of
 ## Credits
 
 The icons used in this library are from [lucid.dev](https://lucide.dev).
+
+## Support
+
+If you find this library useful, please [consider supporting me](https://github.com/sponsors/w99910).  
 
 ## LICENSE
 
