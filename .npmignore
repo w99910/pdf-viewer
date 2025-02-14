@@ -3,3 +3,6 @@ pdf-view.mp4
 TODO.md
 node_modules
 .idea
+*.html
+*.config.js
+*.pdf
