@@ -1,6 +1,6 @@
-# PDF Viewer
+# Easy PDF Viewer
 
-[![DEMO | PDF Viewer](https://raw.githubusercontent.com/w99910/pdf-viewer/master/thumbnail.png)](https://raw.githubusercontent.com/w99910/pdf-viewer/master/pdf-viewer.mp4)
+![DEMO | PDF Viewer](https://asset.tweakit.today/pdf-view.gif)
 
 ### Features
 
@@ -33,9 +33,30 @@ Thus, I implemented this package because
 - construct the container and load pdf using url. No need to specify button container or overlay container etc.
 - add/remove buttons such as download, preview thumbnails, etc.
 
-## Usage
 
-### Basic
+## Installation
+
+- ### NPM 
+  ```bash
+  npm install easy-pdf-viewer
+  ```
+
+- ### PNPM 
+  ```bash
+  pnpm install easy-pdf-viewer
+  ```
+
+- ### Direct Git Repo install 
+  ```bash
+  npm install github:w99910/pdf-viewer
+  ```
+
+- ### Git 
+  ```bash
+  git clone https://github.com/w99910/pdf-viewer.git
+  ```
+
+### Basic Usage
 
 - Create Or Get the pdf container
 
@@ -48,8 +69,8 @@ Thus, I implemented this package because
 - Import the css file and construct the `PDFViewer` class
 
 ```js
-import 'pdf-viewer/dist/style.css';
-import PDFViewer from "pdf-viewer";
+import 'easy-pdf-viewer/dist/style.css';
+import PDFViewer from "easy-pdf-viewer";
 
 let pdfViewer = new PDFViewer(document.getElementById('pdf'),{
   fullscreen: false,
@@ -74,7 +95,7 @@ pdfViewer.init('/test.pdf');
 pdfViewer.setButtons([]);
 
 //or replace button
-import {SearchButton} from 'pdf-viewer';
+import {SearchButton} from 'easy-pdf-viewer';
 
 pdfViewer.setButtons([new SearchButton]);
 ```
@@ -84,7 +105,7 @@ pdfViewer.setButtons([new SearchButton]);
   You can add buttons by using `addButton` method.
 
 ```js
-import {DownloadButton} from 'pdf-viewer';
+import {DownloadButton} from 'easy-pdf-viewer';
 
 pdfViewer.addButton(new DownloadButton);
 ```
@@ -97,7 +118,7 @@ pdfViewer.addButton(new DownloadButton);
 
   ```js
   // custom-button.ts
-  import {Button} from 'pdf-viewer';
+  import {Button} from 'easy-pdf-viewer';
 
   export class CustomButton implements Button {
     build(data): HTMLElement | null {

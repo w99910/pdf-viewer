@@ -1,14 +1,18 @@
 {
-  "name": "pdf-viewer",
+  "name": "easy-pdf-viewer",
   "version": "0.0.1",
   "description": "easy to use pdf viewer written in vanilla typescript",
   "main": "index.js",
-  "author": "Zaw Lin Tun (w99910)",
+  "author": "Thomas Brillion",
   "license": "MIT",
   "type": "module",
   "dependencies": {
     "js-utils": "github:w99910/js-utils",
     "pdfjs-dist": "^3.10.111"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w99910/pdf-viewer.git"
   },
   "scripts": {
     "dev": "vite",

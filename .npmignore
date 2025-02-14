@@ -5,4 +5,4 @@ node_modules
 .idea
 *.html
 *.config.js
-*.pdf
+readme.pdf
